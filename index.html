@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+{% include jumbotron.html %}
+
+<div class="container" id="content">
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Quick Links</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li><a href="#course_info">Course Info</a></li>
+{% for week in site.data.weeks %}
+      <li><a href="#week_{{ week.number }}">Week {{ week.number }}</a></li>
+{% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% include course_info.html %}
+
+{% for week in site.data.weeks %}
+
+  <a name="week_{{ week.number }}"></a>
+  <h2 class="week-label">Week {{ week.number }}</h2>
+
+{% for day in week.days %}
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ day.name }}</h3>
+    </div>
+    <div class="panel-body">
+{% if day.override %}
+      <div class="row">
+        <div class="col-xs-12">
+          <p>{{ day.override }}</p>
+        </div>
+      </div>
+{% else %}
+      <div class="row">
+
+        <!-- Lecture -->
+        <div class="col-sm-4">
+          <div class="well well-sm">
+            <h4>Lecture</h4>
+{% for slides in day.slides %}
+            <p>Slides: <a href="{{ slides.link }}">{{ slides.text }}</a></p>
+{% endfor %}
+            <ul>
+{% for lecture in day.lecture %}
+{% if lecture.link %}
+              <li><a href="{{ lecture.link | prepend: site.baseurl }}">{{ lecture.text }}</a></li>
+{% elsif lecture.outbound %}
+              <li><a href="{{ lecture.outbound }}">{{ lecture.text }}</a></li>
+{% else %}
+{% if lecture == "TBA" %}
+              <li><span class="text-warning">TBA</span></li>
+{% elsif lecture == "None" %}
+              <li><span class="text-info">None</span></li>
+{% else %}
+              <li>{{ lecture }}</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Lab -->
+        <div class="col-sm-4">
+          <div class="well well-sm">
+            <h4>Lab</h4>
+            <ul>
+{% for lab in day.lab %}
+{% if lab.link %}
+              <li><a href="{{ lab.link | prepend: site.baseurl }}">{{ lab.text }}</a>{% if lab.due %} due {{ lab.due }}{% endif %}</li>
+{% elsif lab.outbound %}
+              <li><a href="{{ lab.outbound }}">{{ lab.text }}</a> due {{ lab.due }}</li>
+{% else %}
+{% if lab.text == "TBA" %}
+              <li><span class="text-warning">TBA</span></li>
+{% elsif lab.text == "None" %}
+              <li><span class="text-info">None</span></li>
+{% else %}
+              <li>{{ lab.text }}</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Assignments -->
+        <div class="col-sm-4">
+          <div class="well well-sm">
+            <h4>Assignments</h4>
+            <ul>
+{% for assignment in day.assignment %}
+{% if assignment.link %}
+              <li><a href="{{ assignment.link | prepend: site.baseurl }}">{{ assignment.text }}</a> due {{ assignment.due }}</li>
+{% elsif assignment.outbound %}
+              <li><a href="{{ assignment.outbound }}">{{ assignment.text }}</a> due {{ assignment.due }}</li>
+{% elsif assignment.text %}
+{% if assignment.text == "TBA" %}
+              <li><span class="text-warning">TBA</span></li>
+{% elsif assignment.text == "None" %}
+              <li><span class="text-info">None</span></li>
+{% else %}
+              <li>{{ assignment.text }}</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+{% endif %}
+      <div class="row">
+
+        <!-- Notes -->
+        <div class="col-xs-12">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endfor %}
+
+</div>

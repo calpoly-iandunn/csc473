@@ -1,0 +1,27 @@
+###############################################################################
+
+- number: 1
+  days:
+  - name: Monday 4/3
+    lecture:
+      - Introduction & Orientation
+    lab:
+      - text: TBA
+    assignment:
+      - text: TBA
+
+  - name: Wednesday 4/5
+    lecture:
+      - Light, rays, the camera, & spheres
+    lab:
+      - text: TBA
+    assignment:
+      - text: TBA
+
+  - name: Friday 4/7
+    lecture:
+      - Plane intersections, shadows, & profiling
+    lab:
+      - text: TBA
+    assignment:
+      - text: TBA

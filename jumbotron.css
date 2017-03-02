@@ -1,0 +1,38 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+.week-label {
+  padding-top: 75px;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+h2:before {
+  color: #000;
+  content:"\25AA";
+  margin-right: 6px;
+}
+
+h2:after {
+  content:' ';
+  display: block;
+  border: 2px solid #000;
+  margin-top: 4px;
+}
+
+h4 {
+  text-decoration: underline;
+}

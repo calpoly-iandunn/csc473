@@ -2,7 +2,7 @@
 
 - number: 1
   days:
-  - name: Monday 4/3
+  - name: Tuesday 4/4
     lecture:
       - Introduction & Orientation
     lab:
@@ -10,7 +10,7 @@
     assignment:
       - text: TBA
 
-  - name: Wednesday 4/5
+  - name: Thursday 4/6
     lecture:
       - Light, rays, the camera, & spheres
     lab:
@@ -18,7 +18,11 @@
     assignment:
       - text: TBA
 
-  - name: Friday 4/7
+###############################################################################
+
+- number: 2
+  days:
+  - name: Tuesday 4/11
     lecture:
       - Plane intersections, shadows, & profiling
     lab:

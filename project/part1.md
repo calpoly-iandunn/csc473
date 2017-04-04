@@ -134,6 +134,48 @@ In addition to the normal execution syntax, your program should support the foll
 
 ---
 
+  `raytrace sceneinfo <input_filename>`
+
+This diagnostic command simply loads the povray scene in, parses it, and prints out the contents.
+Official output TBA, but it will look something like this:
+
+    > raytrace sceneinfo simple.pov
+    Camera:
+    - Location: {0 0 14}
+    - Up: {0 1 0}
+    - Right: {1.33333 0 0}
+    - Look at: {0 0 0}
+
+    1 light(s)
+    Light[0]:
+    - Location: {-100 100 100}
+    - Color: {1.5 1.5 1.5}
+
+    2 object(s)
+    Object[0]:
+    - Type: Sphere
+    - Center: {0 0 0}
+    - Radius: 2
+    - Color: {1 0 1}
+    - Material:
+      - Ambient: 0.2
+      - Diffuse: 0.4
+    - Transform:
+      - Translate: {0 0 0}
+
+    Object[1]:
+    - Type: Plane
+    - Normal: {0 1 0}
+    - Distance: -4
+    - Color: {0.2 0.2 0.8}
+    - Material:
+      - Ambient: 0.4
+      - Diffuse: 0.8
+    - Transform:
+      - Translate: {0 0 0}
+
+---
+
   `raytrace pixelray <input_filename> <width> <height> <x> <y>`
 
 where `input_filename` `width` and `height` are the same as for the `render` command, and the other options are:
@@ -145,7 +187,6 @@ This command simply prints out the direction and origin of the ray given the cam
 For example:
 
     > raytrace pixelray sample.pov 640 480 319 239
-
     Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
 
 (these numbers are made up, I will post correct output to match soon!)
@@ -163,7 +204,6 @@ This command casts a ray in the the scene found in `input_filename` and for the 
 It then prints the type of object hit, the T for the given ray intersection, and the color of the hit object.
 
     > raytrace pixelray sample.pov 640 480 319 239
-
     Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
     T = 17.6582
     Object Type: Sphere

@@ -10,14 +10,9 @@ Due Friday April 14th, 2017 at 11:55pm
 
 ## Overview:
 
-Throughout this quarter you will implement the basic functions of a distributed ray tracer.
-This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
-Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
-All code must be written in C++.
-
 There are (approximately) five stages to your final ray tracer:
 
-- Parsing the scene description file.
+- Parsing the scene description file
 - Computing ray-object intersections
 - Shading
 - Recursive Tracing (reflection, refraction and shadows)

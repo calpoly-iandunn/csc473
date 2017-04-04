@@ -8,13 +8,6 @@ Due Thursday June 9th, 2007 at 11:55pm
 
 ---
 
-## Overview:
-
-Throughout this quarter you will implement the basic functions of a distributed ray tracer.
-This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
-Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
-All code must be written in C++.
-
 ## Goals for assignment 6:
 
 For this portion of your ray tracer, your program needs to:

@@ -8,13 +8,6 @@ Due Friday May 12, 2017 at 11:55pm
 
 ---
 
-## Overview:
-
-Throughout this quarter you will implement the basic functions of a distributed ray tracer.
-This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
-Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
-All code must be written in C++.
-
 ### Goal for assignment 3:
 
 In this assignment you will implement reflection and refraction on mirrored and translucent surfaces.

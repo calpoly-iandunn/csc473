@@ -10,12 +10,6 @@ Due Friday April 28th, 2017 at 11:55pm
 
 ## Overview:
 
-Throughout this quarter you will implement the basic functions of a distributed ray tracer.
-This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
-Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
-All code must be written in C++.
-
-
 Goal for assignment 1: In this assignment you will implement the direct illumination shading and shadow casting (and drawing) for your ray tracer along with a free camera, supporting only spheres and planes in terms of intersections.
 
 You code must include implementation of camera transforms and multiple objects. Specific technologies that must be supported are computation of:

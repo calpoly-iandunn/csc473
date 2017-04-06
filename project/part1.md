@@ -26,7 +26,7 @@ Write a ray caster that can intersect rays with spheres and planes from a pinhol
 You do not need to compute lighting, just color the pixels the pigment of the closest intersections with a sphere or plane.
 Your code will need to:
 
-- Parse a subset of the scene description file, specially, simple.pov which is available <a href="https://github.com/iondune/csc473-inputfiles">here</a>.
+- Parse a subset of the scene description file, specially, simple.pov which is available [here](https://github.com/iondune/csc473-inputfiles).
 - Compute ray-sphere and ray-plane intersections
 - Color pixels based the pigment of the closest intersection
 - Write out resulting image
@@ -35,10 +35,10 @@ Your code will need to:
 
 As the initial assignment for your ray tracer, you need to think about designing and implementing the abstract object(s) to represent geometry in your scene and write the parsing code to read in the scene description file (see below).
 In general, all geometric objects in your world will need to be able to be parsed, intersected (by rays), and shaded.
-You can use a vector/matrix library, options include glm and eigen.
+You can use a vector/matrix library, options include [glm](https://glm.g-truc.net/) and [eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page).
 
 In addition, your ray tracer will need to support specific unit tests throughout the quarter.
-In general, this will require that for a specific ray (relative to the camera – i.e. listed in pixel space, e.g. [Xi, Yi]),  can be tested – for example, having various values returned throughout the ray tracing process.
+In general, this will require that for a specific ray (relative to the camera – i.e. listed in pixel space, e.g. [Xi, Yi]),  can be tested - for example, having various values returned throughout the ray tracing process.
 This will include values such as the ray’s point, and direction, distance to closest object, color of intersected object, and then later derived ray’s from the original ray.
 
 ---
@@ -73,7 +73,10 @@ Your raytracer must be able to parse the following types:
 
 The bold elements are the types that MUST be parsed for this first assignment (you may ignore the zero translate at this time if you would like).
 You should create an abstract object from which all of the ray tracer objects will be derived.
-Each derived object should have its own parse function (read) that takes the filestream in, processes the data for that object, and returns the altered file pointer (for example).
+Each derived object can have its own parse function (read) that takes the filestream in, processes the data for that object, and returns the altered file pointer (for example).
+You can also implement a separate class that is responsible for parsing, if you would rather do that.
+In general the details of your implementation are up to you, just try to keep things as clean an modular as possible.
+Whatever code you write in this first week will likely still be in your code base when you are working on your final project in week 10.
 
 *Please be careful when writing your parser – depending on white space is likely not a good idea because over the class, white spaces will vary.
 Also note pigment, finish and transforms order can vary within a given object.
@@ -93,6 +96,7 @@ The closest intersection will be shaded using the model described in the next se
 However, in the first pass of the algorithm you may wish to color every intersection a constant color to test for correct intersection.
 
 ### Notes for the camera for this assignment
+
 For this assignment,  you may work under the assumption that the camera is positioned down the positive Z axis, looking down the negative Z axis (we will next implement a complete virtual camera).
 Note this is how the camera values are specified in the sample povray file.
 To compute the value of the rays, note that the limits of the near plane (i.e. the left, right, top and bottom) are defined by the camera up and left vectors.

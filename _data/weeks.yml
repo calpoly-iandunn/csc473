@@ -5,14 +5,19 @@
   - name: Tuesday 4/4
     lecture:
       - Introduction & Orientation
+      - Review graphics pipeline
     lab:
       - text: Review program 1 spec
+        link: /project/part1
     assignment:
       - text: Work on Program 1
 
   - name: Thursday 4/6
     lecture:
-      - Light, rays, the camera, & spheres
+      - C++
+      - Rays and the camera
+      - text: Spheres
+        link: /glossary/spheres
     lab:
       - text: Work on Program 1
     assignment:

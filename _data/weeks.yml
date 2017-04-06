@@ -6,17 +6,17 @@
     lecture:
       - Introduction & Orientation
     lab:
-      - text: TBA
+      - text: Review program 1 spec
     assignment:
-      - text: TBA
+      - text: Work on Program 1
 
   - name: Thursday 4/6
     lecture:
       - Light, rays, the camera, & spheres
     lab:
-      - text: TBA
+      - text: Work on Program 1
     assignment:
-      - text: TBA
+      - text: Work on Program 1
 
 ###############################################################################
 
@@ -26,6 +26,14 @@
     lecture:
       - Plane intersections, shadows, & profiling
     lab:
-      - text: TBA
+      - text: Work on Program 1
     assignment:
-      - text: TBA
+      - text: Work on Program 1
+
+  - name: Thursday 4/13
+    lecture:
+      - TBA
+    lab:
+      - text: Work on Program 1
+    assignment:
+      - text: Program 1 Due

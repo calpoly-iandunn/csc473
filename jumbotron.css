@@ -36,3 +36,7 @@ h2:after {
 h4 {
   text-decoration: underline;
 }
+
+.MathJax_Display {
+  text-align: left !important;
+}

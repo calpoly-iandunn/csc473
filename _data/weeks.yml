@@ -15,9 +15,6 @@
   - name: Thursday 4/6
     lecture:
       - C++
-      - Rays and the camera
-      - text: Spheres
-        link: /glossary/spheres
     lab:
       - text: Work on Program 1
     assignment:
@@ -29,7 +26,10 @@
   days:
   - name: Tuesday 4/11
     lecture:
-      - Plane intersections, shadows, & profiling
+      - Rays and the camera
+      - text: Spheres
+        link: /glossary/spheres
+      - Plane intersections
     lab:
       - text: Work on Program 1
     assignment:
@@ -37,7 +37,8 @@
 
   - name: Thursday 4/13
     lecture:
-      - TBA
+      - Shadows
+      - Profiling
     lab:
       - text: Work on Program 1
     assignment:

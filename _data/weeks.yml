@@ -4,8 +4,8 @@
   days:
   - name: Tuesday 4/4
     lecture:
-      - Introduction & Orientation
-      - Review graphics pipeline
+      - text: Introduction & Orientation
+        link: /lectures/00-introduction
     lab:
       - text: Review program 1 spec
         link: /project/part1
@@ -14,7 +14,8 @@
 
   - name: Thursday 4/6
     lecture:
-      - C++
+      - text: C++
+        link: /lectures/01-cpp1
     lab:
       - text: Work on Program 1
     assignment:

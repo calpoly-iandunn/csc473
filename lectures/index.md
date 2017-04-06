@@ -3,4 +3,5 @@ layout: page
 title: "Lectures"
 ---
 
-[01 - C++](cpp1)
+- [00 - Introduction](00-introduction)
+- [01 - C++](01-cpp1)

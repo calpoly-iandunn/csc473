@@ -4,3 +4,4 @@ url: "http://iondune.github.io"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge

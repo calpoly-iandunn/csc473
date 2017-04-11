@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /glossary/spheres/
 title: "Spheres"
 ---
 
@@ -53,6 +52,3 @@ $$ A = d \cdot d $$
 $$ B = 2 d \cdot (p0 - c) t$$
 
 $$ C = (p0 - c) \cdot (p0 - c) - r^2 $$
-
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-

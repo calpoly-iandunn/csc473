@@ -3,5 +3,5 @@ baseurl: "/csc473"
 url: "http://iondune.github.io"
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge

@@ -61,7 +61,7 @@ Your raytracer must be able to parse the following types:
 - **pigment**
   - **color**
     - **rgb**
-    - **rgbf**
+    - rgbf
 - finish
   - ambient
   - diffuse
@@ -121,9 +121,9 @@ and the command `render` indicates that we simply want to draw the entire scene.
 
 Thus:
 
-  `raytrace render sample.pov 640 480`
+  `raytrace render example.pov 640 480`
 
-will render a 640x480 image file, `sample.png` consisting of the scene defined in `sample.pov`.
+will render a 640x480 image file, `sample.png` consisting of the scene defined in `example.pov`.
 
 Image files should be output as png files. Use [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) to produce your output images unless you have a strong inclination to use some other library.
 
@@ -164,8 +164,6 @@ Official output TBA, but it will look something like this:
     - Material:
       - Ambient: 0.2
       - Diffuse: 0.4
-    - Transform:
-      - Translate: {0 0 0}
 
     Object[1]:
     - Type: Plane
@@ -175,8 +173,6 @@ Official output TBA, but it will look something like this:
     - Material:
       - Ambient: 0.4
       - Diffuse: 0.8
-    - Transform:
-      - Translate: {0 0 0}
 
 ---
 
@@ -190,7 +186,7 @@ where `input_filename` `width` and `height` are the same as for the `render` com
 This command simply prints out the direction and origin of the ray given the camera description found in `input_filename` and for the pixel (`x`, `y`).
 For example:
 
-    > raytrace pixelray sample.pov 640 480 319 239
+    > raytrace pixelray example.pov 640 480 319 239
     Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
 
 (these numbers are made up, I will post correct output to match soon!)
@@ -207,7 +203,7 @@ where `input_filename` `width` and `height` are the same as for the `render` com
 This command casts a ray in the the scene found in `input_filename` and for the pixel (`x`, `y`), finds the first object that is hit.
 It then prints the type of object hit, the T for the given ray intersection, and the color of the hit object.
 
-    > raytrace pixelray sample.pov 640 480 319 239
+    > raytrace pixelray example.pov 640 480 319 239
     Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
     T = 17.6582
     Object Type: Sphere

@@ -30,7 +30,6 @@
       - Rays and the camera
       - text: Spheres
         link: /glossary/spheres
-      - Planes
     lab:
       - text: Work on Program 1
     assignment:
@@ -38,8 +37,9 @@
 
   - name: Thursday 4/13
     lecture:
+      - Planes
+      - Lighting
       - Shadows
-      - Profiling
     lab:
       - text: Work on Program 1
     assignment:

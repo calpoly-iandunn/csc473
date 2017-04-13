@@ -1,5 +1,6 @@
 ---
 layout: page
+active: lectures
 title: "Lecture 4: Planes"
 ---
 

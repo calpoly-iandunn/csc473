@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /project/part4/
+active: project
 title: "Program 4 - Transforms and Anti-aliasing"
 ---
 

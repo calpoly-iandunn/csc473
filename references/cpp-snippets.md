@@ -1,5 +1,6 @@
 ---
 layout: page
+active: references
 title: "C++ Snippets"
 ---
 

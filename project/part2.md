@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /project/part2/
+active: project
 title: "Program 2 - Shading, Shadows, and Camera"
 ---
 

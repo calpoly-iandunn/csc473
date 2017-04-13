@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /project/part1/
+active: project
 title: "Program 1 - File Parsing and Ray Cast"
 ---
 
-Due Friday April 14th, 2017 at 11:55pm
+Due Friday April 16th, 2017 at 11:59pm
 
 ---
 

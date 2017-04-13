@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /project/part6/
+active: project
 title: "Program 6 - Monte Carlo Ray Tracing"
 ---
 

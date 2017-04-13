@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /project/part3/
+active: project
 title: "Program 3 - Reflection, Refraction, and Triangles"
 ---
 

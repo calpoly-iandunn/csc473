@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /project/part5/
+active: project
 title: "Program 5 - Spatial Data Structures"
 ---
 

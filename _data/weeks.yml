@@ -27,9 +27,10 @@
   days:
   - name: Tuesday 4/11
     lecture:
-      - Rays and the camera
+      - text: Rays and the camera
+        link: /lectures/02-camera
       - text: Spheres
-        link: /glossary/spheres
+        link: /lectures/03-spheres
     lab:
       - text: Work on Program 1
     assignment:
@@ -37,8 +38,10 @@
 
   - name: Thursday 4/13
     lecture:
-      - Planes
-      - Lighting
+      - text: Planes
+        link: /lectures/04-planes
+      - text: Lighting
+        link: /lectures/05-lighting
       - Shadows
     lab:
       - text: Work on Program 1

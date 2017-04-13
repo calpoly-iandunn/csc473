@@ -26,7 +26,7 @@ Write a ray caster that can intersect rays with spheres and planes from a pinhol
 You do not need to compute lighting, just color the pixels the pigment of the closest intersections with a sphere or plane.
 Your code will need to:
 
-- Parse a subset of the scene description file, specially, simple.pov which is available [here](https://github.com/iondune/csc473-inputfiles).
+- Parse a subset of the scene description file, specially: simple.pov, spheres.pov, and planes.pov, which are all available [here](https://github.com/iondune/csc473-inputfiles).
 - Compute ray-sphere and ray-plane intersections
 - Color pixels based the pigment of the closest intersection
 - Write out resulting image

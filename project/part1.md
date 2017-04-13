@@ -84,6 +84,26 @@ Try to write a flexible parser.*
 
 ---
 
+## Rounding
+
+In order to match my output exactly for the different test input/output files, you will need to use `std::setprecision` along with cout.
+For, example:
+
+```c++
+    cout << std::setprecision(4);
+    cout << "Pixel: [" << X << ", " << Y << "] Ray: " << Ray << endl;
+```
+
+Also, when converting the float color values to 0-255 ints (which you should do as the last step before printing out or writing out pixel colors), you will need to round:
+
+```c++
+unsigned int red = (unsigned int) std::round(color.r * 255.f);
+unsigned int green = (unsigned int) std::round(color.g * 255.f);
+unsigned int blue = (unsigned int) std::round(color.b * 255.f);
+```
+
+---
+
 ## Ray Object Intersections
 
 After parsing the scene file and creating the necessary data structures, your program should begin casting rays.

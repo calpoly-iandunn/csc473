@@ -125,7 +125,9 @@ Thus:
 
 will render a 640x480 image file, `sample.png` consisting of the scene defined in `example.pov`.
 
-Image files should be output as png files. Use [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) to produce your output images unless you have a strong inclination to use some other library.
+Image files should be output as png files.
+Use [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) to produce your output images unless you have a strong inclination to use some other library.
+Name the output file "output.png".
 
 Sample input files and images are given on the class webpage.
 For later assignments, you will need to also submit rendered images.

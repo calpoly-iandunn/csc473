@@ -23,6 +23,8 @@ String.assign((std::istreambuf_iterator<char>(FileHandle)), std::istreambuf_iter
 
 ## Write an image using stb_image_write
 
+Note that we "flip" our y values here, so that we can match the "positive y is down" convention that stb_image_write uses, not the "positive y is up" convention we use.
+
 ```c++
 const int numChannels = 3;
 const string fileName = "output.png";
@@ -36,9 +38,9 @@ for (int y = 0; y < size.y; ++ y)
     {
         unsigned char red, green, blue;
 
-        data[(size.x * numChannels) * y + numChannels * x + 0] = red;
-        data[(size.x * numChannels) * y + numChannels * x + 1] = green;
-        data[(size.x * numChannels) * y + numChannels * x + 2] = blue;
+        data[(size.x * numChannels) * (size.y - 1 - y) + numChannels * x + 0] = red;
+        data[(size.x * numChannels) * (size.y - 1 - y) + numChannels * x + 1] = green;
+        data[(size.x * numChannels) * (size.y - 1 - y) + numChannels * x + 2] = blue;
     }
 }
 

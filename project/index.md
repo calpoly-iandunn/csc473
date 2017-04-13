@@ -23,9 +23,9 @@ All code must be written in C++.
 
 ## Milestones
 
-- [Program 1 - File Parsing and Ray Cast](part1/) due 4/16 by 11:59pm.
-- [Program 2 - Shading, Shadows, and Camera](part2/) due 4/28.
-- [Program 3 - Reflection, Refraction, and Triangles](part3/) due 5/12.
-- [Program 4 - Transforms and Anti-aliasing](part4/) due 5/19.
-- [Program 5 - Spatial Data Structures](part5/) due 5/26.
-- [Program 6 - Monte Carlo Ray Tracing](part6/) due 6/9.
+- [Program 1 - File Parsing and Ray Cast](part1) due 4/16 by 11:59pm.
+- [Program 2 - Shading, Shadows, and Camera](part2) due 4/28.
+- [Program 3 - Reflection, Refraction, and Triangles](part3) due 5/12.
+- [Program 4 - Transforms and Anti-aliasing](part4) due 5/19.
+- [Program 5 - Spatial Data Structures](part5) due 5/26.
+- [Program 6 - Monte Carlo Ray Tracing](part6) due 6/9.

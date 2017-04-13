@@ -16,11 +16,13 @@ All code must be written in C++.
 
 [**Test files (arguments and expected output) for all stages of the project can be found here.**](https://github.com/iondune/csc473-testfiles)
 
+[Required survey to gather project grading info](https://goo.gl/forms/sedM8BmLGTyQqjts2)
+
 [CMakeLists.txt template for use in compiling your C++ code.](https://gist.github.com/iondune/b75501189e027c886ac12afee1274f0e)
 
 ## Milestones
 
-- [Program 1 - File Parsing and Ray Cast](part1/) due 4/14.
+- [Program 1 - File Parsing and Ray Cast](part1/) due 4/16 by 11:59pm.
 - [Program 2 - Shading, Shadows, and Camera](part2/) due 4/28.
 - [Program 3 - Reflection, Refraction, and Triangles](part3/) due 5/12.
 - [Program 4 - Transforms and Anti-aliasing](part4/) due 5/19.

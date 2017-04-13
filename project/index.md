@@ -12,7 +12,9 @@ Since you will be adding and reusing your code, it is advised that you write you
 All code must be written in C++.
 
 
-[Input files for all stages of the project can be found here.](https://github.com/iondune/csc473-inputfiles)
+[**Input files for all stages of the project can be found here.**](https://github.com/iondune/csc473-inputfiles)
+
+[**Test files (arguments and expected output) for all stages of the project can be found here.**](https://github.com/iondune/csc473-testfiles)
 
 [CMakeLists.txt template for use in compiling your C++ code.](https://gist.github.com/iondune/b75501189e027c886ac12afee1274f0e)
 

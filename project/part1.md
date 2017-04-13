@@ -150,12 +150,18 @@ Official output TBA, but it will look something like this:
     - Right: {1.33333 0 0}
     - Look at: {0 0 0}
 
+    ---
+
     1 light(s)
+
     Light[0]:
     - Location: {-100 100 100}
     - Color: {1.5 1.5 1.5}
 
+    ---
+
     2 object(s)
+
     Object[0]:
     - Type: Sphere
     - Center: {0 0 0}

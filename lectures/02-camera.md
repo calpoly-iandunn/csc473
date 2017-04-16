@@ -69,7 +69,17 @@ We can use a "right" basis vector with length $$ 4/3 $$ to account for the aspec
 If you take a look at any of the `.pov` files for this class, you will notice that the "right" vectors are scaled in this way.
 
 
-## Camera Space
+
+## View Space
+
+### Definitions
+
+It is common to define a coordinate system using a set of orthogonal basis vectors.
+Our world space coordinate system is defined by the orthogonal basis vectors $$\hat x$$, $$\hat y$$, and $$\hat z$$.
+We will define our view space basis vectors $$\hat u$$, $$\hat v$$, and $$\hat w$$.
+These are often called the "camera basis vectors".
+
+We can find our basis vectors using the camera specification in our `.pov` files:
 
 ```POV-Ray
 camera {
@@ -80,14 +90,41 @@ camera {
 }
 ```
 
-Our camera has a set of basis vectors $$\hat u$$, $$\hat v$$, and $$\hat w$$.
-These basis vectors
+$$\hat u$$ is our `right` vector.
 
-Assuming the image to render has width $$w$$ and height $$h$$, a given pixel $$i, j$$ has the following "image coordinates":
+$$\hat v$$ is our `up` vector.
 
-$$U_s = -\frac{1}{2} + \frac{i + 0.5}{w}$$
+Here we run into a problem, however.
 
-$$V_s = -\frac{1}{2} + \frac{j + 0.5}{h}$$
+`location` and `look_at` describe positions, not vectors, but there is another problem.
+
+We have a right-handed coordinate system, which means that $$ \hat w $$ must be the right-handed cross product of $$\hat u$$ and $$\hat v$$.
+
+However, that gives us a $$\hat w$$ that points in the **_opposite_** direction of where the camera is looking.
+
+We will account for this by defining $$\hat w$$ as the _opposite_ of the "look" vector $$\hat l$$, which is the direction the camera is actually looking.
+
+$$ \hat w = - \hat l $$
+
+The look vector can be found by simply normalizing the difference between `look_at` and `location`:
+
+$$ \hat l = \frac{look\_at - location}{|| look\_at - location ||} $$
+
+
+### Transformations
+
+Given some coordinate in view space, $$ P_v = U_s, V_s, W_s $$, we can find that position transformed into world space, $$ P_w $$, using the following equation:
+
+$$ P_w = U_s * \hat u + V_s * \hat v + W_s * \hat w $$
+
+We have our $$U_s$$ and $$V_s$$ and defined above, but what is $$ W_s $$?
+
+Geometrically, this is the distance the image plane is pushed along the viewing axis.
+This distance is usually referred to as the **focal length**.
+In this class we will use a focal length of 1 since that results in a reasonable field of view and is also simple.
+Remember that our $$\hat w$$ basis vector points in the opposite direction, so we define:
+
+$$ W_s = - focal\_length = -1 $$
 
 
 

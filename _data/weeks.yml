@@ -40,9 +40,8 @@
     lecture:
       - text: Planes
         link: /lectures/04-planes
-      - text: Lighting
+      - text: Lighting & Shadows
         link: /lectures/05-lighting
-      - Shadows
     lab:
       - text: Work on Program 1
     assignment:

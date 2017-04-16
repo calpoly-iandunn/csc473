@@ -76,7 +76,7 @@ If you take a look at any of the `.pov` files for this class, you will notice th
 
 It is common to define a coordinate system using a set of orthogonal basis vectors.
 Our world space coordinate system is defined by the orthogonal basis vectors $$\hat x$$, $$\hat y$$, and $$\hat z$$.
-We will define our view space basis vectors $$\hat u$$, $$\hat v$$, and $$\hat w$$.
+We will define our view space basis vectors $$\vec u$$, $$\hat v$$, and $$\hat w$$.
 These are often called the "camera basis vectors".
 
 We can find our basis vectors using the camera specification in our `.pov` files:
@@ -90,7 +90,7 @@ camera {
 }
 ```
 
-$$\hat u$$ is our `right` vector.
+$$\vec u$$ is our `right` vector (note that it is _not_ normalzied).
 
 $$\hat v$$ is our `up` vector.
 
@@ -98,7 +98,7 @@ Here we run into a problem, however.
 
 `location` and `look_at` describe positions, not vectors, but there is another problem.
 
-We have a right-handed coordinate system, which means that $$ \hat w $$ must be the right-handed cross product of $$\hat u$$ and $$\hat v$$.
+We have a right-handed coordinate system, which means that $$ \hat w $$ must be the right-handed cross product of $$\vec u$$ and $$\hat v$$.
 
 However, that gives us a $$\hat w$$ that points in the **_opposite_** direction of where the camera is looking.
 
@@ -115,7 +115,9 @@ $$ \hat l = \frac{look\_at - location}{|| look\_at - location ||} $$
 
 Given some coordinate in view space, $$ P_v = U_s, V_s, W_s $$, we can find that position transformed into world space, $$ P_w $$, using the following equation:
 
-$$ P_w = U_s * \hat u + V_s * \hat v + W_s * \hat w $$
+$$ P_w = C_0 + U_s * \vec u + V_s * \hat v + W_s * \hat w $$
+
+Where $$C_0$$ is the origin of the view space system expressed in world space coordinates, otherwise known as the "camera position".
 
 We have our $$U_s$$ and $$V_s$$ and defined above, but what is $$ W_s $$?
 
@@ -126,18 +128,28 @@ Remember that our $$\hat w$$ basis vector points in the opposite direction, so w
 
 $$ W_s = - focal\_length = -1 $$
 
+Don't forget that we leave our $$\vec u$$ right vector un-normalized, despite apparent convention, to account for the aspect ratio down the line.
+You can just think of it as a normalized basis vector which has been scaled up by the aspect ratio.
 
 
-## Summary
+## Camera Rays
 
-Your rays should be in world space, but we get those world space vectors by computing $$U_s$$, $$V_s$$, and $$W_s$$.
-
-$$U_s$$ and $$V_s$$ are as defined above page, $$W_s$$ is always -1.
-
-Then you multiply $$U_s$$ by the $$\hat u$$ vector, etc. for $$\hat v$$ and $$\hat w$$.
-
-$$\hat u$$ is the right vector (and is not normalized, use it as scaled from the povray file), $$\hat v$$ is the up vector (normalize) and $$\hat w$$ is the opposite of the "look" vector, which is normalized look_at - camera location.
+With all of these components we are ready to define the rays (in world space coordinates) for each pixel.
+For each ray we need an origin point and a direction.
+The origin point is easy - all rays originate from the camera location.
 
 $$ P_0 = camera.location $$
 
-$$ \hat d = U_s * \hat u + V_s * \hat v + W_s * \hat w $$
+For direction, we should normalize the difference between the pixel's position on the image plane (transformed to world space) and the camera origin.
+
+$$ \vec d = P_w - C_0 $$
+
+$$ \vec d = C_0 - C_0 +  U_s * \vec u + V_s * \hat v + W_s * \hat w $$
+
+$$ \vec d = U_s * \vec u + V_s * \hat v + W_s * \hat w $$
+
+$$ \hat d = \frac{\vec d}{|| \vec d ||} $$
+
+Plug these in to get the final ray equation.
+
+$$p(t) = p_0 + t * \hat d$$

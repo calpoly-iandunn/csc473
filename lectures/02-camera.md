@@ -24,7 +24,7 @@ In general, we test for intersections against geometric objects by solving for v
 
 
 
-## Pixel Rays
+## Image Plane
 
 Given some camera specification, we need to be able to compute view rays.
 Let's assume that our camera is sitting somewhere along the positive Z axis and is looking towards -Z.
@@ -43,7 +43,30 @@ $$V_s = \frac{j}{h}$$
 
 This will give us an image plane that stretches from $$(0, 0)$$ to $$(1, 1)$$ in view space coordinates.
 But, we want the image plane to stretch from $$(-1/2, -1/2)$$ to $$(1/2, 1/2)$$.
+We can accomplish this quite simply by shifting our coordinates:
 
+$$ U_s = \frac{i}{w} - \frac{1}{2} $$
+
+$$ V_s = \frac{j}{h} - \frac{1}{2} $$
+
+Another problem with these equations is that we are getting the *lower-left corner of each pixel box* instead of the centers.
+Let's say that we want to get the pixel centers (there are a few reasons why we want to, though the resulting image will be nearly the same):
+
+$$ U_s = -\frac{1}{2} + \frac{i + 0.5}{w} $$
+
+$$ V_s = -\frac{1}{2} + \frac{j + 0.5}{h} $$
+
+There's one other problem here.
+The images that we are rendering will typically be rectangular, not a perfect square.
+Most of the time we will render `640x480` images in this class, which has an aspect ratio of `4:3`.
+
+If we use this square image plane we will get squashed images that distort the relationship between horizontal and vertical scale.
+There are two equivalent ways to solve this problem.
+We could stretch the image plane along the horizontal axis by $$ 4/3 $$.
+
+However, we will eventually by multiplying these view space coordinates by the basis vectors of our camera.
+We can use a "right" basis vector with length $$ 4/3 $$ to account for the aspect ratio at that time.
+If you take a look at any of the `.pov` files for this class, you will notice that the "right" vectors are scaled in this way.
 
 
 ## Camera Space

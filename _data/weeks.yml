@@ -14,7 +14,7 @@
 
   - name: Thursday 4/6
     lecture:
-      - text: C++
+      - text: C++ (1)
         link: /lectures/01-cpp1
     lab:
       - text: Work on Program 1
@@ -46,3 +46,25 @@
       - text: Work on Program 1
     assignment:
       - text: Program 1 Due
+
+###############################################################################
+
+- number: 3
+  days:
+  - name: Tuesday 4/18
+    lecture:
+      - text: Triangles
+      - text: C++ (2)
+    lab:
+      - text: Work on Program 2
+    assignment:
+      - text: Work on Program 2
+
+  - name: Thursday 4/20
+    lecture:
+      - text: Shading Models
+        link: /lectures/06-shading-models
+    lab:
+      - text: Work on Program 2
+    assignment:
+      - text: Work on Program 2

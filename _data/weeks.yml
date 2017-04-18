@@ -54,7 +54,7 @@
   - name: Tuesday 4/18
     lecture:
       - text: Triangles
-      - text: C++ (2)
+        link: /lectures/08-triangles
     lab:
       - text: Work on Program 2
     assignment:
@@ -64,7 +64,11 @@
     lecture:
       - text: Shading Models
         link: /lectures/06-shading-models
+      - text: Transformations
+        link: /lectures/07-transformations
     lab:
       - text: Work on Program 2
     assignment:
       - text: Work on Program 2
+
+###############################################################################

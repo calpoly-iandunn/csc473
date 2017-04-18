@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 00: Introduction & Orientation"
+title: "Lecture 0: Introduction & Orientation"
 ---
 
 Read the syllabus!

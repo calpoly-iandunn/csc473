@@ -4,10 +4,6 @@ active: project
 title: "Program 1 - File Parsing and Ray Cast"
 ---
 
-Due Friday April 16th, 2017 at 11:59pm
-
----
-
 ## Overview:
 
 There are (approximately) five stages to your final ray tracer:
@@ -71,7 +67,7 @@ Your raytracer must be able to parse the following types:
   - refraction
   - ior
 
-The bold elements are the types that MUST be parsed for this first assignment (you may ignore the zero translate at this time if you would like).
+The bold elements are the types that MUST be parsed for this first assignment (you should parse but ignore the zero translate at this time).
 You should create an abstract object from which all of the ray tracer objects will be derived.
 Each derived object can have its own parse function (read) that takes the filestream in, processes the data for that object, and returns the altered file pointer (for example).
 You can also implement a separate class that is responsible for parsing, if you would rather do that.
@@ -81,26 +77,6 @@ Whatever code you write in this first week will likely still be in your code bas
 *Please be careful when writing your parser – depending on white space is likely not a good idea because over the class, white spaces will vary.
 Also note pigment, finish and transforms order can vary within a given object.
 Try to write a flexible parser.*
-
----
-
-## Rounding
-
-In order to match my output exactly for the different test input/output files, you will need to use `std::setprecision` along with cout.
-For, example:
-
-```c++
-    cout << std::setprecision(4);
-    cout << "Pixel: [" << X << ", " << Y << "] Ray: " << Ray << endl;
-```
-
-Also, when converting the float color values to 0-255 ints (which you should do as the last step before printing out or writing out pixel colors), you will need to round:
-
-```c++
-unsigned int red = (unsigned int) std::round(color.r * 255.f);
-unsigned int green = (unsigned int) std::round(color.g * 255.f);
-unsigned int blue = (unsigned int) std::round(color.b * 255.f);
-```
 
 ---
 
@@ -143,16 +119,11 @@ Thus:
 
   `raytrace render example.pov 640 480`
 
-will render a 640x480 image file, `sample.png` consisting of the scene defined in `example.pov`.
-
-Image files should be output as png files.
-Use [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) to produce your output images unless you have a strong inclination to use some other library.
-Name the output file "output.png".
-See the [C++ snippets reference]({{ site.baseurl }}/references/cpp-snippets) for an example of how to write an image using stb_image_write.
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
 
 Sample input files and images are given on the class webpage.
 For later assignments, you will need to also submit rendered images.
-Please include a `README.txt` file in your repository that contains a description of which parts of the ray tracer that you believe are working, partially working, and not implemented.
+Please include a `README.txt` or `README.md` file in your repository that contains a description of which parts of the ray tracer that you believe are working, partially working, and not implemented.
 This will assist the grader in determining what is causing potential errors in your output and help in assigning partial credit.
 
 ### Diagnostic/Testing
@@ -170,7 +141,7 @@ Official output TBA, but it will look something like this:
     Camera:
     - Location: {0 0 14}
     - Up: {0 1 0}
-    - Right: {1.33333 0 0}
+    - Right: {1.333 0 0}
     - Look at: {0 0 0}
 
     ---
@@ -215,10 +186,8 @@ where `input_filename` `width` and `height` are the same as for the `render` com
 This command simply prints out the direction and origin of the ray given the camera description found in `input_filename` and for the pixel (`x`, `y`).
 For example:
 
-    > raytrace pixelray example.pov 640 480 319 239
-    Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
-
-(these numbers are made up, I will post correct output to match soon!)
+    > raytrace pixelray example.pov 640 480 320 240
+    Pixel: [320, 240] Ray: {0 0 14} -> {0.001042 0.001042 -1}
 
 ---
 
@@ -233,16 +202,14 @@ This command casts a ray in the the scene found in `input_filename` and for the 
 It then prints the type of object hit, the T for the given ray intersection, and the color of the hit object.
 
     > raytrace pixelray example.pov 640 480 319 239
-    Pixel: [319 239] Ray: {0 0 14} -> {0.220943 0.127908 -0.966863}
-    T = 17.6582
+    Pixel: [320, 240] Ray: {0 0 14} -> {0.001042 0.001042 -1}
+    T = 12
     Object Type: Sphere
-    Color: (91, 33, 106)
-
-(these numbers are made up, I will post correct output to match soon!)
+    Color: 1 0 1
 
 If no object is it, it simply prints `No Hit`
 
-### Grading breakdown:
+## Grading breakdown:
 
 - 40 points file parsing (evidenced via ray cast working)
 - 30 points sphere intersections (working ray cast)

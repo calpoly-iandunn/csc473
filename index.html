@@ -55,6 +55,8 @@ layout: default
 {% for lecture in day.lecture %}
 {% if lecture.link %}
               <li><a href="{{ lecture.link | prepend: site.baseurl }}">{{ lecture.text }}</a></li>
+{% elsif lecture.text %}
+              <li>{{ lecture.text }}</li>
 {% elsif lecture.outbound %}
               <li><a href="{{ lecture.outbound }}">{{ lecture.text }}</a></li>
 {% else %}

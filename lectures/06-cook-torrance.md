@@ -23,9 +23,9 @@ $$ r = k_a + \sum_{i=0}^n l_c * ( r_d + r_s ) $$
 
 With
 
-$$ r_d = k_d * (\hat n \cdot \hat l) $$
+$$ r_d = k_d * (\vec n \cdot \vec l) $$
 
-$$ r_s = k_s * (\hat h \cdot \hat n) ^ p $$
+$$ r_s = k_s * (\vec h \cdot \vec n) ^ p $$
 
 To compute total reflectance $$ r $$ with the Blinn-Phong model.
 Here we have defined $$ r_d $$ for the diffuse reflectance and $$ r_s $$ for the specular reflectance.
@@ -35,7 +35,7 @@ This is the same equation we have been using and have already implemented.
 
 Cook and Torrance propose a variation of this equation:
 
-$$ r = k_a + \sum_{i=0}^n l_c * (\hat n \cdot \hat l) * ( s * r_d + d * r_s ) $$
+$$ r = k_a + \sum_{i=0}^n l_c * (\vec n \cdot \vec l) * ( s * r_d + d * r_s ) $$
 
 With
 
@@ -44,11 +44,11 @@ $$ r_d = k_d $$
 This equation introduces two concepts:
 
 1. The diffuse and specular reflectance components are now scaled by some variables $$ s $$ and $$ d $$.
-2. We pull the $$ \hat n $$ and $$ \hat l $$ dot product out of the diffuse reflectance and make it a part of the sum.
+2. We pull the $$ \vec n $$ and $$ \vec l $$ dot product out of the diffuse reflectance and make it a part of the sum.
   This makes our $$ r_d $$ a constant, though we can modify this definition later if we choose to.
   This also implies that our $$ r_s $$ specular reflectance is also multiplied by the same dot product (unlike before in Blinn-Phong).
 
-As we will soon learn, however, $$ r_s $$ now includes a $$ (\hat n \cdot \hat l) $$ divisor, which will simply cancel out with the $$ (\hat n \cdot \hat l) $$ in the numerator.
+As we will soon learn, however, $$ r_s $$ now includes a $$ (\vec n \cdot \vec l) $$ divisor, which will simply cancel out with the $$ (\vec n \cdot \vec l) $$ in the numerator.
 This convention is adopted for two reasons:
 
 1. It fits better with how the forthcoming $$ r_s $$ equation is derived.
@@ -67,7 +67,7 @@ $$ s + d = 1 $$
 
 Sometimes we ignore the $$ s $$ altogether and simply write:
 
-$$ r = k_a + \sum_{i=0}^n l_c * (\hat n \cdot \hat l) * ( s * r_d + (1 - s) * r_s ) $$
+$$ r = k_a + \sum_{i=0}^n l_c * (\vec n \cdot \vec l) * ( s * r_d + (1 - s) * r_s ) $$
 
 This ratio is based on the observation that (except for emissive materials), conservation of energy implies that a material can only
 reflect as much energy (light) as it takes in.
@@ -79,7 +79,7 @@ Therefore if a material reflects a lot of light specularly, then it must reflect
 
 I'm getting there.
 
-$$ r_s = \frac{D * G * F}{4 * (\hat n \cdot \hat l) * (\hat n \cdot \hat v)} $$
+$$ r_s = \frac{D * G * F}{4 * (\vec n \cdot \vec l) * (\vec n \cdot \vec v)} $$
 
 Note the n-dot-l divisor that I warned would be there!
 
@@ -105,7 +105,7 @@ You can think of these microfacets as being polygonal approximations of the surf
 ![Microfacets]({{ site.baseurl }}/images/microfacet.png)
 
 The important concept here is that the normal of the surface and the normals of each microfacet may not be the same.
-For exceptionally smooth surfaces, like a perfect mirror, all the microfacets face the same direction which is $$ \hat n $$, the normal of the surface.
+For exceptionally smooth surfaces, like a perfect mirror, all the microfacets face the same direction which is $$ \vec n $$, the normal of the surface.
 However, for matte or rough surfaces, such as matte paint or stone, the microfacets face random directions.
 
 On rough surfaces, these microfacets can occlude other facets, cast shadows on facets, and be pointing away from the normal.
@@ -131,7 +131,7 @@ $$ D $$ is the part of the Cook-Torrance model which defines the shape of the sp
 There are a lot of choices here.
 It may not be surprising that one of the choices is **Blinn-Phong**, that is, we can choose to use the same specular highlight shape as we previously used in the Blinn-Phong reflectance model.
 
-$$ D_{blinn} = \frac{1}{\pi \alpha^2} (\hat h \cdot \hat n)^{(\frac{2}{\alpha^2} - 2)} $$
+$$ D_{blinn} = \frac{1}{\pi \alpha^2} (\vec h \cdot \vec n)^{\left( \frac{2}{\alpha^2} - 2 \right)} $$
 
 Now this looks sort of familiar!
 Except, we are dividing by something now... and our clean "power" exponent has been replaced by something more nasty.
@@ -143,7 +143,7 @@ Let's explain these two changes - starting with the divisor.
 
 Our $$ D $$ functions for Cook-Torrance need to be normalized such that:
 
-$$ \int_\Omega D(h)(\hat h \cdot \hat n) d\omega_i = 1 $$
+$$ \int_\Omega D(h)(\vec h \cdot \vec n) d\omega_i = 1 $$
 
 The result of this normalization in our Blinn-Phong case (and indeed, for many different cases) is a factor of $$ \frac{1}{\pi \alpha^2} $$
 
@@ -160,10 +160,57 @@ In practice you never want to use absolute `0` or `1` since these edge cases ten
 
 We can then relate our new $$ \alpha $$ parameter to our old `power` variable as such:
 
-$$ power = (\frac{2}{\alpha^2} - 2) $$
+$$ power = \left( \frac{2}{\alpha^2} - 2 \right) $$
 
 Due to the way $$ \alpha $$ scales, I have found success using the following convention from UE4.
 I define a `roughness` parameter in the material and set
 
 $$ \alpha = roughness^2 $$
+
+
+### Other Choices
+
+As I have mentioned, there are other choices for Normalized Distribution function.
+Instead of Blinn-Phong, the original authors Cook and Torrance recommend the *Beckmann* distribution.
+Modern authors usually recommend the more recent *GGX* distribution.
+
+However, these is enough to process without adding these equations in as well.
+For now we'll just stick with the Blinn-Phong distribution function, as it is good enough.
+Indeed, the Blinn-Phong and Beckmann functions are quite similar for many values of $$ \alpha $$.
+
+For additional function choices for $$ D $$, as well as choices for $$ G $$ and $$ F $$, can be found in the [reference]({{ site.baseurl }}/references).
+
+Now we will cover $$ G $$ and $$ F $$.
+
+
+
+## Geometric Attenuation
+
+$$ G $$ is the part of the Cook-Torrance model which accounts for attenuation caused by neighboring microfacets.
+Microfacets can block the light from reaching other microfacets, and they can also obscure the microfacets from the viewer's perspective.
+This effect is more prominent on rougher materials.
+
+$$ G $$ is therefore a number from 0 to 1 which indicates the proportion of light that is **not** blocked by either of these effects.
+As such it is defined as the minimum of two different factors which calculate either type of attenuation.
+
+$$ G = min \left( 1, \frac{2 (\vec h \cdot \vec n) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec h \cdot \vec n) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right) $$
+
+
+
+## Fresnel
+
+$$ F $$ is the part of the Cook-Torrance model which accounts for the *fresnel* effect.
+
+In computer graphics the most commonly used approximation for the fresnel effect is **Schlick's Approximation**:
+
+$$ F = F_0 + (1 - F_0)*(1 - (\vec v \cdot \vec h))^5 $$
+
+Where $$ F_0 $$ is the reflectance at normal incidence, given by:
+
+$$ F_0 = \frac{(n - 1)^2}{(n + 1)^2} $$
+
+Where $$ n $$ is the material's index of refraction.
+
+And if you're wondering, yes! Opaque materials can and do still have indices of refraction.
+See [here](https://physics.stackexchange.com/questions/223048/how-do-opaque-materials-have-an-index-of-refraction).
 

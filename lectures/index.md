@@ -10,6 +10,6 @@ title: "Lectures"
 - [3 - Spheres](03-spheres)
 - [4 - Planes](04-planes)
 - [5 - Lighting](05-lighting)
-- [6 - Shading Models](06-shading-models)
+- [6 - Cook-Torrance](06-cook-torrance)
 - [7 - Transformations](07-transformations)
 - [8 - Triangles](08-triangles)

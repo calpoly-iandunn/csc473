@@ -61,9 +61,23 @@
       - text: Work on Program 2
 
   - name: Thursday 4/20
+    override: Class Cancelled
+
+###############################################################################
+
+- number: 3
+  days:
+  - name: Tuesday 4/25
     lecture:
-      - text: Shading Models
-        link: /lectures/06-shading-models
+      - text: Cook-Torrance
+        link: /lectures/06-cook-torrance
+    lab:
+      - text: Work on Program 2
+    assignment:
+      - text: Work on Program 2
+
+  - name: Thursday 4/27
+    lecture:
       - text: Transformations
         link: /lectures/07-transformations
     lab:

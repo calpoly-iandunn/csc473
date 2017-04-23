@@ -133,5 +133,5 @@ unsigned int blue = (unsigned int) std::round(color.b * 255.f);
 
 Image files should be output as png files.
 Use [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) to produce your output images unless you have a strong inclination to use some other library.
-Name the output file "output.png".
+Name the output file "output.png" and create it in the current directory (where the executable is run).
 See the [C++ snippets reference]({{ site.baseurl }}/references/cpp-snippets) for an example of how to write an image using stb_image_write.

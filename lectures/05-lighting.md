@@ -36,6 +36,13 @@ Also note that this is *not* an approximation when the vectors are co-planar (as
 It is an approximation when the vectors are not co-planar.
 
 
+### Multiple Lights
+
+To support multiple lights, you loop over each light and sum up the diffuse and specular contributions (but do not duplicate ambient light):
+
+$$ I_{tot} = K_a * L_a + \sum_{i=0}^n \left( K_d * ( \hat N \cdot \hat L_i ) * L_{di} + K_s * ( \hat H_i \cdot \hat N ) ^ \alpha * L_{si} \right) $$
+
+
 
 ## Shadows
 

@@ -18,9 +18,12 @@ Similarly, $$ L_a $$, $$ L_d $$, and $$ L_s $$ specify the light colors for ambi
 $$ \alpha $$ specifies the shininess of the material.
 And, $$ \hat N $$, $$ \hat L $$, $$ \hat V $$, and $$ \hat R $$ specify the normal, light, reflection, and view vectors (respectively).
 
-Note how these vectors are defined in this image.
+Note how these vectors are defined in this image:
 
 ![Blinn-Phong Vectors]({{ site.baseurl }}/images/phong_vectors.png)
+
+Note in particular how the view vector $$ \hat V $$ points towards the viewer from the surface.
+When computing this value in your ray tracer, you will need to negate the direction of your ray.
 
 The image also includes the half-vector $$ \hat H $$
 

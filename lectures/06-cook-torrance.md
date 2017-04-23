@@ -214,3 +214,51 @@ Where $$ n $$ is the material's index of refraction.
 And if you're wondering, yes! Opaque materials can and do still have indices of refraction.
 See [here](https://physics.stackexchange.com/questions/223048/how-do-opaque-materials-have-an-index-of-refraction).
 
+
+
+## References
+
+[Coding Labs](http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx)
+Covers Cook-Torrance with diagrams, in the context of PBR renderer using Monte-Carlo IBL
+
+[RenderMan](https://renderman.pixar.com/view/cook-torrance-shader)
+Pixar's explanation of Cook-Torrance in the context of RenderMan, their offline rendering system and associated shader language.
+Not completely useful to us since it skips some aspects that are important to us (and either implicit or ignored in their case).
+
+[Walter et. al.](https://www.cs.cornell.edu/~srm/publications/EGSR07-btdf.pdf)
+*Microfacet Models for Refraction through Rough Surfaces*.
+Introduces the GGX functions.
+
+[Graphic Rants](http://graphicrants.blogspot.com/2013/08/specular-brdf-reference.html)
+Very informative blog post from a UE4 dev describing different function choices for D, F, G.
+
+[SIGGRAPH 2012](http://blog.selfshadow.com/publications/s2012-shading-course/#course_content)
+Several presentations including general PBR exploration.
+
+[SIGGRAPH 2015](http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf#57)
+More recent slides from the previous lesson.
+
+[SIGGRAPH 2010](http://renderwonk.com/publications/s2010-shading-course/hoffman/s2010_physically_based_shading_hoffman_b_notes.pdf)
+Some generally useful coursenotes about correct lighting.
+
+[ruh.li](http://ruh.li/GraphicsCookTorrance.html)
+Pretty straight-forward explanation of Cook-Torrance with sample code.
+
+[stackgl](https://github.com/stackgl/glsl-specular-cook-torrance/blob/master/index.glsl) and [stackgl](https://github.com/stackgl/glsl-specular-beckmann/blob/master/distribution.glsl)
+Sample glsl code implementing Cook-Torrance reflection model.
+
+[Correct Specular Term?](https://computergraphics.stackexchange.com/questions/3946/correct-specular-term-of-the-cook-torrance-torrance-sparrow-model)
+StackExchange question about variations in the Cook-Torrance equation.
+
+[Importance Sampling?](https://computergraphics.stackexchange.com/questions/4979/what-is-importance-sampling)
+StackExchange question about importance sampling, with some useful explanation of Cook-Torrance components.
+
+[Shininess to roughness?](https://computergraphics.stackexchange.com/questions/1515/what-is-the-accepted-method-of-converting-shininess-to-roughness-and-vice-versa)
+StackExchange question about how to convert from Blinn-Phong shininess to Cook-Torrance roughness.
+
+[Frostbite](http://www.frostbite.com/wp-content/uploads/2014/11/course_notes_moving_frostbite_to_pbr.pdf)
+Paper on how Frostbite converted their engine to PBR (Cook-Torrance).
+
+[Disney BRDF](https://disney-animation.s3.amazonaws.com/library/s2012_pbs_disney_brdf_notes_v2.pdf)
+Disney paper with lots of BRDF discussion.
+

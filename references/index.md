@@ -9,3 +9,7 @@ title: "Reference"
   - [C++ Code Snippets](cpp-snippets)
 - Other
   - [Bash snippets](bash-snippets)
+
+- Links
+  - [Shirley Chapter](http://www.cs.utah.edu/%7Eshirley/books/fcg2/rt.pdf)
+    - Generally useful exerpt chapter covering lots of ray-tracing basics.

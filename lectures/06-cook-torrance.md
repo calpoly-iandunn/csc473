@@ -51,7 +51,7 @@ This equation introduces two concepts:
 As we will soon learn, however, $$ r_s $$ now includes a $$ (\vec n \cdot \vec l) $$ divisor, which will simply cancel out with the $$ (\vec n \cdot \vec l) $$ in the numerator.
 This convention is adopted for two reasons:
 
-1. It fits better with how the forthcoming $$ r_s $$ equation is derived.
+1. It comes from the derivation of the forthcoming $$ r_s $$ equation (specifically, since it is a microfacet model).
 2. To be confusing.
 
 Those I suspect that the second reason is only from my perspective.

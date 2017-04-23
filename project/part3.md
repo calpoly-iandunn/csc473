@@ -4,10 +4,6 @@ active: project
 title: "Program 3 - Reflection, Refraction, and Triangles"
 ---
 
-Due Friday May 12, 2017 at 11:55pm
-
----
-
 ### Goal for assignment 3:
 
 In this assignment you will implement reflection and refraction on mirrored and translucent surfaces.

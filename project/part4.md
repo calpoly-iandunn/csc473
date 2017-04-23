@@ -4,10 +4,6 @@ active: project
 title: "Program 4 - Transforms and Anti-aliasing"
 ---
 
-Due Friday May 19th, 2007 at 11:55pm
-
----
-
 ## Goals for assignment 4:
 
 For this portion of your ray tracer, your program needs to:

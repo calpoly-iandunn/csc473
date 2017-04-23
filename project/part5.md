@@ -4,10 +4,6 @@ active: project
 title: "Program 5 - Spatial Data Structures"
 ---
 
-Due Thursday May 26th, at 11:55pm
-
----
-
 ## Goals for assignment 5:
 
 For this portion of your ray tracer, your program needs to:

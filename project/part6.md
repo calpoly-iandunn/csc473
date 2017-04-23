@@ -4,10 +4,6 @@ active: project
 title: "Program 6 - Monte Carlo Ray Tracing"
 ---
 
-Due Thursday June 9th, 2007 at 11:55pm
-
----
-
 ## Goals for assignment 6:
 
 For this portion of your ray tracer, your program needs to:

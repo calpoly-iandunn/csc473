@@ -45,7 +45,7 @@
     lab:
       - text: Work on Program 1
     assignment:
-      - text: Program 1 Due
+      - text: Work on Program 1
 
 ###############################################################################
 
@@ -84,5 +84,25 @@
       - text: Work on Program 2
     assignment:
       - text: Work on Program 2
+
+###############################################################################
+
+- number: 4
+  days:
+  - name: Tuesday 5/2
+    lecture:
+      - text: Reflection and Refraction
+    lab:
+      - text: Work on Program 3
+    assignment:
+      - text: Work on Program 3
+
+  - name: Thursday 5/4
+    lecture:
+      - text: Reflection and Refraction
+    lab:
+      - text: Work on Program 3
+    assignment:
+      - text: Work on Program 3
 
 ###############################################################################

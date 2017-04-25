@@ -35,7 +35,7 @@ This is the same equation we have been using and have already implemented.
 
 Cook and Torrance propose a variation of this equation:
 
-$$ r = k_a + \sum_{i=0}^n l_c * (\vec n \cdot \vec l) * ( s * r_d + d * r_s ) $$
+$$ r = k_a + \sum_{i=0}^n l_c * (\vec n \cdot \vec l) * ( d * r_d + s * r_s ) $$
 
 With
 

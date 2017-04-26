@@ -162,10 +162,9 @@ We can then relate our new $$ \alpha $$ parameter to our old `power` variable as
 
 $$ power = \left( \frac{2}{\alpha^2} - 2 \right) $$
 
-Due to the way $$ \alpha $$ scales, I have found success using the following convention from UE4.
-I define a `roughness` parameter in the material and set
+`roughness` is one of the material properties defined by our `.pov` files.
 
-$$ \alpha = roughness^2 $$
+$$ \alpha = roughness $$
 
 
 ### Other Choices

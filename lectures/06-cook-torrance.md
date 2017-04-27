@@ -164,7 +164,14 @@ $$ power = \left( \frac{2}{\alpha^2} - 2 \right) $$
 
 `roughness` is one of the material properties defined by our `.pov` files.
 
-$$ \alpha = roughness $$
+$$ \alpha = roughness^2 $$
+
+Note that for traditional Blinn-Phong (specifically, not just $$D_{blinn}$$ but if we aren't doing Cook-Torrance at all), you should still use the above power equation for `shininess`,
+but you don't need to square the roughness constant:
+
+$$ power = \left( \frac{2}{roughness^2} - 2 \right) $$
+
+This is an arbitrary convention but I have found it works reasonably well!
 
 
 ### Other Choices

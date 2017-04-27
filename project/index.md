@@ -26,8 +26,8 @@ All code must be written in C++.
 - [Program 3 - Reflection, Refraction, and Triangles](part3) due <span class="text-warning">Sunday 5/7</span> by <span class="text-warning">11:59pm</span>.
 - [Program 4 - Transforms and Anti-aliasing](part4) due <span class="text-warning">Sunday 5/21</span> by <span class="text-warning">11:59pm</span>.
 - [Program 5 - Spatial Data Structures](part5) due <span class="text-warning">Sunday 5/28</span> by <span class="text-warning">11:59pm</span>.
-- [Program 6 - Monte Carlo Ray Tracing](part6) due Thursday 6/8 by <span class="text-warning">11:59pm</span>.
-- Program 7 - Final Project due Thursday 6/15 by <span class="text-warning">11:59pm</span>.
+- [Program 6 - Monte Carlo Ray Tracing](part6) due <span class="text-warning">Thursday 6/8</span> by <span class="text-warning">11:59pm</span>.
+- Program 7 - Final Project due <span class="text-warning">Thursday 6/15</span> by <span class="text-warning">11:59pm</span>.
 
 
 ## Details

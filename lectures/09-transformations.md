@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 7: Transformations"
+title: "Lecture 9: Transformations"
 ---
 
 ## Transformation Sample Code

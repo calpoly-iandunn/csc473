@@ -49,6 +49,15 @@ delete[] data;
 
 ```
 
+In ONE .cpp file make sure to have
+
+```c++
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+```
+
+before you include `stb_image_write.h`
+
+
 ## Clamp a number to a given range
 
 ```c++

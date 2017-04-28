@@ -78,8 +78,10 @@
 
   - name: Thursday 4/27
     lecture:
-      - text: Transformations
-        link: /lectures/07-transformations
+      - text: Cook-Torrance GGX
+        fix: /references/cook-torrance
+      - text: Reflection and Refraction
+        fix: /lectures/07-reflection-and-refraction
     lab:
       - text: Work on Program 2
     assignment:
@@ -92,6 +94,7 @@
   - name: Tuesday 5/2
     lecture:
       - text: Reflection and Refraction
+        fix: /lectures/07-reflection-and-refraction
     lab:
       - text: Work on Program 3
     assignment:
@@ -99,10 +102,32 @@
 
   - name: Thursday 5/4
     lecture:
-      - text: Reflection and Refraction
+      - text: Transformations
+        link: /lectures/07-transformations
     lab:
-      - text: Work on Program 3
+      - text: Code Review Session 1
+        link: /workshops/code-review-1
     assignment:
       - text: Work on Program 3
+
+###############################################################################
+
+- number: 5
+  days:
+  - name: Tuesday 5/2
+    lecture:
+      - text: Midterm Review
+    lab:
+      - text: Work on Program 4
+    assignment:
+      - text: Work on Program 4
+
+  - name: Thursday 5/4
+    lecture:
+      - text: Midterm Exam 1
+    lab:
+      - text: Work on Program 4
+    assignment:
+      - text: Work on Program 4
 
 ###############################################################################

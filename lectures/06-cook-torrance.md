@@ -184,7 +184,7 @@ However, these is enough to process without adding these equations in as well.
 For now we'll just stick with the Blinn-Phong distribution function, as it is good enough.
 Indeed, the Blinn-Phong and Beckmann functions are quite similar for many values of $$ \alpha $$.
 
-For additional function choices for $$ D $$, as well as choices for $$ G $$ and $$ F $$, can be found in the [reference]({{ site.baseurl }}/references).
+For additional function choices for $$ D $$, as well as choices for $$ G $$ and $$ F $$, can be found in the [reference]({{ site.baseurl }}/references/cook-torrance).
 
 Now we will cover $$ G $$ and $$ F $$.
 

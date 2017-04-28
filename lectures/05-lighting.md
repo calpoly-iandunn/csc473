@@ -17,7 +17,7 @@ Where $$ K_a $$, $$ K_d $$, and $$ K_s $$ specify the material colors for ambien
 Similarly, $$ L_d $$ and $$ L_s $$ specify the light colors for diffuse and specular respectively.
 Note that we omit an ambient light color since ambient light is supposed to represent global illumination that is not tied to a particular light.
 $$ \alpha $$ specifies the shininess of the material.
-And, $$ \hat N $$, $$ \hat L $$, $$ \hat V $$, and $$ \hat R $$ specify the normal, light, reflection, and view vectors (respectively).
+And, $$ \hat N $$, $$ \hat L $$, $$ \hat V $$, and $$ \hat R $$ specify the normal, light, view, and reflection vectors (respectively).
 
 Note how these vectors are defined in this image:
 

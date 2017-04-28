@@ -105,21 +105,21 @@ Use this point to compute a vector for the ray’s direction.
 
 Your program should have the following syntax:
 
-  `raytrace render <input_filename> <width> <height>`
+  `raytrace raycast <input_filename> <width> <height>`
 
 assuming that your executable is named `raytrace` where the options are:
 
-- `input_filename` = the name of the povray file to read and render
+- `input_filename` = the name of the povray file to read and raycast
 - `width` = the image width
 - `height` = the image height
 
-and the command `render` indicates that we simply want to draw the entire scene.
+and the command `raycast` indicates that we simply want to draw the entire scene.
 
 Thus:
 
-  `raytrace render example.pov 640 480`
+  `raytrace raycast example.pov 640 480`
 
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
+will raycast a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
 
 Sample input files and images are given on the class webpage.
 For later assignments, you will need to also submit rendered images.
@@ -178,7 +178,7 @@ Official output TBA, but it will look something like this:
 
   `raytrace pixelray <input_filename> <width> <height> <x> <y>`
 
-where `input_filename` `width` and `height` are the same as for the `render` command, and the other options are:
+where `input_filename` `width` and `height` are the same as for the `raycast` command, and the other options are:
 
 - `x` the x coordinate of the pixel to test
 - `y` the y coordinate of the pixel to test
@@ -193,7 +193,7 @@ For example:
 
   `raytrace firsthit <input_filename> <width> <height> <x> <y>`
 
-where `input_filename` `width` and `height` are the same as for the `render` command, and the other options are:
+where `input_filename` `width` and `height` are the same as for the `raycast` command, and the other options are:
 
 - `x` the x coordinate of the pixel to test
 - `y` the y coordinate of the pixel to test

@@ -43,6 +43,7 @@ In addition I will ask the other members of the group why they chose this partic
 
 In general for code reviews, it is best if the code speaks for itself.
 As an audience member it is your responsibility to look at the code and ask questions/provide comments.
+If you don't understand something in the presented code, it probably needs to be pointed out!
 
 I will of course be offering my own critique from a software design and C++ perspective :)
 

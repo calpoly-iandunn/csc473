@@ -128,6 +128,7 @@ $$ G $$ and $$ F $$ have a less significant contribution to the final shaded res
 ## Normalized Distribution
 
 $$ D $$ is the part of the Cook-Torrance model which defines the shape of the specular highlight.
+It describes the concentration of facets oriented to reflect specularily, e.g. facets for which $$ m == h $$
 There are a lot of choices here.
 It may not be surprising that one of the choices is **Blinn-Phong**, that is, we can choose to use the same specular highlight shape as we previously used in the Blinn-Phong reflectance model.
 
@@ -193,6 +194,7 @@ Now we will cover $$ G $$ and $$ F $$.
 ## Geometric Attenuation
 
 $$ G $$ is the part of the Cook-Torrance model which accounts for attenuation caused by neighboring microfacets.
+It describes the fraction of microfacets which are neither occluded or shadowed.
 Microfacets can block the light from reaching other microfacets, and they can also obscure the microfacets from the viewer's perspective.
 This effect is more prominent on rougher materials.
 

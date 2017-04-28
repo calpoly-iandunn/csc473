@@ -67,3 +67,5 @@ It's not always easy to go the other way.
 
 **Short and non-descriptive variable names**: There is of course a limit to how long and descriptive you want to name variables that you have to use over and over,
 but anything that is cleaner to read and review is better!
+
+**Inconsistent Code Style**: I'm a strong believer in consistent code style, especially when it comes to whitespace and naming conventions.

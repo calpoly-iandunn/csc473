@@ -51,13 +51,13 @@ It is also normalized to satisfy certain geometric properties. [(3)](#ref-ndf)
 
 This normalization is the source of the $$ \frac{1}{\pi \alpha^2} $$ factors you see in the Blinn-Phong and Beckmann variations.
 
-$$ D(m) $$ is the concentration of microfacets oriented with subsurface normal $$ m $$.
-For our microfacet model we plug in $$ h $$ since we want $$ D(h) $$, the concentration of microfacets which can reflect light from $$ \hat l $$ to $$ \hat v $$. [(1)](#ref-naty)
+$$ D(m) $$ is the concentration of microfacets oriented with subsurface normal $$ \vec m $$.
+For our microfacet model we plug in $$ \vec h $$ since we want $$ D(h) $$, the concentration of microfacets which can reflect light from $$ \hat l $$ to $$ \hat v $$. [(1)](#ref-naty)
 
 ### Blinn-Phong
 
 $$
-\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec m \cdot \vec n)^{\left( \frac{2}{\alpha^2} - 2 \right)}
+\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec n \cdot \vec m)^{\left( \frac{2}{\alpha^2} - 2 \right)}
 $$
 
 ![Cook_Torrance_D_BlinnPhong]({{ site.baseurl }}/images/Cook_Torrance_D_BlinnPhong.png)
@@ -67,8 +67,8 @@ $$
 $$
 \Large D_{beckmann} = \frac{1}{\pi \alpha^2}
 \frac
-{e^{\left(\frac{(\vec m \cdot \vec n)^2 - 1}{\alpha (\vec m \cdot \vec n)^2}\right)}}
-{(\vec m \cdot \vec n)^4}
+{e^{\left(\frac{(\vec n \cdot \vec m)^2 - 1}{\alpha (\vec n \cdot \vec m)^2}\right)}}
+{(\vec n \cdot \vec m)^4}
 $$
 
 ![Cook_Torrance_D_Beckmann]({{ site.baseurl }}/images/Cook_Torrance_D_Beckmann.png)
@@ -78,8 +78,8 @@ $$
 $$
 \Large D_{GGX} =
 \frac
-{\alpha^2 \chi^+ (\vec m \cdot \vec n)}
-{\pi \left((\vec m \cdot \vec n)^2 *(\alpha^2 + tan^2(\theta_m))\right)^2}
+{\alpha^2 \chi^+ (\vec n \cdot \vec m)}
+{\pi \left((\vec n \cdot \vec m)^2 *(\alpha^2 + tan^2(\theta_m))\right)^2}
 $$
 
 ![Cook_Torrance_D_GGX]({{ site.baseurl }}/images/Cook_Torrance_D_GGX.png)

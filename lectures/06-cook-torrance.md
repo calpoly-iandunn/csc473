@@ -115,7 +115,7 @@ The Cook-Torrance model attempts to account for these three phenomena.
 
 ### So... what about $$ D * G * F $$ ?
 
-$$ D $$ is the Normalized Distribution Function, which accounts for the fraction of facets which reflect light at the viewer.
+$$ D $$ is the Normali Distribution Function, which accounts for the fraction of facets which reflect light at the viewer.
 
 $$ G $$ is the Geometric Attenuation Function, which accounts for the shadowing and masking of facets by one another.
 
@@ -125,7 +125,7 @@ $$ G $$ and $$ F $$ have a less significant contribution to the final shaded res
 
 
 
-## Normalized Distribution
+## Normal Distribution
 
 $$ D $$ is the part of the Cook-Torrance model which defines the shape of the specular highlight.
 It describes the concentration of facets oriented to reflect specularily, e.g. facets for which $$ m == h $$
@@ -177,7 +177,7 @@ This is an arbitrary convention but I have found it works reasonably well!
 
 ### Other Choices
 
-As I have mentioned, there are other choices for Normalized Distribution function.
+As I have mentioned, there are other choices for Normal Distribution function.
 Instead of Blinn-Phong, the original authors Cook and Torrance recommend the *Beckmann* distribution.
 Modern authors usually recommend the more recent *GGX* distribution.
 

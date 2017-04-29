@@ -10,7 +10,7 @@ $$ r = k_a + \sum_{i=0}^n l_c * (\vec n \cdot \vec l) * ( d * r_d + s * r_s ) $$
 
 $$ s + d = 1 $$
 
-$$ s $$ in this equation is the `metallic` material property.
+$$ s $$ in this equation is the `metallic` material property, which we can use directly from our `.pov` files.
 
 Diffuse reflection is often modelled using Lambertian:
 
@@ -90,6 +90,10 @@ $$
 \frac
 {e^{\left(\frac{(\vec n \cdot \vec m)^2 - 1}{\alpha (\vec n \cdot \vec m)^2}\right)}}
 {(\vec n \cdot \vec m)^4}
+$$
+
+$$
+
 $$
 
 

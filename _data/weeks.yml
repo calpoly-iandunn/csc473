@@ -114,7 +114,7 @@
 
 - number: 5
   days:
-  - name: Tuesday 5/2
+  - name: Tuesday 5/9
     lecture:
       - text: Midterm Review
     lab:
@@ -122,7 +122,7 @@
     assignment:
       - text: Work on Program 4
 
-  - name: Thursday 5/4
+  - name: Thursday 5/11
     lecture:
       - text: Midterm Exam 1
     lab:

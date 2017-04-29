@@ -127,7 +127,7 @@ $$
 
 $$ \Large
 G_{cook-torrance} =
-min \left( 1, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right)
+min \left( 1, \frac{2 (\vec n \cdot \vec m) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec n \cdot \vec m) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right)
 $$
 
 

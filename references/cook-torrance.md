@@ -9,7 +9,7 @@ title: "Cook-Torrance Components"
 ### Blinn-Phong
 
 $$
-\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec h \cdot \vec m)^{\left( \frac{2}{\alpha^2} - 2 \right)}
+\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec m \cdot \vec h)^{\left( \frac{2}{\alpha^2} - 2 \right)}
 $$
 
 ![Cook_Torrance_D_BlinnPhong]({{ site.baseurl }}/images/Cook_Torrance_D_BlinnPhong.png)
@@ -19,8 +19,8 @@ $$
 $$
 \Large D_{beckmann} = \frac{1}{\pi \alpha^2}
 \frac
-{e^{\left(\frac{(\vec h \cdot \vec m)^2 - 1}{\alpha (\vec h \cdot \vec m)^2}\right)}}
-{(\vec h \cdot \vec m)^4}
+{e^{\left(\frac{(\vec m \cdot \vec h)^2 - 1}{\alpha (\vec m \cdot \vec h)^2}\right)}}
+{(\vec m \cdot \vec h)^4}
 $$
 
 ![Cook_Torrance_D_Beckmann]({{ site.baseurl }}/images/Cook_Torrance_D_Beckmann.png)
@@ -30,8 +30,8 @@ $$
 $$
 \Large D_{GGX} =
 \frac
-{\alpha^2 \chi^+ (\vec h \cdot \vec m)}
-{\pi \left((\vec h \cdot \vec m)^2 *(\alpha^2 + tan^2(\theta_m))\right)^2}
+{\alpha^2 \chi^+ (\vec m \cdot \vec h)}
+{\pi \left((\vec m \cdot \vec h)^2 *(\alpha^2 + tan^2(\theta_m))\right)^2}
 $$
 
 ![Cook_Torrance_D_GGX]({{ site.baseurl }}/images/Cook_Torrance_D_GGX.png)
@@ -43,7 +43,7 @@ $$
 
 $$ \Large
 G_{cook-torrance} =
-min \left( 1, \frac{2 (\vec h \cdot \vec n) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec h \cdot \vec n) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right)
+min \left( 1, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right)
 $$
 
 ![Cook_Torrance_G_Cook_Torrance]({{ site.baseurl }}/images/Cook_Torrance_G_Cook_Torrance.png)

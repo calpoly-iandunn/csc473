@@ -39,8 +39,10 @@ $$ \vec v $$ is the view vector.
 
 $$ \vec m $$ is the microsurface normal.
 
+$$ \theta_m $$ is the angle between $$ \vec m $$ and $$ \vec n $$
+
 $$ \alpha $$ is the roughness constant.
-$$ \alpha $$ is defined as such using the `roughness` material property from our `.pov` files:
+$$ \alpha $$ is defined as such using the `roughness` material property from our `.pov` files: [(4)](#ref-rants)
 
 $$ \alpha = roughness^2 $$
 
@@ -56,13 +58,32 @@ For our microfacet model we plug in $$ \vec h $$ since we want $$ D(h) $$, the c
 
 ### Blinn-Phong
 
-$$
-\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec n \cdot \vec m)^{\left( \frac{2}{\alpha^2} - 2 \right)}
-$$
-
 ![Cook_Torrance_D_BlinnPhong]({{ site.baseurl }}/images/Cook_Torrance_D_BlinnPhong.png)
 
+$$
+\Large D_{blinn} = \frac{1}{\pi \alpha^2} (\vec n \cdot \vec m)^{power}
+$$
+
+Here, $$ power $$ is the "shininess" or "specular power".
+There doesn't seem to be a standard way to compute this from $$ \alpha $$ or `roughness`.
+Past iterations of CSC 473 have used the reciprical of POV-Ray roughness:
+
+$$
+power = \frac{1}{roughness}
+$$
+
+I recommend (and use) the equation provided by Karis': [(4)](#ref-rants)
+
+$$
+power = \left( \frac{2}{\alpha^2} - 2 \right)
+$$
+
+
 ### Beckmann
+
+![Cook_Torrance_D_Beckmann]({{ site.baseurl }}/images/Cook_Torrance_D_Beckmann.png)
+
+This is the NDF which Cook and Torrance originally advocated for in [(5)](#ref-ct).
 
 $$
 \Large D_{beckmann} = \frac{1}{\pi \alpha^2}
@@ -71,9 +92,10 @@ $$
 {(\vec n \cdot \vec m)^4}
 $$
 
-![Cook_Torrance_D_Beckmann]({{ site.baseurl }}/images/Cook_Torrance_D_Beckmann.png)
 
 ### GGX
+
+![Cook_Torrance_D_GGX]({{ site.baseurl }}/images/Cook_Torrance_D_GGX.png)
 
 $$
 \Large D_{GGX} =
@@ -82,21 +104,23 @@ $$
 {\pi \left((\vec n \cdot \vec m)^2 *(\alpha^2 + tan^2(\theta_m))\right)^2}
 $$
 
-![Cook_Torrance_D_GGX]({{ site.baseurl }}/images/Cook_Torrance_D_GGX.png)
 
 
 ## Geometric Functions
 
 ### Cook-Torrance
 
+![Cook_Torrance_G_Cook_Torrance]({{ site.baseurl }}/images/Cook_Torrance_G_Cook_Torrance.png)
+
 $$ \Large
 G_{cook-torrance} =
 min \left( 1, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec v)}{(\vec v \cdot \vec h)}, \frac{2 (\vec m \cdot \vec h) (\vec n \cdot \vec l)}{(\vec v \cdot \vec h)} \right)
 $$
 
-![Cook_Torrance_G_Cook_Torrance]({{ site.baseurl }}/images/Cook_Torrance_G_Cook_Torrance.png)
 
 ### GGX
+
+![Cook_Torrance_G_GGX]({{ site.baseurl }}/images/Cook_Torrance_G_GGX.png)
 
 $$ \Large
 G_{GGX} =
@@ -108,8 +132,6 @@ G_1(x) =
 \chi^+(\frac{\vec x \cdot \vec m}{\vec x \cdot \vec n})
 \frac{2}{1+\sqrt {1 + \alpha^2 tan^2(\theta_x))}}
 $$
-
-![Cook_Torrance_G_GGX]({{ site.baseurl }}/images/Cook_Torrance_G_GGX.png)
 
 
 ## Fresnel Functions
@@ -140,3 +162,8 @@ Describes where the normalization factor of D function comes from.
 4: [Brian Karis, **Specular BRDF Reference**, 2013](http://graphicrants.blogspot.com/2013/08/specular-brdf-reference.html).
 Reference of D, F, and G functions.
 Written by a UE4 graphics programmer.
+
+<a name="ref-ct"></a>
+5: [Robert Cook & Kenneth Torrance, **A Reflectance Model for Computer Graphics**, 1982](http://inst.cs.berkeley.edu/~cs294-13/fa09/lectures/cookpaper.pdf).
+Original Cook-Torrance paper.
+Many of the equations in this paper have slightly different forms in modern usage, so beware.

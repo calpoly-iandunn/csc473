@@ -88,14 +88,23 @@ This is the NDF which Cook and Torrance originally advocated for in [(5)](#ref-c
 $$
 \Large D_{beckmann} = \frac{1}{\pi \alpha^2}
 \frac
-{e^{\left(\frac{(\vec n \cdot \vec m)^2 - 1}{\alpha (\vec n \cdot \vec m)^2}\right)}}
+{e^{\frac{-tan^2(\theta_m)}{\alpha ^2}}}
 {(\vec n \cdot \vec m)^4}
 $$
 
-$$
+Note that for normalized vectors, the following are equivalent:
 
 $$
+cos^4(\theta_m) = (\vec n \cdot \vec m)^4
+$$
 
+And by trigonometric identity, the following are equivalent:
+
+$$
+-tan^2(\theta_m) = \left(\frac{(\vec n \cdot \vec m)^2 - 1}{(\vec n \cdot \vec m)^2}\right)
+$$
+
+With those substitutions, you find the common form of the Beckmann NDF.
 
 ### GGX
 

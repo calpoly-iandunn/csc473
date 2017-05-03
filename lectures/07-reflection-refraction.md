@@ -178,3 +178,24 @@ total_color := (1 - finish.filter) * (local_color + finish.reflection * reflecti
 ## Schlick's Approximation
 
 
+
+## Shading
+
+We have a handful of new `.pov` material constants as well as secondary rays which must now contribute to our final rendered color.
+
+For this iteration of the class we will use the following (somewhat arbitrarily decided) system for determining the final color.
+
+First we define the three computed colors:
+
+- Local color: this is the result of the local shading computation, e.g. Blinn-Phong or Cook-Torrance.
+  It includes the ambient, diffuse, and specular terms.
+- Reflection color: this is the color found by recursively tracing along the reflection vector.
+- Refraction color: this is the color found by recursively tracing along the transmitted (refraction) vector.
+
+In addition we have the following material properties:
+
+- `filter`: How transparent the material is
+- `reflection`: How much light the material reflects
+
+As `filter` increases, we need to show more refracted light and as a result, less local and reflected light.
+Similarly, as `relection` increases, we need to show more reflected light and as a result, less local and reflected light.

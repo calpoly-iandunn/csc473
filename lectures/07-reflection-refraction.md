@@ -164,18 +164,26 @@ For exit refractions, make sure to:
 
 There are two material values that relate to refraction: `refraction` and `filter`.
 `filter` tell us how transparent the material is (e.g. a value of `1.0` means the object is totally transparent, `0.0` means opaque).
-`refraction` will always be either `1.0` or `0.0` in our files.
+`refraction` is redundant (any transparent material with an index of refraction is refractive) so we will ignore it.
 
-```pascal
-r // reflection vector
-pt // intersection point
 
-reflection_color := raytrace(pt + r * epsilon, r)
-transmission_color := raytrace(pt + t * epsilon, t)
-total_color := (1 - finish.filter) * (local_color + finish.reflection * reflection_color) + finish.filter * transmission_color
-```
 
 ## Schlick's Approximation
+
+**Schlick's Approximation** is a commonly used approximation for the Fresnel equations.
+
+$$ F = F_0 + (1 - F_0)*(1 - (\vec v \cdot \vec h))^5 $$
+
+Where $$ F_0 $$ is the reflectance at normal incidence, given by:
+
+$$ F_0 = \frac{(n - 1)^2}{(n + 1)^2} $$
+
+Where $$ n $$ is the material's index of refraction.
+
+This is the same equation we used while implementing Cook-Torrance, except now we are adding in the transmitted contribution instead of just ignoring it.
+
+
+## Beer's Law
 
 
 
@@ -197,5 +205,35 @@ In addition we have the following material properties:
 - `filter`: How transparent the material is
 - `reflection`: How much light the material reflects
 
-As `filter` increases, we need to show more refracted light and as a result, less local and reflected light.
-Similarly, as `relection` increases, we need to show more reflected light and as a result, less local and reflected light.
+As `relection` increases, we need to show more reflected light and as a result, less local light.
+Similarly, as `filter` increases, we need to show more refracted light and as a result, less local and reflected light.
+
+Things get a little complicated when we throw Schlick's Approximation into the mix, because now our "refracted light" can also include a reflected component.
+
+This is the model we will use to scale the three light contributions:
+
+![ReflectionRefractionLight]({{ site.baseurl }}/images/ReflectionRefractionLight.png)
+
+We will first split our total light into the "filter" and "non-filter" sides.
+On the "filter" side, we have our transmitted light and some reflected light (as described by the Schlick's Approximation).
+On the "non-filter" side, we will have our local shading computation as well as the reflected light as specified by the `.pov` material.
+
+
+```pascal
+r // reflection vector
+pt // intersection point
+
+local_color := blinn_phong(n, l, v) // or cook_torrance
+reflection_color := raytrace(pt + r * epsilon, r)
+transmission_color := raytrace(pt + t * epsilon, t)
+
+fresnel_reflectance := schlicks_approximation(ior, l, v)
+local_contribution = (1 - finish.filter) * (1 - finish.reflection)
+reflection_contribution = (1 - finish.filter) * (finish.reflection) + (finish.filter) * (fresnel_reflectance)
+transmission_contribution = (finish.filter) * (1 - fresnel_reflectance)
+
+total_color :=
+    local_contribution * local_color +
+    reflection_contribution * reflection_color +
+    transmission_contribution * transmission_color
+```

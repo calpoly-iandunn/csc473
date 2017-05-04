@@ -172,7 +172,7 @@ There are two material values that relate to refraction: `refraction` and `filte
 
 **Schlick's Approximation** is a commonly used approximation for the Fresnel equations.
 
-$$ F = F_0 + (1 - F_0)*(1 - (\vec v \cdot \vec h))^5 $$
+$$ F = F_0 + (1 - F_0)*(1 - (\vec n \cdot \vec v))^5 $$
 
 Where $$ F_0 $$ is the reflectance at normal incidence, given by:
 
@@ -180,7 +180,10 @@ $$ F_0 = \frac{(n - 1)^2}{(n + 1)^2} $$
 
 Where $$ n $$ is the material's index of refraction.
 
-This is the same equation we used while implementing Cook-Torrance, except now we are adding in the transmitted contribution instead of just ignoring it.
+This is similar to the Fresnel contribution we had for Cook-Torrance, instead here we use the normal vector instead of halfway vector.
+Remember that in Cook-Torrance, we summing contributions from microfacets with microsurface normal to the halfway vector.
+In this case we are only concerned with the macrosurface normal.
+
 
 
 ## Beer's Law

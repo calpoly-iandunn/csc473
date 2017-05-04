@@ -13,4 +13,4 @@ title: "Lectures"
 - [6 - Cook-Torrance](06-cook-torrance)
 - [7 - Reflection and Refraction](07-reflection-refraction)
 - [8 - Triangles](08-triangles)
-- [9 - Transformations](07-transformations)
+- [9 - Transformations](09-transformations)

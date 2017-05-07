@@ -60,8 +60,10 @@ Sample input files and images are given in the input files repository.
 
 ### Diagnostic/Testing
 
-In addition to the normal execution syntax, your program should support the following diagnostic/testing syntaxes with the given commandline arguments.
-You must also continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
+In addition to the normal execution syntax, your program must continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
+You may also support the optional command below, which is useful for debugging issues.
+The command is **not required** for full creidt on the assignment.
+However, it is an extremely useful tool to use if you have problems generating correct images.
 
 ---
 
@@ -69,7 +71,38 @@ You must also continue to support all Diagnostic/Testing syntaxes from the previ
 
 Prints out information for each iteration of a recursive raytrace.
 
-Sample output TBA.
+```
+Pixel: [370, 270] Color: (60, 18, 61)
+o - Iteration type: Primary
+|   Ray: {0 0 14} -> {0.1044 0.06307 -0.9925}
+|   Hit Object ID (1 - Sphere) at T = 11.43, Intersection = {1.193 0.7208 2.656}
+|   Normal {0.3978 0.2403 0.8854}
+|   Transformed Ray: {0 0 14} -> {0.1044 0.06307 -0.9925}
+|   Ambient: 0.1, 0, 0.1
+|   Diffuse: 0.06088, 0, 0.06088
+|   Specular: 0, 0, 0
+|
+|\
+| o - Iteration type: Refraction
+| |   Ray: {1.193 0.7208 2.655} -> {-0.03511 -0.0212 -0.9992}
+| |   Hit Object ID (2 - Sphere) at T = 4.607, Intersection = {1.032 0.6231 -1.948}
+| |   Normal {-0.421 -0.1639 0.8921}
+| |   Transformed Ray: {1.193 0.7208 2.655} -> {-0.03511 -0.0212 -0.9992}
+| |   Ambient: 0.152, 0.276, 0.16
+| |   Diffuse: 0, 0, 0
+| |   Specular: 0, 0, 0
+| |   Extra Info: into-object
+| |----
+|
+ \
+  o - Iteration type: Reflection
+  |   Ray: {1.193 0.7208 2.656} -> {0.7585 0.4581 0.4634}
+  |   No intersection.
+  |----
+
+
+--------------------------------------------------------------------------------
+```
 
 
 

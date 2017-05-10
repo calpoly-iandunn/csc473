@@ -65,7 +65,7 @@
 
 ###############################################################################
 
-- number: 3
+- number: 4
   days:
   - name: Tuesday 4/25
     lecture:
@@ -89,7 +89,7 @@
 
 ###############################################################################
 
-- number: 4
+- number: 5
   days:
   - name: Tuesday 5/2
     lecture:
@@ -112,11 +112,13 @@
 
 ###############################################################################
 
-- number: 5
+- number: 6
   days:
   - name: Tuesday 5/9
     lecture:
       - text: Midterm Review
+      - text: Transformations
+        link: /lectures/09-transformations
     lab:
       - text: Work on Program 4
     assignment:
@@ -126,8 +128,70 @@
     lecture:
       - text: Midterm Exam 1
     lab:
-      - text: Work on Program 4
+      - text: Work on Program 3
     assignment:
-      - text: Work on Program 4
+      - text: Work on Program 3
+
+###############################################################################
+
+- number: 7
+  days:
+  - name: Tuesday 5/16
+    lecture:
+      - text: Transformations
+        link: /lectures/09-transformations
+      - text: Anti-Aliasing
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
+
+  - name: Thursday 5/18
+    lecture:
+      - text: Boxes
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
+
+###############################################################################
+
+- number: 8
+  days:
+  - name: Tuesday 5/23
+    lecture:
+      - text: Spatial Data Structures
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
+
+  - name: Thursday 5/25
+    lecture:
+      - text: Light Theory
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
+
+###############################################################################
+
+- number: 9
+  days:
+  - name: Tuesday 5/23
+    lecture:
+      - text: Monte Carlo Ray Tracing
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
+
+  - name: Thursday 5/25
+    lecture:
+      - text: Other Ray Tracing Topics
+    lab:
+      - text: Work on Program 5
+    assignment:
+      - text: Work on Program 5
 
 ###############################################################################

@@ -65,4 +65,5 @@ In addition to the normal execution syntax, your program must continue to suppor
 - 20 handle geometric transforms
 - 15 anti-aliasing
 - 5 multiple lights
+- 10 working schlick's approximation
 - 10 general sanity

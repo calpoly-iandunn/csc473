@@ -111,7 +111,8 @@ o - Iteration type: Primary
 
 
 ## Grading breakdown:
-- 27 points working triangle intersections
-- 27 points working reflection
-- 37 points working refraction
-- 9 points general sanity
+- 25 points working triangle intersections
+- 25 points working reflection
+- 30 points working refraction
+- 10 points working beer's law
+- 10 points general sanity

@@ -95,6 +95,7 @@ If no object is it, it simply prints `No Hit`
 
 
 ## Grading breakdown:
-- 40 points two different shading models working with all files
+- 30 points Blinn-Phong working with all files
 - 30 points working shadows with all files
 - 30 points working camera with arbitrary views with all files
+- 10 points alternative BRDF working with all files

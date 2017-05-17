@@ -42,8 +42,6 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
-- `-fresnel` = use Schlick's Approximation to simulate the Fresnel Reflection <span class="text-warning">(optional argument)</span>
-- `-ss=N` = use Super Sampling with NxN samples <span class="text-warning">(optional argument)</span>
 - `-altbrdf` = use a brdf other than Blinn-Phong <span class="text-warning">(optional argument)</span>
 
 and the command `render` indicates that we simply want to draw the entire scene.

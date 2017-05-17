@@ -113,10 +113,11 @@ Or better yet, you can simply clone the [input files repository](https://github.
 
 ### Rounding
 
-In order to match my output exactly for the different test input/output files, you will need to use `std::setprecision` along with cout.
+In order to match my output exactly for the different test input/output files, you will need to use `std::ios::fixed` and `std::setprecision` along with cout.
 For, example:
 
 ```c++
+    cout << std::setiosflags(std::ios::fixed);
     cout << std::setprecision(4);
     cout << "Pixel: [" << X << ", " << Y << "] Ray: " << Ray << endl;
 ```

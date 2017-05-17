@@ -29,7 +29,7 @@ In addition to your source code and build files, your repo should also contain:
 
 Your program should have the following syntax:
 
-  `raytrace render <input_filename> <width> <height> [-altbrdf] [-ss=N]`
+  `raytrace render <input_filename> <width> <height> [-fresnel] [-ss=N] [-altbrdf]`
 
 assuming that your executable is named `raytrace` where the options are:
 

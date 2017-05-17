@@ -56,8 +56,31 @@ Sample input files and images are given in the input files repository.
 
 ### Diagnostic/Testing
 
-In addition to the normal execution syntax, your program must continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
+In addition to the normal execution syntax, your program should support the following diagnostic/testing syntaxes with the given commandline arguments.
+You must also continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
 
+---
+
+  `raytrace printrays <input_filename> <width> <height> <x> <y> [-altbrdf]`
+
+Prints out information for each iteration of a recursive raytrace.
+
+```
+Pixel: [399, 280] Color: (125, 13, 125)
+----
+  Iteration type: Primary
+             Ray: {0.0000 0.0000 12.0000} -> {0.1628 0.0830 -0.9832}
+ Transformed Ray: {-1.0876 -0.2536 12.0000} -> {0.1125 0.0720 -0.9832}
+      Hit Object: (ID #2 - Sphere)
+    Intersection: {1.6662 0.8488 1.9397} at T = 10.2326
+          Normal: {0.0818 0.0982 0.9918}
+         Ambient: {0.2000, 0.0200, 0.2000}
+         Diffuse: {0.2919, 0.0292, 0.2919}
+        Specular: {0.0000, 0.0000, 0.0000}
+
+
+--------------------------------------------------------------------------------
+```
 
 
 ## Grading breakdown:

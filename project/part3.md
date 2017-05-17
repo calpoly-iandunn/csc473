@@ -76,7 +76,6 @@ Pixel: [315, 185] Color: (33, 33, 33)
 ----
   Iteration type: Primary
              Ray: {0.0000 0.0000 14.0000} -> {-0.0093 -0.1128 -0.9936}
- Transformed Ray: {0.0000 0.0000 14.0000} -> {-0.0093 -0.1128 -0.9936}
       Hit Object: (ID #1 - Sphere)
     Intersection: {-0.1058 -1.2819 2.7103} at T = 11.3627
           Normal: {-0.0353 -0.4273 0.9034}
@@ -86,7 +85,6 @@ Pixel: [315, 185] Color: (33, 33, 33)
 ----
   Iteration type: Refraction
              Ray: {-0.1058 -1.2818 2.7093} -> {0.0029 0.0345 -0.9994}
- Transformed Ray: {-0.1058 -1.2818 2.7093} -> {0.0029 0.0345 -0.9994}
       Hit Object: (ID #1 - Sphere)
     Intersection: {-0.0901 -1.0917 -2.7929} at T = 5.5054
           Normal: {-0.0300 -0.3639 -0.9310}

@@ -42,6 +42,8 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
+- `-fresnel` = use Schlick's Approximation to simulate the Fresnel Reflection <span class="text-warning">(optional argument)</span>
+- `-ss=N` = use Super Sampling with NxN samples <span class="text-warning">(optional argument)</span>
 - `-altbrdf` = use a brdf other than Blinn-Phong <span class="text-warning">(optional argument)</span>
 
 and the command `render` indicates that we simply want to draw the entire scene.
@@ -52,53 +54,51 @@ Thus:
 
 will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using the Blinn-Phong BRDF for shading.
 
-  `raytrace render example.pov 640 480`
+  `raytrace render example.pov 640 480 -fresnel`
 
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using your alternate BRDF for shading, perhaps Cook-Torrance.
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` including Fresnel reflectance.
 
 Sample input files and images are given in the input files repository.
 
 ### Diagnostic/Testing
 
-In addition to the normal execution syntax, your program must continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
-You may also support the optional command below, which is useful for debugging issues.
-The command is **not required** for full creidt on the assignment.
-However, it is an extremely useful tool to use if you have problems generating correct images.
+In addition to the normal execution syntax, your program should support the following diagnostic/testing syntaxes with the given commandline arguments.
+You must also continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
 
 ---
 
-  `raytrace pixeltrace <input_filename> <width> <height> <x> <y> [-altbrdf]`
+  `raytrace printrays <input_filename> <width> <height> <x> <y> [-altbrdf]`
 
 Prints out information for each iteration of a recursive raytrace.
 
 ```
-Pixel: [370, 270] Color: (60, 18, 61)
-o - Iteration type: Primary
-|   Ray: {0 0 14} -> {0.1044 0.06307 -0.9925}
-|   Hit Object ID (1 - Sphere) at T = 11.43, Intersection = {1.193 0.7208 2.656}
-|   Normal {0.3978 0.2403 0.8854}
-|   Transformed Ray: {0 0 14} -> {0.1044 0.06307 -0.9925}
-|   Ambient: 0.1, 0, 0.1
-|   Diffuse: 0.06088, 0, 0.06088
-|   Specular: 0, 0, 0
-|
-|\
-| o - Iteration type: Refraction
-| |   Ray: {1.193 0.7208 2.655} -> {-0.03511 -0.0212 -0.9992}
-| |   Hit Object ID (2 - Sphere) at T = 4.607, Intersection = {1.032 0.6231 -1.948}
-| |   Normal {-0.421 -0.1639 0.8921}
-| |   Transformed Ray: {1.193 0.7208 2.655} -> {-0.03511 -0.0212 -0.9992}
-| |   Ambient: 0.152, 0.276, 0.16
-| |   Diffuse: 0, 0, 0
-| |   Specular: 0, 0, 0
-| |   Extra Info: into-object
-| |----
-|
- \
-  o - Iteration type: Reflection
-  |   Ray: {1.193 0.7208 2.656} -> {0.7585 0.4581 0.4634}
-  |   No intersection.
-  |----
+Pixel: [315, 185] Color: (33, 33, 33)
+----
+  Iteration type: Primary
+             Ray: {0.0000 0.0000 14.0000} -> {-0.0093 -0.1128 -0.9936}
+ Transformed Ray: {0.0000 0.0000 14.0000} -> {-0.0093 -0.1128 -0.9936}
+      Hit Object: (ID #1 - Sphere)
+    Intersection: {-0.1058 -1.2819 2.7103} at T = 11.3627
+          Normal: {-0.0353 -0.4273 0.9034}
+         Ambient: {0.0500, 0.0500, 0.0500}
+         Diffuse: {0.0419, 0.0419, 0.0419}
+        Specular: {0.0000, 0.0000, 0.0000}
+----
+  Iteration type: Refraction
+             Ray: {-0.1058 -1.2818 2.7093} -> {0.0029 0.0345 -0.9994}
+ Transformed Ray: {-0.1058 -1.2818 2.7093} -> {0.0029 0.0345 -0.9994}
+      Hit Object: (ID #1 - Sphere)
+    Intersection: {-0.0901 -1.0917 -2.7929} at T = 5.5054
+          Normal: {-0.0300 -0.3639 -0.9310}
+         Ambient: {0.0500, 0.0500, 0.0500}
+         Diffuse: {0.0000, 0.0000, 0.0000}
+        Specular: {0.0000, 0.0000, 0.0000}
+        Extra Info: into-object
+----
+  Iteration type: Refraction
+             Ray: {-0.0901 -1.0915 -2.7938} -> {0.0150 0.1811 -0.9833}
+  No intersection.
+        Extra Info: into-air
 
 
 --------------------------------------------------------------------------------

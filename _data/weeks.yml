@@ -141,6 +141,7 @@
       - text: Transformations
         link: /lectures/09-transformations
       - text: Anti-Aliasing
+        link: /lectures/10-anti-aliasing
     lab:
       - text: Work on Program 5
     assignment:

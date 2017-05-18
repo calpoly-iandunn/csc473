@@ -15,7 +15,7 @@ title: "Lectures"
 - [8 - Triangles](08-triangles)
 - [9 - Transformations](09-transformations)
 - 10 - Anti-Aliasing
-- 11 - Boxes
+- [11 - Boxes](11-boxes)
 - 12 - Spatial Data Structures
 - 13 - Light Theory
 - 14 - Monte Carlo Ray Tracing

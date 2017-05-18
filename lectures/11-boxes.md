@@ -76,20 +76,20 @@ Thus we can generalize our approach (which also makes it easier to add a 3rd dim
 
 ```perl
 
-tgmin = infinity
-tgmax = -infinity
+tgmin = -infinity
+tgmax = infinity
 
 # for x
 
 t1 = (x_min - P_0_x) / dx
 t2 = (x_max - P_0_x) / dx
 
-if t2 > t1 then
+if t1 > t2 then
     swap(t1, t2)
     # Because we want the closest t1 from the perspective of the ray
 
-if t1 > tgmin then tgmin = t1
-if t2 < tgmax then tgmax = t2
+if t1 > tgmin then tgmin = t1 # not a typo - remember we are finding the largest of the mins
+if t2 < tgmax then tgmax = t2 # smallest of the maxes
 
 # same for y, z
 

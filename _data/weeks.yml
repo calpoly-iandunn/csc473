@@ -120,9 +120,9 @@
       - text: Transformations
         link: /lectures/09-transformations
     lab:
-      - text: Work on Program 4
+      - text: Work on Program 3
     assignment:
-      - text: Work on Program 4
+      - text: Work on Program 3
 
   - name: Thursday 5/11
     lecture:
@@ -143,18 +143,18 @@
       - text: Anti-Aliasing
         link: /lectures/10-anti-aliasing
     lab:
-      - text: Work on Program 5
+      - text: Work on Program 4
     assignment:
-      - text: Work on Program 5
+      - text: Work on Program 4
 
   - name: Thursday 5/18
     lecture:
       - text: Boxes
         link: /lectures/11-boxes
     lab:
-      - text: Work on Program 5
+      - text: Work on Program 4
     assignment:
-      - text: Work on Program 5
+      - text: Work on Program 4
 
 ###############################################################################
 
@@ -164,9 +164,9 @@
     lecture:
       - text: Spatial Data Structures
     lab:
-      - text: Work on Program 5
+      - text: Work on Program 4
     assignment:
-      - text: Work on Program 5
+      - text: Work on Program 4
 
   - name: Thursday 5/25
     lecture:
@@ -180,7 +180,7 @@
 
 - number: 9
   days:
-  - name: Tuesday 5/23
+  - name: Tuesday 5/30
     lecture:
       - text: Monte Carlo Ray Tracing
     lab:
@@ -188,12 +188,32 @@
     assignment:
       - text: Work on Program 5
 
-  - name: Thursday 5/25
+  - name: Thursday 6/1
     lecture:
       - text: Other Ray Tracing Topics
     lab:
-      - text: Work on Program 5
+      - text: Work on Program 6
     assignment:
-      - text: Work on Program 5
+      - text: Work on Program 6
+
+###############################################################################
+
+- number: 9
+  days:
+  - name: Tuesday 6/6
+    lecture:
+      - text: TBA
+    lab:
+      - text: Work on Program 6
+    assignment:
+      - text: Work on Program 6
+
+  - name: Thursday 6/8
+    lecture:
+      - text: TBA
+    lab:
+      - text: Work on Program 6
+    assignment:
+      - text: Work on Program 6
 
 ###############################################################################

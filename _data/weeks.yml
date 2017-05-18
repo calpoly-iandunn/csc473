@@ -149,6 +149,7 @@
   - name: Thursday 5/18
     lecture:
       - text: Boxes
+        link: /lectures/11-boxes
     lab:
       - text: Work on Program 5
     assignment:

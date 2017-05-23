@@ -16,6 +16,6 @@ title: "Lectures"
 - [9 - Transformations](09-transformations)
 - [10 - Anti-Aliasing](10-anti-aliasing)
 - [11 - Boxes](11-boxes)
-- 12 - Spatial Data Structures
+- [12 - Spatial Data Structures](12-spatial-data-structures)
 - 13 - Light Theory
 - 14 - Monte Carlo Ray Tracing

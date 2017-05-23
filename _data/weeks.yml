@@ -1,6 +1,7 @@
 ###############################################################################
 
 - number: 1
+  name: Week 1
   days:
   - name: Tuesday 4/4
     lecture:
@@ -24,6 +25,7 @@
 ###############################################################################
 
 - number: 2
+  name: Week 2
   days:
   - name: Tuesday 4/11
     lecture:
@@ -50,6 +52,7 @@
 ###############################################################################
 
 - number: 3
+  name: Week 3
   days:
   - name: Tuesday 4/18
     lecture:
@@ -66,6 +69,7 @@
 ###############################################################################
 
 - number: 4
+  name: Week 4
   days:
   - name: Tuesday 4/25
     lecture:
@@ -90,6 +94,7 @@
 ###############################################################################
 
 - number: 5
+  name: Week 5
   days:
   - name: Tuesday 5/2
     lecture:
@@ -113,10 +118,11 @@
 ###############################################################################
 
 - number: 6
+  name: Week 6
   days:
   - name: Tuesday 5/9
     lecture:
-      - text: Midterm Review
+      - text: Midterm 1 Review
       - text: Transformations
         link: /lectures/09-transformations
     lab:
@@ -135,6 +141,7 @@
 ###############################################################################
 
 - number: 7
+  name: Week 7
   days:
   - name: Tuesday 5/16
     lecture:
@@ -159,10 +166,12 @@
 ###############################################################################
 
 - number: 8
+  name: Week 8
   days:
   - name: Tuesday 5/23
     lecture:
       - text: Spatial Data Structures
+        link: /lectures/12-spatial-data-structures
     lab:
       - text: Work on Program 4
     assignment:
@@ -172,13 +181,15 @@
     lecture:
       - text: Light Theory
     lab:
-      - text: Work on Program 5
+      - text: Code Review Session 2
+        link: /workshops/code-review-2
     assignment:
       - text: Work on Program 5
 
 ###############################################################################
 
 - number: 9
+  name: Week 9
   days:
   - name: Tuesday 5/30
     lecture:
@@ -189,20 +200,17 @@
       - text: Work on Program 5
 
   - name: Thursday 6/1
-    lecture:
-      - text: Other Ray Tracing Topics
-    lab:
-      - text: Work on Program 6
-    assignment:
-      - text: Work on Program 6
+    override: Class cancelled
 
 ###############################################################################
 
 - number: 10
+  name: Week 10
   days:
   - name: Tuesday 6/6
     lecture:
-      - text: TBA
+      - text: Other Ray Tracing Topics
+      - text: Midterm 2 Review
     lab:
       - text: Work on Program 6
     assignment:
@@ -210,10 +218,18 @@
 
   - name: Thursday 6/8
     lecture:
-      - text: TBA
+      - text: Midterm Exam 2
     lab:
       - text: Work on Program 6
     assignment:
       - text: Work on Program 6
+
+###############################################################################
+
+- number: 11
+  name: Finals Week
+  days:
+  - name: Final Exam - Thursday 6/15
+    override: "Final Project Demos"
 
 ###############################################################################

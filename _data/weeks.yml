@@ -180,6 +180,7 @@
   - name: Thursday 5/25
     lecture:
       - text: Light Theory
+        link: /lectures/13-light-theory
     lab:
       - text: Code Review Session 2
         link: /workshops/code-review-2

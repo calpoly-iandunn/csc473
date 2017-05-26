@@ -36,9 +36,9 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
-- `-fresnel` = use Schlick's Approximation to simulate the Fresnel Reflection <span class="text-warning">(optional argument)</span>
-- `-ss=N` = use Super Sampling with NxN samples <span class="text-warning">(optional argument)</span>
-- `-altbrdf` = use a brdf other than Blinn-Phong <span class="text-warning">(optional argument)</span>
+- `-fresnel` = use Schlick's Approximation to simulate **Fresnel** reflection <span class="text-warning">(optional argument)</span>
+- `-ss=N` = use **super sampling** with NxN samples <span class="text-warning">(optional argument)</span>
+- `-altbrdf` = use a **brdf** other than Blinn-Phong <span class="text-warning">(optional argument)</span>
 
 and the command `render` indicates that we simply want to draw the entire scene.
 
@@ -46,11 +46,11 @@ Thus:
 
   `raytrace render example.pov 640 480`
 
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using the Blinn-Phong BRDF for shading.
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
 
-  `raytrace render example.pov 640 480`
+  `raytrace render example.pov 640 480 -ss=3`
 
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using your alternate BRDF for shading, perhaps Cook-Torrance.
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using 3x3 super-sampling.
 
 Sample input files and images are given in the input files repository.
 
@@ -82,6 +82,7 @@ Pixel: [399, 280] Color: (125, 13, 125)
 
 --------------------------------------------------------------------------------
 ```
+
 
 
 ## Grading breakdown:

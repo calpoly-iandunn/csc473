@@ -16,7 +16,7 @@ Then, we average up the colors of each of these rays in order to determine the c
 For example, this means that if we cast four rays for a given pixel, and two of the rays hit a purple sphere while two rays hit the black background,
 the resulting color would be 50% black and 50% purple (i.e. dark purple).
 
-Recall that originally our determintion of camera space coordinates from pixel coordinates looked like this:
+Recall that originally our determination of camera space coordinates from pixel coordinates looked like this:
 
 $$ U_s = -{1 \over 2} + \frac{i + {1 \over 2}}{w} $$
 

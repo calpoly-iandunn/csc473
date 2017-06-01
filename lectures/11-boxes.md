@@ -97,8 +97,10 @@ if tgmin > tgmax then return false
 if tgmax < 0 then return false # box behind
 
 # If we're still here, it's an intersect, and tgmin is the intersction point
-return (true, tgmin)
-
+if (tgmin > 0)
+    return (true, tgmin)
+else
+    return (true, tgmax) # Though we could be inside the box, in which case tgmax is the "exit" intersection
 ```
 
 If the ray is parallel to any of the faces of our box, e.g. if `dx == 0`, we'll get a divide-by-zero when we try to do this.
@@ -114,4 +116,58 @@ else
     # Do the check we did before
 
 ```
+
+
+
+## Pov-Ray
+
+In our `.pov` files, we are given the min and max of a box:
+
+```
+box {<-2, -3, -4>, <4, 3, 2>
+  pigment { color rgb <1.0, 0.2, 1.0>}
+  finish {ambient 0.2 diffuse 0.8}
+}
+```
+
+This describes a box with min `<-2, -3, -4>` and max `<4, 3, 2>`.
+
+
+
+## Normal Calculation
+
+To calculate the normal of a box at a given intersection point, we simply need to figure out which side of the box we hit.
+The normal is then implicitly understood.
+
+```perl
+if pt.x == min.x then
+    return vec3(-1, 0, 0)
+else if pt.x == max.x then
+    return vec3(1, 0, 0)
+else if pt.y == min.y then
+    return vec3(0, -1, 0)
+
+# etc...
+```
+
+Note however that it is insufficient to simply use the `==` operator for float comparisons of this nature.
+Due to the inherent imprecision of floating point values we need to check if `pt.x` is simply near to `min.x`.
+
+If you're using `glm`, there is a built in `glm::epsilonEqual` function that you can use in `<glm/gtc/epsilon.hpp>`.
+
+It's relatively simple to write our own espilon comparison method, though:
+
+```cpp
+bool Equals(float const a, float const b, float const epsilon = 0.0001f)
+{
+    return std::abs(a - b) < epislon;
+}
+```
+
+Note that there is no one-size-fits-all approach to comparing float values.
+The correct technique is going to depend on the relative size and scale of values.
+For the units in our program, something like the above will work just fine.
+
+If you're interested in a slightly more in-depth look at floating point comparisons,
+[this blog post](http://realtimecollisiondetection.net/blog/?p=89) is a good place to start.
 

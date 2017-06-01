@@ -195,6 +195,7 @@
   - name: Tuesday 5/30
     lecture:
       - text: Monte Carlo Ray Tracing
+        link: /lectures/14-monte-carlo
     lab:
       - text: Work on Program 5
     assignment:

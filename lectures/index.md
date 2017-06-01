@@ -18,4 +18,4 @@ title: "Lectures"
 - [11 - Boxes](11-boxes)
 - [12 - Spatial Data Structures](12-spatial-data-structures)
 - [13 - Light Theory](13-light-theory)
-- 14 - Monte Carlo Ray Tracing
+- [14 - Monte Carlo Ray Tracing](14-monte-carlo)

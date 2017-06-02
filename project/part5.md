@@ -15,13 +15,6 @@ For this portion of your ray tracer, your program needs to:
 
 You will also need to create your own visually interesting scene that you render and submit the .pov file.
 
----
-
-In addition to your source code and build files, your repo should also contain:
-
-- Your own .pov file and rendered image of an interesting scene
-
-
 
 ## Program execution:
 

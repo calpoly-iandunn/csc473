@@ -4,39 +4,72 @@ active: project
 title: "Program 6 - Monte Carlo Ray Tracing"
 ---
 
-## Goals for assignment 6:
+## Overview:
+
+### Goals for assignment 6:
 
 For this portion of your ray tracer, your program needs to:
-- Support all prior rendering requirements (but turn off anti-aliasing for GI renders)
-- compute global illumination using Monte Carlo ray tracing
-  - please use 128 cosine weighted sample rays on your hemisphere for the first bounce
-  - use 64-32 cosine weighted sample rays on your hemisphere for the second bounce
-- Extra Credit: A feature of your choice from:  texture mapping, motion blur, depth of field (or an instructor approved alternative – ask me)
 
-For our final rendered scene,  use the simple-gi.pov file (and optionally you can use the modified ‘Cornel Box’ on the website).  You will again need to create your own ‘pretty’ scene that you render and submit the .pov file for.
+- Support all prior rendering requirements
+- Compute global illumination using Monte Carlo ray tracing
+  - Please use 128 cosine weighted sample rays on your hemisphere for the first bounce (though make this parameter configurable)
+  - Use 32 cosine weighted sample rays on your hemisphere for the second bounce (though make this parameter configurable)
+
+You will also need to create your own visually interesting scene that you render and submit the .pov file.
+
+
+
+## Program execution:
+
+Your program should have the following syntax:
+
+  `raytrace render <input_filename> <width> <height> [-fresnel] [-ss=N] [-sds] [-gi]`
+
+assuming that your executable is named `raytrace` where the options are:
+
+- `input_filename` = the name of the povray file to read and render
+- `width` = the image width
+- `height` = the image height
+- `-fresnel` = use Schlick's Approximation to simulate **Fresnel** reflection
+  **(optional argument)**{: class="text-warning"}
+- `-ss=N` = use **super sampling** with NxN samples
+  **(optional argument)**{: class="text-warning"}
+- `-sds` = enable your **spatial data structure**, e.g. bounding volume hierarchy
+  **(optional argument)**{: class="text-warning"}
+- `-gi` = use Monte Carlo **global illumination**
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-success"}
+
+and the command `render` indicates that we simply want to draw the entire scene.
+
+Thus:
+
+  `raytrace render example.pov 640 480`
+
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
+
+  `raytrace render example.pov 640 480 -gi`
+
+will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using Monte Carlo global illumination.
+
+Sample input files and images are given in the input files repository.
+
+
+### Diagnostic/Testing
+
+In addition to the normal execution syntax, your program should support the following diagnostic/testing syntaxes with the given commandline arguments.
+You must also continue to support all Diagnostic/Testing syntaxes from the previous iteration(s) of the project.
 
 ---
 
-What you should hand in via polylearn:
-- Your code, include all files necessary to compile and run your ray tracer, including a Makefile or cmakeLists.txt
-- A `README.txt` file with any information about what is working or not working with your implementation to assist the grader in determining what is causing potential errors in your output and help in assigning partial credit.  Along with an expected runtime to compute a render of `simple-gi.pov` at 640 480 with no anti-aliasing.
-- Your own `.pov` file and rendered image of an interesting scene
+No new commands (yet!)
 
-You need to handin your code and images generated using poly learn.  Look for the assignment directory.
+If I can come up with a new diagnostic command that will be helpful in solving spatial data structure problems, I will post it here.
 
-### Grading breakdown (will be applied to each part appropriately):
+
+
+## Grading breakdown:
 
 - 30 all prior requirements working
 - 55 Monte-Carlo ray tracing as evidenced by color bleeding
 - 15 general sanity
-
-Extra Credit: `+20` added feature of your choice, texture mapping, motion blur, depth of field (or an instructor approved alternative – ask me)
-
----
-
-Use the same command line assumptions from program 4 except add a final flag to turn on and off global illumination (1 on 0 off).  For example:
-
-Thus:
-  `raytrace 640 480 sample.pov 0 1`
-
-will render a 640x480 image file,  “sample.tga” consisting of the scene defined in “sample.pov” using the Blinn-Phong and NO anti-aliasing, but global illumintation! Unless you strongly want to change your default BRDF, please explain if this is true in your readme.

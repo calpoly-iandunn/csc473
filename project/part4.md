@@ -87,8 +87,6 @@ Pixel: [399, 280] Color: (125, 13, 125)
 
 ## Grading breakdown:
 
-- 20 handle geometric transforms
+- 30 handle geometric transforms
 - 15 anti-aliasing
-- 5 multiple lights
 - 10 working schlick's approximation
-- 10 general sanity

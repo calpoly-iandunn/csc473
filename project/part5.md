@@ -67,6 +67,5 @@ If I can come up with a new diagnostic command that will be helpful in solving s
 
 ## Grading breakdown:
 
-- 25 spatial data structure
-- 15 points working box intersections
-- 10 general sanity
+- 30 spatial data structure
+- 20 points working box intersections

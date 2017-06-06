@@ -27,6 +27,21 @@ First, photo particles are cast into the scene by the light sources and recursiv
 Then, a gather step illuminates parts of the scene based on how many photos hit that area.
 
 
+### Path Tracing
+
+**Path tracing** is a very slow but very accurate technique for rendering images with global illumination.
+It supports caustics just like photon mapping.
+In some ways photon mapping can be considered an optimization/approximation of path tracing.
+
+Path tracing involves generating many, many paths between the camera and the scene light sources.
+You can generate these paths either by starting at the camera and tracing outwards towards lights
+or by starting at the light and tracing towards the camera.
+You can also start paths at both the light and camera and connect them in the middle - this is called bidirectional path tracing.
+A large number of rays is necessary to generate accurate images without too much noise.
+
+- [Reference for bidirectional path tracing](https://graphics.stanford.edu/courses/cs348b-03/papers/veach-chapter10.pdf)
+
+
 ### Soft/Area Lights
 
 **Soft lights** can be implemented by casting multiple shadow feelers and summing illumination for multiple light vectors
@@ -62,3 +77,5 @@ It is dicussed on slides 40-49 of [this slide deck](https://docs.google.com/pres
 
 **Constructive Solid Geometry**, or CSG, describes geometry as a tree of set operations (e.g. union, interscetion, difference) applied to geometric primitives.
 It can be rendered by finding the intersection range for each object (e.g. the "enter" and "exit" intersection) and applying the set operations to those ranges!
+
+- [Reference for constructive solid geometry](http://web.cse.ohio-state.edu/~parent.1/classes/681/Lectures/19.RayTracingCSG.pdf)

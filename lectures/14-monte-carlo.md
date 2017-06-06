@@ -154,17 +154,19 @@ This is a reasonable choice that saves us some headache in exchange for a relati
 
 ```javascript
 function raytrace(ray) {
+    let diffuse, specular;
     [diffuse, specular] = blinn_phong();
-    reflection = raytrace(reflection_ray);
-    transmission = raytrace(transmission_ray);
 
-    sample_pts = generate_hemisphere_sample_points(256);
+    let reflection = raytrace(reflection_ray);
+    let transmission = raytrace(transmission_ray);
 
-    ambient = 0;
+    let sample_pts = generate_hemisphere_sample_points(256);
+
+    let ambient = 0;
     for (pt of sample_pts)
         ambient += raytrace(pt) * dot(pt, normal);
 
-    total_color = combine(ambient, diffuse, specular, reflection, transmission);
+    let total_color = combine(ambient, diffuse, specular, reflection, transmission);
     return total_color;
 }
 ```
@@ -184,5 +186,110 @@ In general, an `N` increase in rays will produce an `sqrt(N)` decrease in noise.
 So if we can find a way to decrease noise without increasing ray count, that will be incredibly valuable to us.
 
 We can accomplish this by modifying the distribution function of our random hemisphere samples.
+Specifically, if we choose a distribution function with **cosine weighting**, that is, $$ p(x) = cos(\theta) $$,
+we can eliminate the $$ cos(\theta) $$ component of our function.
+We'll also significantly improve the image quality (i.e. reduce noise, or variance)
+since we'll be concentrating our rays in the direction that matters,
+avoiding rays near the edge of the hemisphere which have little effect on the image.
 
-**(More on this later)**
+As it happens, we can generate random samples on a hemisphere with cosine weight
+by simpling generating uniform samples on a disc (uniform with respect to area)
+and projecting them upwards onto the hemisphere.
+The code for this generation/projection looks like this:
+
+```javascript
+function generateCosineWeightedPoint(u, v) {
+    let radial = Math.sqrt(u);
+    let theta = 2.0 * pi * v;
+
+    let x = radial * Math.cos(theta);
+    let y = radial * Math.sin(theta);
+
+    return [x, y, Math.sqrt(1 - u)];
+}
+```
+
+Here, `u` and `v` are random parameters generated uniformly between `0` and `1`.
+We'll discuss these parameters further later, but it would suffice to simply use something like this:
+
+```c
+const float u = rand() / (float) RAND_MAX;
+const float v = rand() / (float) RAND_MAX;
+```
+
+
+### Other Distributions
+
+If we choose the model indirect light including specular highlights or according to a different BRDF (e.g. Cook-Torrance),
+we need to choose a different distribution that "matches the shape" of the function we are approximating.
+We won't bother to do that in this class but just be aware!
+
+
+
+## Hemisphere Alignment
+
+Our function `generateCosineWeightPoint` gives us points on a hemisphere which is oriented on the coordinate frame
+with the top of the hemisphere pointing upwards (e.g. towards `<0, 0, 1>`).
+We need to align this hemisphere with the surfel we are rendering.
+Specifically, we need to point it towards the normal.
+
+We can do this by transforming the generated vector by a rotation matrix which rotates
+from the sample hemisphere direction (i.e. `<0, 0, 1>`) to the normal.
+
+Here's some pseudocode:
+
+```javascript
+function alignSampleVector(sample, up, normal)
+{
+    let angle = Math.acos(Math.dot(up, normal));
+    let axis = Math.cross(up, normal);
+
+    let matrix = make_rotation_matrix(angle, axis);
+
+    return transform(matrix, sample);
+}
+```
+
+
+
+## Attenuation
+
+It's also a good idea to apply geometric attenuation to our sampled colors here.
+This makes it so that nearby faces contribute more light than distance faces.
+This means getting the distance travelled by each sample ray and weighting the contribution by the distance.
+
+Some pseudocode:
+
+```javascript
+function attenuateSampleValue(sampledColor, distance) {
+    const weight = 0.01;
+    return sampledColor / Math.pow(distance * weight + 1.0);
+}
+```
+
+Here `weight` is an arbitrary constant to control the shape of the attenuation function -
+it could be derived from the units used in our scene.
+I have found `0.01` to be a reasonable value for this constant for producing interesting images.
+A more convservative (i.e. larger) is probably more physically accurate.
+
+
+
+## Stratifed Samples
+
+I mentioned that we would revist the `u` and `v` parameters from the function `generateCosineWeightedPoint`.
+While purely random values for these parameters would work, we can reduce noise in the output image by using stratified samples.
+This means dividing the `u*v` space (e.g. a square) into `N` distinct areas,
+then picking `N` samples each of which are a random sample within their respective small area.
+
+If `N` is not a perfect square, you'll need to be careful about how you subdivide the `u*v` space.
+I recommend simply duplicating a few sample regions.
+
+
+
+## Implementation Details
+
+Since we are now simulating indirect light it's a good idea to turn off the constant ambient approximation.
+
+We also need to figure out what material properties we should apply to the color value calculated by indirect illumination.
+You could make strong arguments for multiplying by either `material.diffuse` or `material.ambient`.
+I recommend simply using the value outright.

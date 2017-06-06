@@ -211,7 +211,8 @@
   days:
   - name: Tuesday 6/6
     lecture:
-      - text: Other Ray Tracing Topics
+      - text: Advanced Ray Tracing
+        link: /lectures/15-advanced-ray-tracing
       - text: Midterm 2 Review
     lab:
       - text: Work on Program 6

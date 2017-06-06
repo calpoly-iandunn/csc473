@@ -19,3 +19,4 @@ title: "Lectures"
 - [12 - Spatial Data Structures](12-spatial-data-structures)
 - [13 - Light Theory](13-light-theory)
 - [14 - Monte Carlo Ray Tracing](14-monte-carlo)
+- [15 - Advanced Ray Tracing](15-advanced-ray-tracing)

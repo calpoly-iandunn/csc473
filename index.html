@@ -48,17 +48,14 @@ layout: default
         <div class="col-sm-4">
           <div class="well well-sm">
             <h4>Lecture</h4>
-{% for slides in day.slides %}
-            <p>Slides: <a href="{{ slides.link }}">{{ slides.text }}</a></p>
-{% endfor %}
             <ul>
 {% for lecture in day.lecture %}
 {% if lecture.link %}
               <li><a href="{{ lecture.link | prepend: site.baseurl }}">{{ lecture.text }}</a></li>
-{% elsif lecture.text %}
-              <li>{{ lecture.text }}</li>
 {% elsif lecture.outbound %}
               <li><a href="{{ lecture.outbound }}">{{ lecture.text }}</a></li>
+{% elsif lecture.text %}
+              <li>{{ lecture.text }}</li>
 {% else %}
 {% if lecture == "TBA" %}
               <li><span class="text-warning">TBA</span></li>

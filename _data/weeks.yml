@@ -123,6 +123,7 @@
   - name: Tuesday 5/9
     lecture:
       - text: Midterm 1 Review
+        outbound: https://docs.google.com/document/d/12jha2cvZMN-dmncaKcz3SyAgyIFUOzfuCGorvs8s7u0/edit?usp=sharing
       - text: Transformations
         link: /lectures/09-transformations
     lab:
@@ -214,6 +215,7 @@
       - text: Advanced Ray Tracing
         link: /lectures/15-advanced-ray-tracing
       - text: Midterm 2 Review
+        outbound: https://docs.google.com/document/d/1_z7UJPzR8lD5h5NJ2hpdsxL8bF1VjU-GA2lp2pMYZGE/edit?usp=sharing
     lab:
       - text: Work on Program 6
     assignment:

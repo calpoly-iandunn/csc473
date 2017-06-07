@@ -40,17 +40,17 @@ assuming that your executable is named `raytrace` where the options are:
   **(optional argument)**{: class="text-warning"}
   **(new)**{: class="text-success"}
 
-and the command `render` indicates that we simply want to draw the entire scene.
+I also recommend that you support the following commands to control `gi` parameters:
 
-Thus:
-
-  `raytrace render example.pov 640 480`
-
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov`.
-
-  `raytrace render example.pov 640 480 -gi`
-
-will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using Monte Carlo global illumination.
+- `-gi_samples=N` = use N sampes for Monte Carlo **global illumination**
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-success"}
+- `-gi_bounces=b` = use at most b bounces for Monte Carlo **global illumination**
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-success"}
+- `-gi_ratio=r` = divide N by r for each bounce of Monte Carlo **global illumination**
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-success"}
 
 Sample input files and images are given in the input files repository.
 

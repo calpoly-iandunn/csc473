@@ -252,28 +252,6 @@ function alignSampleVector(sample, up, normal)
 
 
 
-## Attenuation
-
-It's also a good idea to apply geometric attenuation to our sampled colors here.
-This makes it so that nearby faces contribute more light than distance faces.
-This means getting the distance travelled by each sample ray and weighting the contribution by the distance.
-
-Some pseudocode:
-
-```javascript
-function attenuateSampleValue(sampledColor, distance) {
-    const weight = 0.01;
-    return sampledColor / Math.pow(distance * weight + 1.0);
-}
-```
-
-Here `weight` is an arbitrary constant to control the shape of the attenuation function -
-it could be derived from the units used in our scene.
-I have found `0.01` to be a reasonable value for this constant for producing interesting images.
-A more convservative (i.e. larger) is probably more physically accurate.
-
-
-
 ## Stratifed Samples
 
 I mentioned that we would revist the `u` and `v` parameters from the function `generateCosineWeightedPoint`.

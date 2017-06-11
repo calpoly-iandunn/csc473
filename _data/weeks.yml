@@ -234,7 +234,7 @@
 - number: 11
   name: Finals Week
   days:
-  - name: Final Exam - Thursday 6/15
-    override: "Final Project Demos"
+  - name: "Final Exam - Thursday 6/15 @ 10:00am"
+    override: "Final Project Demos: 10:00am - 1:00pm"
 
 ###############################################################################

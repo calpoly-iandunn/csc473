@@ -110,7 +110,7 @@ However, if that's the case we just need to check the start point of the ray.
 ```perl
 
 if dx == 0 then
-    if P_0_x >= x_min or P_0_x <= x_max then
+    if P_0_x < x_min or P_0_x > x_max then
         return false
 else
     # Do the check we did before

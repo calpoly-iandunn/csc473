@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Final Project"
+auto-title: true
 ---
 
 ## Requirements

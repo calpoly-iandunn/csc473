@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 10: Anti-Aliasing"
+auto-title: true
 ---
 
 ## Super Sampling

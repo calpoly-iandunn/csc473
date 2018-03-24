@@ -2,6 +2,7 @@
 layout: page
 active: references
 title: "Reference"
+auto-title: true
 ---
 
 - Rendering

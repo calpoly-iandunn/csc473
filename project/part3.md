@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 3 - Reflection, Refraction, and Triangles"
+auto-title: true
 ---
 
 ## Overview:

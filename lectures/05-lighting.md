@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 5: Lighting"
+auto-title: true
 ---
 
 ## Shading

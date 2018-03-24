@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 2 - Shading, Shadows, and Camera"
+auto-title: true
 ---
 
 ## Overview:

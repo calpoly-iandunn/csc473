@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 5 - Spatial Data Structures"
+auto-title: true
 ---
 
 ## Overview:

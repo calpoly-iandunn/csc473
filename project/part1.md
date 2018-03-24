@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 1 - File Parsing and Ray Cast"
+auto-title: true
 ---
 
 ## Overview:

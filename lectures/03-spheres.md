@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 3: Spheres"
+auto-title: true
 ---
 
 

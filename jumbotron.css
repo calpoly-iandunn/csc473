@@ -1,7 +1,11 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
+/* Move down content because we have a fixed navbar that is ~50px tall */
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+}
+
+.spacer {
+  padding-top: 20px;
 }
 
 .bold {
@@ -45,4 +49,80 @@ img {
 
 .half {
   max-width: 50%;
+}
+
+iframe
+{
+  border: none;
+}
+
+.navbar {
+  font-size: 16px;
+}
+
+.day-card {
+  margin-bottom: 1rem;
+}
+
+.quick-links-card {
+  margin-bottom: 1rem;
+}
+
+pre {
+  padding: 0.5rem;
+}
+
+
+/* table */
+
+.tbl-outline {
+  margin: 0 0 10.5px;
+}
+
+.tbl-outline td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.tbl-outline th {
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+  padding: 3px;
+  text-decoration: underline;
+}
+
+
+/*********
+ * Print *
+ *********/
+
+@media print {
+  body {
+    font-size: 0.8em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h3, h4, h5 {
+    font-size: 1.1em;
+  }
+
+  img {
+    max-width: 300px;
+    max-height: 250px;
+  }
+
+  p > img {
+
+  }
+
+  .navbar {
+    display: none;
+  }
 }

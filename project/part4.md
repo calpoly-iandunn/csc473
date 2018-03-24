@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 4 - Transforms and Anti-aliasing"
+auto-title: true
 ---
 
 ## Overview:

@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Project"
+auto-title: true
 ---
 
 
@@ -21,13 +22,13 @@ All code must be written in C++.
 
 ## Milestones
 
-- [Program 1 - File Parsing and Ray Cast](part1) due <span class="text-warning">Sunday 4/16</span> by <span class="text-warning">11:59pm</span>.
-- [Program 2 - Shading, Shadows, and Camera](part2) due <span class="text-warning">Sunday 4/30</span> by <span class="text-warning">11:59pm</span>.
-- [Program 3 - Reflection, Refraction, and Triangles](part3) due <span class="text-warning">Thursday 5/11</span> by <span class="text-warning">11:59pm</span>.
-- [Program 4 - Transforms and Anti-aliasing](part4) due <span class="text-warning">Tuesday 5/23</span> by <span class="text-warning">11:59pm</span>.
-- [Program 5 - Spatial Data Structures](part5) due <span class="text-warning">Thursday 6/1</span> by <span class="text-warning">11:59pm</span>.
-- [Program 6 - Monte Carlo Ray Tracing](part6) due <span class="text-warning">Thursday 6/8</span> by <span class="text-warning">11:59pm</span>.
-- [Program 7 - Final Project](final) due <span class="text-warning">Thursday 6/15</span> by <span class="text-warning">11:59pm</span>.
+- [Program 1 - File Parsing and Ray Cast](part1) due **Sunday 4/16** by **11:59pm**.
+- [Program 2 - Shading, Shadows, and Camera](part2) due **Sunday 4/30** by **11:59pm**.
+- [Program 3 - Reflection, Refraction, and Triangles](part3) due **Thursday 5/11** by **11:59pm**.
+- [Program 4 - Transforms and Anti-aliasing](part4) due **Tuesday 5/23** by **11:59pm**.
+- [Program 5 - Spatial Data Structures](part5) due **Thursday 6/1** by **11:59pm**.
+- [Program 6 - Monte Carlo Ray Tracing](part6) due **Thursday 6/8** by **11:59pm**.
+- [Program 7 - Final Project](final) due **Thursday 6/15** by **11:59pm**.
 
 
 ## Details

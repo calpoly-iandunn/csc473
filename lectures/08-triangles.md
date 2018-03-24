@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 8: Triangles"
+auto-title: true
 ---
 
 

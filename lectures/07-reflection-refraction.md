@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 7: Reflection and Refraction"
+auto-title: true
 ---
 
 Now that we have shading & shadows in our scene, what else is there other than geometric complexity?

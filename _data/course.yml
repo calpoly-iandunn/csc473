@@ -1,0 +1,50 @@
+
+number: 473
+title: "Advanced Rendering Techniques"
+
+tabs:
+  - name: home
+    title: Home
+    link: /index.html
+
+  - name: references
+    title: References
+    link: /references
+
+  - name: lectures
+    title: Lectures
+    link: /lectures
+
+  - name: project
+    title: Project
+    link: /project
+
+  - name: calendar
+    title: Calendar
+    link: /calendar.html
+
+links:
+  - name: syllabus
+    title: Syllabus
+    link: /syllabus.html
+
+  - name: polylearn
+    title: PolyLearn
+    outbound: "https://polylearn.calpoly.edu/AY_2017-2018/course/view.php?id=19891"
+
+  - name: piazza
+    title: Piazza
+    outbound: "http://piazza.com/calpoly/spring2018/csc473"
+
+schedule_columns:
+  - name: lecture
+    title: Lecture
+    class: "col-sm-6"
+
+meetings:
+  lecture:
+    when: "2:10pm - 3:00pm"
+    in: 186-C303
+  lab:
+    when: "3:10pm - 4:00pm"
+    in: 14-255

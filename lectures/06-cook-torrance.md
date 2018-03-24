@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 6: Cook-Torrance"
+auto-title: true
 ---
 
 In 1982, Robert Cook and Kenneth Torrance published a reflectance model that more accurately represented the physical reality of light reflectance

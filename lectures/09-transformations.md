@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 9: Transformations"
+auto-title: true
 ---
 
 

@@ -1,0 +1,116 @@
+---
+layout: page
+active: calendar
+title: "Calendar"
+auto-title: true
+---
+
+<p>This calendar is mostly for planning purposes, but may be useful as an easy way to view deadlines across the quarter.</p>
+
+<p>Note that assignments are listed as due on Friday when due on the Sunday after.</p>
+
+<table class="tbl-outline">
+
+<tr><th>Week</th><th>Day</th><th>Topics</th>
+
+{% for pair in site.data.assignments %}
+  {% assign name = pair[0] %}
+  {% assign assignment = pair[1] %}
+  <th><a href="{{ site.baseurl }}/assignments/{{ name }}">{{ assignment.title }}</a></th>
+{% endfor %}
+
+</tr>
+{% for week in site.data.weeks %}
+
+{% capture week_color %}{% cycle '#fff', '#EDEDED' %}{% endcapture %}
+
+{% for day in week.days %}
+
+  <tr style="background-color: {{ week_color }};">
+
+    <td>{{ week.number }}</td>
+    <td>{{ day.name }}</td>
+
+
+{% if day.override %}
+    <td><ul><li>{{ day.override }}</li></ul></td>
+{% else %}
+
+    <!-- Columns -->
+{% for column in site.data.course.schedule_columns %}
+    <td>
+      <ul>
+  {% for item in day[column.name] %}
+    {% if item.link %}
+        <li><a href="{{ item.link | prepend: site.baseurl }}">{{ item.text }}</a>{% if item.due %} due {{ item.due }}{% endif %}</li>
+    {% elsif item.outbound %}
+        <li><a href="{{ item.outbound }}">{{ item.text }}</a>{% if item.due %} due {{ item.due }}{% endif %}</li>
+    {% elsif item.text %}
+        <li>{{ item.text }}{% if item.due %} due {{ item.due }}{% endif %}</li>
+    {% else %}
+      {% if item == "TBA" %}
+        <li><span class="text-warning">TBA</span></li>
+      {% elsif item == "None" %}
+        <li><span class="text-info">None</span></li>
+      {% else %}
+        <li>{{ item }}</li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% for date in site.data.dates %}
+    {% if day.name == date.when %}
+      {% assign anything = true %}
+        <li>{{ date.what }}</li>
+    {% endif %}
+  {% endfor %}
+
+      </ul>
+    </td>
+{% endfor %}
+{% endif %}
+
+    <!-- Assignments -->
+{% for pair in site.data.assignments %}
+    <td>
+  {% assign name = pair[0] %}
+  {% assign assignment = pair[1] %}
+
+  {% if assignment.type == 'program' %}
+    {% if day.name == assignment.due %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
+    {% endif %}
+
+    {% if day.weekend == assignment.due %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due" aria-hidden="true" style="color: orange;"></span></a>
+    {% endif %}
+
+    {% if day.name == assignment.assigned %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-arrow-circle-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
+    {% endif %}
+  {% endif %}
+
+  {% if assignment.type == 'lab' %}
+    {% if day.name == assignment.due %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
+    {% endif %}
+
+    {% if day.weekend == assignment.due %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due" aria-hidden="true" style="color: orange;"></span></a>
+    {% endif %}
+
+    {% if day.name == assignment.assigned %}
+      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-arrow-thick-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
+    {% endif %}
+  {% endif %}
+
+    </td>
+{% endfor %}
+
+
+  </tr>
+
+{% endfor %}
+{% endfor %}
+
+</table>

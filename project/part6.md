@@ -2,6 +2,7 @@
 layout: page
 active: project
 title: "Program 6 - Monte Carlo Ray Tracing"
+auto-title: true
 ---
 
 ## Overview:

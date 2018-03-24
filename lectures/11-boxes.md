@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 11: Boxes"
+auto-title: true
 ---
 
 

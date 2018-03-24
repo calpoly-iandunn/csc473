@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 12: Spatial Data Structures"
+auto-title: true
 ---
 
 

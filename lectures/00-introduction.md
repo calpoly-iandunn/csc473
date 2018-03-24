@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 0: Introduction & Orientation"
+auto-title: true
 ---
 
 Read the syllabus!

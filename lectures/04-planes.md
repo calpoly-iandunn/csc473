@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 4: Planes"
+auto-title: true
 ---
 
 ## Overview

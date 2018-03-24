@@ -2,6 +2,7 @@
 layout: page
 active: lectures
 title: "Lecture 13: Light Theory"
+auto-title: true
 ---
 
 

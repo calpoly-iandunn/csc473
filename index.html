@@ -1,17 +1,51 @@
 ---
 layout: default
+active: home
 ---
 
-{% include jumbotron.html %}
+
+<!-- ///////// -->
+<!-- Jumbotron -->
+<!-- ///////// -->
+
+<div class="jumbotron">
+  <div class="container">
+
+    <h1>CSC {{ site.data.course.number }}: {{ site.data.course.title }}</h1>
+
+    <p>
+      This is the course webpage for <strong>CSC {{ site.data.course.number }}: {{ site.data.course.title }}</strong> taught by Ian Dunn.
+    </p>
+
+    <p>
+      We meet from
+        <strong><span class="text-primary">{{ site.data.course.meetings.lecture.when }}</span></strong>
+{% if site.data.course.meetings.lecture.in %}
+        in <strong><span class="text-secondary">{{ site.data.course.meetings.lecture.in }}</span></strong>
+{% endif %}
+
+        and from
+        <strong><span class="text-primary">{{ site.data.course.meetings.lab.when }}</span></strong>
+        in <strong><span class="text-secondary">{{ site.data.course.meetings.lab.in }}</span></strong>
+
+        on <strong>MWF</strong>.
+    </p>
+
+  </div>
+</div>
 
 <div class="container" id="content">
 
 
-<div class="panel panel-warning">
-  <div class="panel-heading">
-    <h3 class="panel-title">Quick Links</h3>
+<!-- /////////// -->
+<!-- Quick Links -->
+<!-- /////////// -->
+
+<div class="card quick-links-card border-success">
+  <div class="card-header text-white bg-success">
+    Quick Links
   </div>
-  <div class="panel-body">
+  <div class="card-body">
     <ul>
       <li><a href="#course_info">Course Info</a></li>
 {% for week in site.data.weeks %}
@@ -21,117 +55,130 @@ layout: default
   </div>
 </div>
 
+
+<!-- /////////// -->
+<!-- Course Info -->
+<!-- /////////// -->
+
+<a name="course_info"></a>
+
+<div class="card border-info">
+  <div class="card-header text-white bg-info">
+    Course Info
+  </div>
+  <div class="card-body">
+
 {% include course_info.html %}
+
+  </div>
+</div>
+
+
+
+<!-- //////// -->
+<!-- Schedule -->
+<!-- //////// -->
 
 {% for week in site.data.weeks %}
 
-  <a name="week_{{ week.number }}"></a>
-  <h2 class="week-label">{{ week.name }}</h2>
+<a name="week_{{ week.number }}"></a>
+<h2 class="week-label">{{ week.name }}</h2>
 
-{% for day in week.days %}
+  {% capture week_class %}{% cycle 'primary', 'secondary' %}{% endcapture %}
 
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ day.name }}</h3>
-    </div>
-    <div class="panel-body">
-{% if day.override %}
-      <div class="row">
-        <div class="col-xs-12">
-          <p>{{ day.override }}</p>
-        </div>
+<div class="row">
+
+  {% for day in week.days %}
+
+  <div class="col-lg-4">
+
+    <div class="card day-card border-{{ week_class }}">
+      <div class="card-header text-white bg-{{ week_class }}">
+        {{ day.name }}
       </div>
-{% else %}
-      <div class="row">
+      <div class="card-body">
 
-        <!-- Lecture -->
-        <div class="col-sm-4">
-          <div class="well well-sm">
-            <h4>Lecture</h4>
-            <ul>
-{% for lecture in day.lecture %}
-{% if lecture.link %}
-              <li><a href="{{ lecture.link | prepend: site.baseurl }}">{{ lecture.text }}</a></li>
-{% elsif lecture.outbound %}
-              <li><a href="{{ lecture.outbound }}">{{ lecture.text }}</a></li>
-{% elsif lecture.text %}
-              <li>{{ lecture.text }}</li>
-{% else %}
-{% if lecture == "TBA" %}
-              <li><span class="text-warning">TBA</span></li>
-{% elsif lecture == "None" %}
-              <li><span class="text-info">None</span></li>
-{% else %}
-              <li>{{ lecture }}</li>
-{% endif %}
-{% endif %}
-{% endfor %}
-            </ul>
-          </div>
-        </div>
+    {% if day.override %}
+        <p>{{ day.override }}</p>
+    {% else %}
 
-        <!-- Lab -->
-        <div class="col-sm-4">
-          <div class="well well-sm">
-            <h4>Lab</h4>
-            <ul>
-{% for lab in day.lab %}
-{% if lab.link %}
-              <li><a href="{{ lab.link | prepend: site.baseurl }}">{{ lab.text }}</a>{% if lab.due %} due {{ lab.due }}{% endif %}</li>
-{% elsif lab.outbound %}
-              <li><a href="{{ lab.outbound }}">{{ lab.text }}</a> due {{ lab.due }}</li>
-{% else %}
-{% if lab.text == "TBA" %}
-              <li><span class="text-warning">TBA</span></li>
-{% elsif lab.text == "None" %}
-              <li><span class="text-info">None</span></li>
-{% else %}
-              <li>{{ lab.text }}</li>
-{% endif %}
-{% endif %}
-{% endfor %}
-            </ul>
-          </div>
-        </div>
+        <!-- Columns -->
+    {% for column in site.data.course.schedule_columns %}
+        <h4>{{ column.title }}</h4>
+        <ul>
+
+      {% for item in day[column.name] %}
+        {% if item.link %}
+          <li><a href="{{ item.link | prepend: site.baseurl }}">{{ item.text }}</a>{% if item.due %} due {{ item.due }}{% endif %}</li>
+        {% elsif item.outbound %}
+          <li><a href="{{ item.outbound }}">{{ item.text }}</a>{% if item.due %} due {{ item.due }}{% endif %}</li>
+        {% elsif item.text %}
+          <li>{{ item.text }}{% if item.due %} due {{ item.due }}{% endif %}</li>
+        {% else %}
+          <li>{{ item }}</li>
+        {% endif %}
+      {% endfor %}  {% comment %} items {% endcomment %}
+
+      {% for pair in site.data.assignments %}
+        {% assign name = pair[0] %}
+        {% assign assignment = pair[1] %}
+        {% if assignment.type == 'workshop' %}
+          {% if day.name == assignment.date %}
+          <li><a href="{{ site.baseurl }}/assignments/{{ name }}">{{ assignment.title }} - {{ assignment.subtitle }}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+        </ul>
+    {% endfor %} {% comment %} columns {% endcomment %}
 
         <!-- Assignments -->
-        <div class="col-sm-4">
-          <div class="well well-sm">
-            <h4>Assignments</h4>
-            <ul>
-{% for assignment in day.assignment %}
-{% if assignment.link %}
-              <li><a href="{{ assignment.link | prepend: site.baseurl }}">{{ assignment.text }}</a> due {{ assignment.due }}</li>
-{% elsif assignment.outbound %}
-              <li><a href="{{ assignment.outbound }}">{{ assignment.text }}</a> due {{ assignment.due }}</li>
-{% elsif assignment.text %}
-{% if assignment.text == "TBA" %}
-              <li><span class="text-warning">TBA</span></li>
-{% elsif assignment.text == "None" %}
-              <li><span class="text-info">None</span></li>
-{% else %}
-              <li>{{ assignment.text }}</li>
-{% endif %}
-{% endif %}
-{% endfor %}
-            </ul>
-          </div>
-        </div>
+        <h4>Assignments</h4>
+        <ul>
+    {% assign anything = false %}
+    {% for pair in site.data.assignments %}
+      {% assign name = pair[0] %}
+      {% assign assignment = pair[1] %}
 
-      </div>
-{% endif %}
-      <div class="row">
+      {% if day.name == assignment.due %}
+        {% assign anything = true %}
+          <li><a href="{{ site.baseurl }}/assignments/{{ name }}">{{ assignment.title }}</a> is due <span class="text-danger">today!</span></li>
+      {% endif %}
+      {% if day.weekend == assignment.due %}
+        {% assign anything = true %}
+          <li><a href="{{ site.baseurl }}/assignments/{{ name }}">{{ assignment.title }}</a> is due soon, on <span class="text-danger">{{ assignment.due }}!</span></li>
+      {% endif %}
+    {% endfor %}
+    {% for pair in site.data.assignments %}
+      {% assign name = pair[0] %}
+      {% assign assignment = pair[1] %}
 
-        <!-- Notes -->
-        <div class="col-xs-12">
-        </div>
+      {% if day.name == assignment.assigned %}
+        {% assign anything = true %}
+          <li><a href="{{ site.baseurl }}/assignments/{{ name }}">{{ assignment.title }}</a> due {{ assignment.due }}</li>
+      {% endif %}
+    {% endfor %}
 
-      </div>
-    </div>
-  </div>
+    {% for date in site.data.dates %}
+      {% if day.name == date.when %}
+        {% assign anything = true %}
+          <li>{{ date.what }}</li>
+      {% endif %}
+    {% endfor %}
 
-{% endfor %}
+    {% if anything == false %}
+          <li><span>Nothing new assigned or due.</span></li>
+    {% endif %}
+        </ul>
 
-{% endfor %}
+  {% endif %} {% comment %} override {% endcomment %}
 
-</div>
+      </div> <!-- .card-body -->
+    </div> <!-- .card -->
+  </div> <!-- .col-lg-3 -->
+
+  {% endfor %} {% comment %} days {% endcomment %}
+
+</div> <!-- .row -->
+
+{% endfor %} {% comment %} weeks {% endcomment %}

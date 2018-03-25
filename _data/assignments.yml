@@ -4,8 +4,8 @@ program01:
   subtitle: File Parsing and Ray Cast
   type:     program
   individual: true
-  assigned: Tuesday 4/4
-  due:      Sunday 4/16
+  assigned: Monday 4/2
+  due:      Friday 4/13
 
 
 program02:
@@ -13,8 +13,8 @@ program02:
   subtitle: Shading, Shadows, and Camera
   type:     program
   individual: true
-  assigned: Tuesday 4/18
-  due:      Sunday 4/30
+  assigned: Friday 4/13
+  due:      Friday 4/27
 
 
 program03:
@@ -22,8 +22,8 @@ program03:
   subtitle: Reflection, Refraction, and Triangles
   type:     program
   individual: true
-  assigned: Sunday 4/30
-  due:      Thursday 5/11
+  assigned: Friday 4/27
+  due:      Friday 5/11
 
 
 program04:
@@ -31,8 +31,8 @@ program04:
   subtitle: Transforms and Anti-aliasing
   type:     program
   individual: true
-  assigned: Thursday 5/11
-  due:      Tuesday 5/23
+  assigned: Friday 5/11
+  due:      Wednesday 5/23
 
 
 program05:
@@ -40,8 +40,8 @@ program05:
   subtitle: Spatial Data Structures
   type:     program
   individual: true
-  assigned: Tuesday 5/23
-  due:      Thursday 6/1
+  assigned: Wednesday 5/23
+  due:      Friday 6/1
 
 
 program06:
@@ -49,8 +49,8 @@ program06:
   subtitle: Monte Carlo Ray Tracing
   type:     program
   individual: true
-  assigned: Thursday 6/1
-  due:      Thursday 6/8
+  assigned: Friday 6/1
+  due:      Friday 6/8
 
 
 program07:
@@ -58,6 +58,6 @@ program07:
   subtitle: Final Project
   type:     program
   individual: true
-  assigned: Thursday 6/8
-  due:      Thursday 6/15
+  assigned: Friday 6/8
+  due:      Friday 6/15
 

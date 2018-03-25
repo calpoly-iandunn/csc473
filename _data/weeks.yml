@@ -3,51 +3,42 @@
 - number: 1
   name: Week 1
   days:
-  - name: Tuesday 4/4
+  - name: Monday 4/2
     lecture:
       - text: Introduction & Orientation
         link: /lectures/00-introduction
-    lab:
-      - text: Review program 1 spec
-        link: /project/part1
-    assignment:
-      - text: Work on Program 1
 
-  - name: Thursday 4/6
+  - name: Wednesday 4/4
+    lecture:
+      - text: The Rendering Equation
+        link: /lectures/00-introduction
+
+  - name: Friday 4/6
     lecture:
       - text: C++ (1)
         link: /lectures/01-cpp1
-    lab:
-      - text: Work on Program 1
-    assignment:
-      - text: Work on Program 1
 
 ###############################################################################
 
 - number: 2
   name: Week 2
   days:
-  - name: Tuesday 4/11
+  - name: Monday 4/9
     lecture:
       - text: Rays and the camera
         link: /lectures/02-camera
+
+  - name: Wednesday 4/11
+    lecture:
       - text: Spheres
         link: /lectures/03-spheres
-    lab:
-      - text: Work on Program 1
-    assignment:
-      - text: Work on Program 1
-
-  - name: Thursday 4/13
-    lecture:
       - text: Planes
         link: /lectures/04-planes
+
+  - name: Friday 4/13
+    lecture:
       - text: Lighting & Shadows
         link: /lectures/05-lighting
-    lab:
-      - text: Work on Program 1
-    assignment:
-      - text: Work on Program 1
     weekend: Sunday 4/16
 
 ###############################################################################
@@ -55,42 +46,40 @@
 - number: 3
   name: Week 3
   days:
-  - name: Tuesday 4/18
+  - name: Monday 4/16
     lecture:
       - text: Triangles
         link: /lectures/08-triangles
-    lab:
-      - text: Work on Program 2
-    assignment:
-      - text: Work on Program 2
 
-  - name: Thursday 4/20
-    override: Class Cancelled
+  - name: Wednesday 4/18
+    lecture:
+      - text: Cook-Torrance
+        link: /lectures/06-cook-torrance
+
+  - name: Friday 4/20
+    lecture:
+      - text: Cook-Torrance GGX
+        link: /references/cook-torrance
 
 ###############################################################################
 
 - number: 4
   name: Week 4
   days:
-  - name: Tuesday 4/25
+  - name: Monday 4/23
     lecture:
-      - text: Cook-Torrance
-        link: /lectures/06-cook-torrance
-    lab:
-      - text: Work on Program 2
-    assignment:
-      - text: Work on Program 2
-
-  - name: Thursday 4/27
-    lecture:
-      - text: Cook-Torrance GGX
-        link: /references/cook-torrance
-      - text: Reflection and Refraction
+      - text: Reflection
         link: /lectures/07-reflection-refraction
-    lab:
-      - text: Work on Program 2
-    assignment:
-      - text: Work on Program 2
+
+  - name: Wednesday 4/25
+    lecture:
+      - text: Refraction
+        link: /lectures/07-reflection-refraction
+
+  - name: Friday 4/27
+    lecture:
+      - text: Fresnel
+        link: /lectures/07-reflection-refraction
     weekend: Sunday 4/30
 
 ###############################################################################
@@ -98,145 +87,126 @@
 - number: 5
   name: Week 5
   days:
-  - name: Tuesday 5/2
-    lecture:
-      - text: Reflection and Refraction
-        link: /lectures/07-reflection-refraction
-    lab:
-      - text: Work on Program 3
-    assignment:
-      - text: Work on Program 3
-
-  - name: Thursday 5/4
+  - name: Monday 4/30
     lecture:
       - text: Transformations
         link: /lectures/09-transformations
-    lab:
-      - text: Code Review Session 1
+
+  - name: Wednesday 5/2
+    lecture:
+      - text: Transformations
+        link: /lectures/09-transformations
+      - text: "Lab: Code Review Session 1"
         link: /workshops/code-review-1
-    assignment:
-      - text: Work on Program 3
+
+  - name: Friday 5/4
+    lecture:
+      - text: Transformations
+        link: /lectures/09-transformations
 
 ###############################################################################
 
 - number: 6
   name: Week 6
   days:
-  - name: Tuesday 5/9
+  - name: Monday 5/7
     lecture:
       - text: Midterm 1 Review
         outbound: https://docs.google.com/document/d/12jha2cvZMN-dmncaKcz3SyAgyIFUOzfuCGorvs8s7u0/edit?usp=sharing
-      - text: Transformations
-        link: /lectures/09-transformations
-    lab:
-      - text: Work on Program 3
-    assignment:
-      - text: Work on Program 3
 
-  - name: Thursday 5/11
+  - name: Wednesday 5/9
     lecture:
       - text: Midterm Exam 1
-    lab:
-      - text: Work on Program 3
-    assignment:
-      - text: Work on Program 3
+
+  - name: Friday 5/11
+    lecture:
+      - text: Anti-Aliasing
+        link: /lectures/10-anti-aliasing
 
 ###############################################################################
 
 - number: 7
   name: Week 7
   days:
-  - name: Tuesday 5/16
-    lecture:
-      - text: Transformations
-        link: /lectures/09-transformations
-      - text: Anti-Aliasing
-        link: /lectures/10-anti-aliasing
-    lab:
-      - text: Work on Program 4
-    assignment:
-      - text: Work on Program 4
-
-  - name: Thursday 5/18
+  - name: Monday 5/14
     lecture:
       - text: Boxes
         link: /lectures/11-boxes
-    lab:
-      - text: Work on Program 4
-    assignment:
-      - text: Work on Program 4
+
+  - name: Wednesday 5/16
+    lecture:
+      - text: Spatial Data Structures
+        link: /lectures/12-spatial-data-structures
+
+  - name: Friday 5/18
+    lecture:
+      - text: Bounding-Volume Hierarchies
+        link: /lectures/12-spatial-data-structures
 
 ###############################################################################
 
 - number: 8
   name: Week 8
   days:
-  - name: Tuesday 5/23
-    lecture:
-      - text: Spatial Data Structures
-        link: /lectures/12-spatial-data-structures
-    lab:
-      - text: Work on Program 4
-    assignment:
-      - text: Work on Program 4
-
-  - name: Thursday 5/25
+  - name: Monday 5/21
     lecture:
       - text: Light Theory
         link: /lectures/13-light-theory
-    lab:
-      - text: Code Review Session 2
+
+  - name: Wednesday 5/23
+    lecture:
+      - text: Monte Carlo Ray Tracing
+        link: /lectures/14-monte-carlo
+      - text: "Lab: Code Review Session 2"
         link: /workshops/code-review-2
-    assignment:
-      - text: Work on Program 5
+
+  - name: Friday 5/25
+    lecture:
+      - text: Distribution Ray Tracing
+        link: /lectures/14-monte-carlo
 
 ###############################################################################
 
 - number: 9
   name: Week 9
   days:
-  - name: Tuesday 5/30
-    lecture:
-      - text: Monte Carlo Ray Tracing
-        link: /lectures/14-monte-carlo
-    lab:
-      - text: Work on Program 5
-    assignment:
-      - text: Work on Program 5
+  - name: Monday 5/28
+    override: Academic holiday - Memorial Day observed
 
-  - name: Thursday 6/1
-    override: Class cancelled
+  - name: Wednesday 5/30
+    lecture:
+      - text: Advanced Ray Tracing
+        link: /lectures/15-advanced-ray-tracing
+
+  - name: Friday 6/1
+    lecture:
+      - text: Advanced Ray Tracing
+        link: /lectures/15-advanced-ray-tracing
 
 ###############################################################################
 
 - number: 10
   name: Week 10
   days:
-  - name: Tuesday 6/6
+  - name: Monday 6/4
     lecture:
-      - text: Advanced Ray Tracing
-        link: /lectures/15-advanced-ray-tracing
       - text: Midterm 2 Review
         outbound: https://docs.google.com/document/d/1_z7UJPzR8lD5h5NJ2hpdsxL8bF1VjU-GA2lp2pMYZGE/edit?usp=sharing
-    lab:
-      - text: Work on Program 6
-    assignment:
-      - text: Work on Program 6
 
-  - name: Thursday 6/8
+  - name: Wednesday 6/6
     lecture:
       - text: Midterm Exam 2
-    lab:
-      - text: Work on Program 6
-    assignment:
-      - text: Work on Program 6
+
+  - name: Friday 6/8
+    lecture:
+      - text: Make-up Day or TBA
 
 ###############################################################################
 
 - number: 11
   name: Finals Week
   days:
-  - name: "Final Exam - Thursday 6/15 @ 10:00am"
-    override: "Final Project Demos: 10:00am - 1:00pm"
+  - name: "Friday 6/15"
+    override: "Final Project Demos: ??? - ???"
 
 ###############################################################################

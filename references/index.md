@@ -12,6 +12,7 @@ auto-title: true
   - [Lecture Sample Code](https://github.com/iondune/csc473-samplecode)
   - [C++ Code Snippets](cpp-snippets)
 - Other
+  - [Git](git)
   - [Bash snippets](bash-snippets)
 
 - Links

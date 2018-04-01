@@ -8,7 +8,7 @@ auto-title: true
 
 ## Overview
 
-Throughout this quarter you will implement the basic functions of a distributed ray tracer.
+Throughout this quarter you will implement the basic functions of a distribution ray tracer.
 This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
 Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
 All code must be written in C++.
@@ -22,25 +22,20 @@ All code must be written in C++.
 
 ## Milestones
 
-- [Program 1 - File Parsing and Ray Cast](part1) due **Sunday 4/16** by **11:59pm**.
-- [Program 2 - Shading, Shadows, and Camera](part2) due **Sunday 4/30** by **11:59pm**.
-- [Program 3 - Reflection, Refraction, and Triangles](part3) due **Thursday 5/11** by **11:59pm**.
-- [Program 4 - Transforms and Anti-aliasing](part4) due **Tuesday 5/23** by **11:59pm**.
-- [Program 5 - Spatial Data Structures](part5) due **Thursday 6/1** by **11:59pm**.
-- [Program 6 - Monte Carlo Ray Tracing](part6) due **Thursday 6/8** by **11:59pm**.
-- [Program 7 - Final Project](final) due **Thursday 6/15** by **11:59pm**.
-
+<ul>
+{% for pair in site.data.assignments %}
+  {% assign name = pair[0] %}
+  {% assign assignment = pair[1] %}
+  <li><a href="{{ site.baseurl }}/project/{{ name }}">{{ assignment.title }} - {{ assignment.subtitle }}</a> due <strong>{{ assignment.due }}</strong>.</li>
+{% endfor %}
+</ul>
 
 ## Details
 
 ### Project Turn-In
 
 Use of a version control system is mandatory for this project and is how I will be collecting your source code for grading.
-In particular, I will require everyone to use **git**.
-
-To turn in your code, I'll need you to use a git hosting service that allows for private repositories.
-I recommend [GitHub](https://github.com/) or [GitLab](https://gitlab.com/), though I am open to alternatives.
-Both GitHub and GitLab offer free private repositories, though with GitHub you need to sign up for the [GitHub Student Developer Pack](https://education.github.com/pack).
+In particular, we will be using [GitHub Classroom](https://classroom.github.com/).
 
 ### Continuous Integration
 
@@ -50,14 +45,6 @@ There are two primary benefits provided by this server:
 
 1. Resolve build issues early on - it's always a nightmare trying to get everyone's code to build on my machine
 2. Detect cross-platform runtime issues
-
-In order for me to grade your assignments, I will need access to your git repositories.
-[Make sure to fill out this survey](https://goo.gl/forms/sedM8BmLGTyQqjts2) and then additionally grant my access to your hosted repository.
-
-- On Github, you must [add me as a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
-- On Gitlab, you must [add me as a user (I only need Reporter access)](https://gitlab.com/help/workflow/add-user/add-user.md)
-
-My username on both services is `iondune`.
 
 ### Building
 

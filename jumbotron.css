@@ -90,39 +90,3 @@ pre {
   padding: 3px;
   text-decoration: underline;
 }
-
-
-/*********
- * Print *
- *********/
-
-@media print {
-  body {
-    font-size: 0.8em;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  h3, h4, h5 {
-    font-size: 1.1em;
-  }
-
-  img {
-    max-width: 300px;
-    max-height: 250px;
-  }
-
-  p > img {
-
-  }
-
-  .navbar {
-    display: none;
-  }
-}

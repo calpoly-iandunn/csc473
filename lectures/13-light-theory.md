@@ -108,7 +108,7 @@ $$ E = \frac{d\Phi}{dA} $$
 
 or
 
-$$ \frac{differential\;flux\;from\;light}{differential\;in\;area\;receiving\;flux} $$
+$$ \frac{\text{differential flux from light}}{\text{differential in area receiving flux}} $$
 
 In the limit, this becomes pointwise irradiance measurement.
 

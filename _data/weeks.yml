@@ -10,13 +10,13 @@
 
   - name: Wednesday 4/4
     lecture:
-      - text: The Rendering Equation
-        link: /lectures/00-introduction
+      - text: C++ (1)
+        link: /lectures/01-cpp1
 
   - name: Friday 4/6
     lecture:
-      - text: C++ (1)
-        link: /lectures/01-cpp1
+      - text: The Rendering Equation
+        link: /lectures/00-introduction
 
 ###############################################################################
 

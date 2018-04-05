@@ -5,6 +5,7 @@ title: "Program 1 - File Parsing and Ray Cast"
 auto-title: true
 ---
 
+
 ## Overview:
 
 There are (approximately) five stages to your final ray tracer:
@@ -30,15 +31,16 @@ Your code will need to:
 
 ### Software engineering considerations:
 
-As the initial assignment for your ray tracer, you need to think about designing and implementing the abstract object(s) to represent geometry in your scene and write the parsing code to read in the scene description file (see below).
+As the initial assignment for your ray tracer, you need to think about designing and implementing the abstract object(s)
+to represent geometry in your scene and write the parsing code to read in the scene description file (see below).
 In general, all geometric objects in your world will need to be able to be parsed, intersected (by rays), and shaded.
-You can use a vector/matrix library, options include [glm](https://glm.g-truc.net/) and [eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page).
+You should use a vector/matrix library, recommended option is [glm](https://glm.g-truc.net/).
 
 In addition, your ray tracer will need to support specific unit tests throughout the quarter.
 In general, this will require that for a specific ray (relative to the camera – i.e. listed in pixel space, e.g. [Xi, Yi]),  can be tested - for example, having various values returned throughout the ray tracing process.
 This will include values such as the ray’s point, and direction, distance to closest object, color of intersected object, and then later derived ray’s from the original ray.
 
----
+
 
 ## Scene Description Language
 
@@ -70,8 +72,13 @@ Your raytracer must be able to parse the following types:
 
 The bold elements are the types that MUST be parsed for this first assignment (you should parse but ignore the zero translate at this time).
 You should create an abstract object from which all of the ray tracer objects will be derived.
-Each derived object can have its own parse function (read) that takes the filestream in, processes the data for that object, and returns the altered file pointer (for example).
-You can also implement a separate class that is responsible for parsing, if you would rather do that.
+Each derived object can have its own parse function (read) that takes the filestream in and processes the data for that object.
+You can also implement a separate class that is responsible for parsing, if you would rather do that, to keep the parse code separate from the raytracing code.
+
+I highly recommend that you consider reading the entire file into a string, then using a [stringstream](http://en.cppreference.com/w/cpp/io/basic_istringstream) for the actual parse code.
+This will make it a lot easier to **unit test** your parse code.
+Parsing code is highly unit-testable - I recommend taking a look at [Catch2](https://github.com/catchorg/Catch2) as a potential unit testing framework.
+
 In general the details of your implementation are up to you, just try to keep things as clean an modular as possible.
 Whatever code you write in this first week will likely still be in your code base when you are working on your final project in week 10.
 
@@ -79,30 +86,33 @@ Whatever code you write in this first week will likely still be in your code bas
 Also note pigment, finish and transforms order can vary within a given object.
 Try to write a flexible parser.*
 
----
+
 
 ## Ray Object Intersections
 
 After parsing the scene file and creating the necessary data structures, your program should begin casting rays.
 The camera object should, with knowledge of the output image size and a given pixel, be able to cast the necessary rays and return the appropriate rgb color value for the pixel.
 In the assignment you will only cast one ray per pixel (this will change in later assignments however).
-The rays should be represented by an object.
+The rays should be represented by a class or struct.
+
 To cast a ray, simply traverse the scene object list (also represented by C++ objects) testing for intersection with each object.
 Each derived geometry object should have its own intersection routine that takes a ray, performs an intersection test and returns the closest intersection (if one exists).
 The closest intersection will be shaded using the model described in the next section.
 However, in the first pass of the algorithm you may wish to color every intersection a constant color to test for correct intersection.
 
+
 ### Notes for the camera for this assignment
 
-For this assignment,  you may work under the assumption that the camera is positioned down the positive Z axis, looking down the negative Z axis (we will next implement a complete virtual camera).
+For this assignment, you may work under the assumption that the camera is positioned down the positive Z axis, looking down the negative Z axis (we will next implement a complete virtual camera).
 Note this is how the camera values are specified in the sample povray file.
 To compute the value of the rays, note that the limits of the near plane (i.e. the left, right, top and bottom) are defined by the camera up and left vectors.
-Assuming the ‘eye’ represents the center of projection of the camera, and the near plane is one unit in front of the camera, divide the world space defined by these extents by the number of pixels specified as input to the program (see ‘program execution below’) to generate sample points ‘per’ pixel in world space.
+Assuming the ‘eye’ represents the center of projection of the camera, and the near plane is one unit in front of the camera,
+divide the world space defined by these extents by the number of pixels specified as input to the program (see **program Execution** below) to generate sample points ‘per’ pixel in world space.
 Use this point to compute a vector for the ray’s direction.
 
----
 
-## Program execution:
+
+## Program Execution
 
 Your program should have the following syntax:
 

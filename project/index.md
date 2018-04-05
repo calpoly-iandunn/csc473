@@ -6,12 +6,18 @@ auto-title: true
 ---
 
 
+<a href="https://classroom.github.com/a/AXydoVDc" class="btn btn-primary">GitHub Classroom</a>
+<a href="https://github.com/iondune/csc473-inputfiles" class="btn btn-secondary">Input Files</a>
+<a href="https://github.com/iondune/csc473-testfiles" class="btn btn-secondary">Output Files</a>
+
 ## Overview
 
 Throughout this quarter you will implement the basic functions of a distribution ray tracer.
 This software will be enhanced throughout the quarter, thus this initial assignment will serve as the base for following assignments.
 Since you will be adding and reusing your code, it is advised that you write your code in a clean, structured object-oriented fashion.
 All code must be written in C++.
+
+[**The GitHub Classroom page for this assignment can be found here.**](https://classroom.github.com/a/AXydoVDc)
 
 [**Input files for all stages of the project can be found here.**](https://github.com/iondune/csc473-inputfiles)
 

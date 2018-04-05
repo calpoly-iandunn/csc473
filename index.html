@@ -119,16 +119,6 @@ active: home
         {% endif %}
       {% endfor %}  {% comment %} items {% endcomment %}
 
-      {% for pair in site.data.assignments %}
-        {% assign name = pair[0] %}
-        {% assign assignment = pair[1] %}
-        {% if assignment.type == 'workshop' %}
-          {% if day.name == assignment.date %}
-          <li><a href="{{ site.baseurl }}/project/{{ name }}">{{ assignment.title }} - {{ assignment.subtitle }}</a></li>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
         </ul>
     {% endfor %} {% comment %} columns {% endcomment %}
 

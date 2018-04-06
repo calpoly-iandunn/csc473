@@ -15,8 +15,10 @@
 
   - name: Friday 4/6
     lecture:
-      - text: The Rendering Equation
-        link: /lectures/00-introduction
+      - text: Rays and the camera
+        link: /lectures/02-camera
+      - text: C++ (2)
+        link: /lectures/01-cpp1
 
 ###############################################################################
 
@@ -25,15 +27,15 @@
   days:
   - name: Monday 4/9
     lecture:
-      - text: Rays and the camera
-        link: /lectures/02-camera
-
-  - name: Wednesday 4/11
-    lecture:
       - text: Spheres
         link: /lectures/03-spheres
       - text: Planes
         link: /lectures/04-planes
+
+  - name: Wednesday 4/11
+    lecture:
+      - text: The Rendering Equation
+        link: /lectures/00-introduction
 
   - name: Friday 4/13
     lecture:

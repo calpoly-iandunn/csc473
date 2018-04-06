@@ -85,3 +85,35 @@ $$ A = d \cdot d $$
 $$ B = 2 d \cdot (p_0 - c) t$$
 
 $$ C = (p_0 - c) \cdot (p_0 - c) - r^2 $$
+
+
+
+## Quadratic Equation
+
+Recall:
+
+$$ t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+This part is the determinant:
+
+$$ b^2 - 4ac $$
+
+When the determinant is negative, there are no (real) solutions to this quadratic equation.
+This indicates no intersection between the ray and the sphere.
+
+If the determinant is zero, there is exactly one solution.
+This indicates the ray just barely brushes the surface of the sphere.
+
+In all other cases, there are multiple solutions.
+This indicates the ray passes through the sphere in the usual way.
+Typically, we are concerned with the smaller $$ t $$ value, as this is the "closer" intersection.
+
+Be careful, however, about rays that originate inside the sphere!
+For such rays, the smaller $$ t $$ value will be negative.
+Typically we do not want to consider any negative intersections,
+so you more likely want to return the smallest *positive* $$ t $$ intersection.
+
+This distinction becomes important when dealing with:
+
+- shadow feeler rays
+- reflection/refraction rays

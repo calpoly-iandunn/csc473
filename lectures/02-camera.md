@@ -65,7 +65,7 @@ If we use this square image plane we will get squashed images that distort the r
 There are two equivalent ways to solve this problem.
 We could stretch the image plane along the horizontal axis by $$ 4/3 $$.
 
-However, we will eventually by multiplying these view space coordinates by the basis vectors of our camera.
+However, we will eventually be multiplying these view space coordinates by the basis vectors of our camera.
 We can use a "right" basis vector with length $$ 4/3 $$ to account for the aspect ratio at that time.
 If you take a look at any of the `.pov` files for this class, you will notice that the "right" vectors are scaled in this way.
 
@@ -145,7 +145,9 @@ For direction, we should normalize the difference between the pixel's position o
 
 $$ \vec d = P_w - C_0 $$
 
-$$ \vec d = C_0 - C_0 +  U_s * \vec u + V_s * \hat v + W_s * \hat w $$
+$$ \vec d = ( C_0 +  U_s * \vec u + V_s * \hat v + W_s * \hat w ) - C_0  $$
+
+$$ \vec d = U_s * \vec u + V_s * \hat v + W_s * \hat w + C_0 - C_0  $$
 
 $$ \vec d = U_s * \vec u + V_s * \hat v + W_s * \hat w $$
 

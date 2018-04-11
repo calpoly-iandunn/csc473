@@ -17,8 +17,6 @@
     lecture:
       - text: Rays and the camera
         link: /lectures/02-camera
-      - text: C++ (2)
-        link: /lectures/01-cpp1
 
 ###############################################################################
 
@@ -34,13 +32,13 @@
 
   - name: Wednesday 4/11
     lecture:
-      - text: The Rendering Equation
-        link: /lectures/00-introduction
+      - text: Lighting & Shadows
+        link: /lectures/05-lighting
 
   - name: Friday 4/13
     lecture:
-      - text: Lighting & Shadows
-        link: /lectures/05-lighting
+      - text: C++ (2)
+        link: /lectures/06-cpp2
     weekend: Sunday 4/16
 
 ###############################################################################
@@ -50,18 +48,18 @@
   days:
   - name: Monday 4/16
     lecture:
-      - text: Triangles
-        link: /lectures/08-triangles
-
-  - name: Wednesday 4/18
-    lecture:
       - text: Cook-Torrance
         link: /lectures/06-cook-torrance
 
-  - name: Friday 4/20
+  - name: Wednesday 4/18
     lecture:
       - text: Cook-Torrance GGX
         link: /references/cook-torrance
+
+  - name: Friday 4/20
+    lecture:
+      - text: Triangles
+        link: /lectures/08-triangles
 
 ###############################################################################
 

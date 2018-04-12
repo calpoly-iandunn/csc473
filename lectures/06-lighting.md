@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 5: Lighting"
+title: "Lecture 6: Lighting"
 auto-title: true
 ---
 

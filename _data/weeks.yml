@@ -32,13 +32,13 @@
 
   - name: Wednesday 4/11
     lecture:
-      - text: Lighting & Shadows
-        link: /lectures/05-lighting
+      - text: C++ (2)
+        link: /lectures/05-cpp2
 
   - name: Friday 4/13
     lecture:
-      - text: C++ (2)
-        link: /lectures/06-cpp2
+      - text: Lighting & Shadows
+        link: /lectures/06-lighting
     weekend: Sunday 4/16
 
 ###############################################################################

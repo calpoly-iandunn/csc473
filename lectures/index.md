@@ -6,11 +6,13 @@ auto-title: true
 ---
 
 - [0 - Introduction](00-introduction)
-- [1 - C++](01-cpp1)
+- [1 - C++ (1)](01-cpp1)
 - [2 - Camera](02-camera)
 - [3 - Spheres](03-spheres)
 - [4 - Planes](04-planes)
-- [5 - Lighting](05-lighting)
+- [5 - C++ (2)](05-cpp2)
+- [6 - Lighting](06-lighting)
+
 - [6 - Cook-Torrance](06-cook-torrance)
 - [7 - Reflection and Refraction](07-reflection-refraction)
 - [8 - Triangles](08-triangles)

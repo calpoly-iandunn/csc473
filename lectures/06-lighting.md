@@ -167,7 +167,7 @@ function raycolor(vec3 p0, vec3 d)
             if (not in_shadow) then
 
                 color += compute_diffuse()
-                color += compute_ambient()
+                color += compute_specular()
 
     else
 

@@ -39,7 +39,9 @@
     lecture:
       - text: Lighting & Shadows
         link: /lectures/06-lighting
-    weekend: Sunday 4/16
+    weekend:
+      - Saturday 4/14
+      - Sunday 4/15
 
 ###############################################################################
 

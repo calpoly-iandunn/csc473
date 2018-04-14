@@ -77,6 +77,11 @@ pre {
   padding: 0.5rem;
 }
 
+:not(pre) > code {
+  background: #f4f4f4;
+  border-radius: 0.25rem;
+  padding: 0.2em;
+}
 
 /* table */
 

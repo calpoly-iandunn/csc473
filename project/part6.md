@@ -12,11 +12,11 @@ title: "Program 6"
 For this portion of your ray tracer, your program needs to:
 
 - Support all prior rendering requirements
-- Compute global illumination using Monte Carlo ray tracing
+- Compute **global illumination** using Monte Carlo ray tracing
   - Please use 128 cosine weighted sample rays on your hemisphere for the first bounce (though make this parameter configurable)
   - Use 32 cosine weighted sample rays on your hemisphere for the second bounce (though make this parameter configurable)
 
-You will also need to create your own visually interesting scene that you render and submit the .pov file.
+You will also need to create your own visually interesting scene that you render and submit the `.pov` file.
 
 
 
@@ -39,19 +39,19 @@ assuming that your executable is named `raytrace` where the options are:
   **(optional argument)**{: class="text-warning"}
 - `-gi` = use Monte Carlo **global illumination**
   **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-success"}
+  **(new)**{: class="text-info"}
 
 I also recommend that you support the following commands to control `gi` parameters:
 
 - `-gi_samples=N` = use N sampes for Monte Carlo **global illumination**
   **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-success"}
+  **(new)**{: class="text-info"}
 - `-gi_bounces=b` = use at most b bounces for Monte Carlo **global illumination**
   **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-success"}
+  **(new)**{: class="text-info"}
 - `-gi_ratio=r` = divide N by r for each bounce of Monte Carlo **global illumination**
   **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-success"}
+  **(new)**{: class="text-info"}
 
 Sample input files and images are given in the input files repository.
 

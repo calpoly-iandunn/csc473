@@ -13,13 +13,13 @@ In this assignment you will implement the direct illumination shading and shadow
 
 You code must include implementation of camera transforms and multiple objects. Specific technologies that must be supported are computation of:
 
-- the shading for opaque non-reflective objects using two different BRDFs (you will need to implement the Blinn-Phong model and the Cook-Torrance model).
+- the shading for opaque non-reflective objects using **two different BRDFs** (you will need to implement the Blinn-Phong model and the Cook-Torrance model).
   [See Here.](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)
   Your shading must use the light and material properties specified in the pov file.
   In order to switch between the two different BRDF models use a command line option (see "program execution" below)
-- shadow feeler rays for all intersections that are used for computing shadows for all objects.
+- **shadow feeler rays** for all intersections that are used for computing shadows for all objects.
   Please experiment with appropriate epsilon offsets to avoid shadow acne.
-- correct images for camera with arbitrary world view, i.e not only looking down the negative z axis (e.g. simp_cam.pov files)
+- correct images for **camera with arbitrary world view**, i.e not only looking down the negative z axis (e.g. simp_cam.pov files)
 
 Software engineering considerations:
 You will once again need to support specific unit tests throughout the quarter for specific rays (relative to the camera – i.e. listed in pixel space, e.g. [Xi, Yi]).
@@ -39,7 +39,9 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
-- `-altbrdf` = use Cook-Torrance instead of Blinn-Phong <span class="text-warning">(optional argument)</span>
+- `-altbrdf` = use Cook-Torrance instead of Blinn-Phong
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-info"}
 
 and the command `render` indicates that we simply want to draw the entire scene.
 Note that in this context, **optional** refers to whether the argument is required for

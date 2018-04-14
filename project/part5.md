@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part5
 active: project
-title: "Program 5 - Spatial Data Structures"
-auto-title: true
+title: "Program 5"
 ---
 
 ## Overview:

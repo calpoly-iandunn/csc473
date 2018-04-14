@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part4
 active: project
-title: "Program 4 - Transforms and Anti-aliasing"
-auto-title: true
+title: "Program 4"
 ---
 
 ## Overview:

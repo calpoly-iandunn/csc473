@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part3
 active: project
-title: "Program 3 - Reflection, Refraction, and Triangles"
-auto-title: true
+title: "Program 3"
 ---
 
 ## Overview:

@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part2
 active: project
-title: "Program 2 - Shading, Shadows, and Camera"
-auto-title: true
+title: "Program 2"
 ---
 
 ## Overview:

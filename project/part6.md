@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part6
 active: project
-title: "Program 6 - Monte Carlo Ray Tracing"
-auto-title: true
+title: "Program 6"
 ---
 
 ## Overview:

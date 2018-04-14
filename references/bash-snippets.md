@@ -2,6 +2,7 @@
 layout: page
 active: references
 title: "Bash Snippets"
+auto-title: true
 ---
 
 ## Use a file as the arguments for some program

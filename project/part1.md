@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part1
 active: project
-title: "Program 1 - File Parsing and Ray Cast"
-auto-title: true
+title: "Program 1"
 ---
 
 

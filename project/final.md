@@ -49,6 +49,7 @@ I expect to see some reasonable documentation in your `README.md` of:
 
 Past final project directories:
 
+* [2017](http://users.csc.calpoly.edu/~idunn01/teaching/csc473/finals17/)
 * [2013](http://users.csc.calpoly.edu/~zwood/teaching/csc473/final13/)
 * [2011](http://users.csc.calpoly.edu/~zwood/teaching/csc473/finals11/)
 * [2010](http://users.csc.calpoly.edu/~zwood/teaching/csc473/finalw10/)

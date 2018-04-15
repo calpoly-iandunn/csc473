@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part2
 active: project
-title: "Program 2 - Shading, Shadows, and Camera"
-auto-title: true
+title: "Program 2"
 ---
 
 ## Overview:
@@ -13,13 +13,13 @@ In this assignment you will implement the direct illumination shading and shadow
 
 You code must include implementation of camera transforms and multiple objects. Specific technologies that must be supported are computation of:
 
-- the shading for opaque non-reflective objects using two different BRDFs (you will need to implement the Blinn-Phong model and your choice of an alternative shading model (e.g. Cook-Torrance)).
+- the shading for opaque non-reflective objects using **two different BRDFs** (you will need to implement the Blinn-Phong model and the Cook-Torrance model).
   [See Here.](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)
   Your shading must use the light and material properties specified in the pov file.
   In order to switch between the two different BRDF models use a command line option (see "program execution" below)
-- shadow feeler rays for all intersections that are used for computing shadows for all objects.
+- **shadow feeler rays** for all intersections that are used for computing shadows for all objects.
   Please experiment with appropriate epsilon offsets to avoid shadow acne.
-- correct images for camera with arbitrary world view, i.e not only looking down the negative z axis (e.g. simp_cam.pov files)
+- correct images for **camera with arbitrary world view**, i.e not only looking down the negative z axis (e.g. simp_cam.pov files)
 
 Software engineering considerations:
 You will once again need to support specific unit tests throughout the quarter for specific rays (relative to the camera – i.e. listed in pixel space, e.g. [Xi, Yi]).
@@ -39,9 +39,14 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
-- `-altbrdf` = use a brdf other than Blinn-Phong <span class="text-warning">(optional argument)</span>
+- `-altbrdf` = use Cook-Torrance instead of Blinn-Phong
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-info"}
 
 and the command `render` indicates that we simply want to draw the entire scene.
+Note that in this context, **optional** refers to whether the argument is required for
+your raytracer to run at all, and has nothing to do with whether you must implement the parameter
+for this assignment.
 
 Thus:
 
@@ -49,7 +54,7 @@ Thus:
 
 will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using the Blinn-Phong BRDF for shading.
 
-  `raytrace render example.pov 640 480`
+  `raytrace render example.pov 640 480 -altbrdf`
 
 will render a 640x480 image file, `output.png` consisting of the scene defined in `example.pov` using your alternate BRDF for shading, perhaps Cook-Torrance.
 
@@ -97,6 +102,6 @@ If no object is it, it simply prints `No Hit`
 
 ## Grading breakdown:
 - 30 points Blinn-Phong working with all files
+- 20 points Cook-Torrance BRDF working with all files
 - 30 points working shadows with all files
-- 30 points working camera with arbitrary views with all files
-- 10 points alternative BRDF working with all files
+- 20 points working camera with arbitrary views with all files

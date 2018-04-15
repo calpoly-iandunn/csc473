@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part5
 active: project
-title: "Program 5 - Spatial Data Structures"
-auto-title: true
+title: "Program 5"
 ---
 
 ## Overview:
@@ -11,10 +11,11 @@ auto-title: true
 
 For this portion of your ray tracer, your program needs to:
 
-- compute intersections and appropriate shading for boxes
-- handle large files (e.g. `balls2.pov` and `bunny.pov`) in reasonable times by including either a bounding volume hierarchy (BVH), binary space partitioning tree (BSP tree) or an oct-tree (i.e. a spatial data structure) in your code to optimize ray intersection testing
+- compute intersections and appropriate shading for **boxes**
+- handle large files (e.g. `balls2.pov` and `bunny.pov`) in reasonable times by including a **spatial data structure** in your code to optimize ray intersection testing
+  - e.g. a bounding volume hierarchy (BVH), binary space partitioning tree (BSP tree) or an oct-tree
 
-You will also need to create your own visually interesting scene that you render and submit the .pov file.
+You will also need to create your own visually interesting scene that you render and submit the `.pov` file.
 
 
 ## Program execution:
@@ -36,7 +37,7 @@ assuming that your executable is named `raytrace` where the options are:
   **(optional argument)**{: class="text-warning"}
 - `-sds` = enable your **spatial data structure**, e.g. bounding volume hierarchy
   **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-success"}
+  **(new)**{: class="text-info"}
 
 and the command `render` indicates that we simply want to draw the entire scene.
 

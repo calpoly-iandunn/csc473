@@ -2,6 +2,7 @@
 layout: page
 active: references
 title: "Cook-Torrance Components"
+auto-title: true
 ---
 
 General form of the Cook-Torrance shading model:

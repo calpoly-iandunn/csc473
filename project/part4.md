@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: assignment
+assignment: part4
 active: project
-title: "Program 4 - Transforms and Anti-aliasing"
-auto-title: true
+title: "Program 4"
 ---
 
 ## Overview:
@@ -11,16 +11,16 @@ auto-title: true
 
 For this portion of your ray tracer, your program needs to:
 
-- handle all previous specifications with modifications to the way reflection and refraction are weighted by using the Schlick approximation to weight reflection and refraction
-- handle geometric transforms on all geometric types
-- handle multiple lights
-- use anti-aliasing (9 stratified super samples per pixel) (be able to turn this on and off with command line)
+- handle all previous specifications with modifications to the way reflection and refraction are weighted by using the **Schlick approximation** to weight reflection and refraction
+- handle **geometric transforms** on all geometric types
+- handle **multiple lights**
+- use **anti-aliasing** (stratified super samples per pixel)
 
 ---
 
 In addition to your source code and build files, your repo should also contain:
 
-- Your own .pov file and rendered image of a reflective and refractive scene.
+- Your own `.pov` file and rendered image of a reflective and refractive scene.
   Be creative and create an interesting scene.
   Choose colors and an arrangement of geometry that you find pleasing.
 
@@ -37,9 +37,14 @@ assuming that your executable is named `raytrace` where the options are:
 - `input_filename` = the name of the povray file to read and render
 - `width` = the image width
 - `height` = the image height
-- `-fresnel` = use Schlick's Approximation to simulate **Fresnel** reflection <span class="text-warning">(optional argument)</span>
-- `-ss=N` = use **super sampling** with NxN samples <span class="text-warning">(optional argument)</span>
-- `-altbrdf` = use a **brdf** other than Blinn-Phong <span class="text-warning">(optional argument)</span>
+- `-fresnel` = use Schlick's Approximation to simulate **Fresnel** reflection
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-info"}
+- `-ss=N` = use **super sampling** with NxN samples
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-info"}
+- `-altbrdf` = use a **brdf** other than Blinn-Phong
+  **(optional argument)**{: class="text-warning"}
 
 and the command `render` indicates that we simply want to draw the entire scene.
 

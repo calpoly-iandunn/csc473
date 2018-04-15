@@ -2,6 +2,7 @@
 layout: page
 active: references
 title: "C++ Snippets"
+auto-title: true
 ---
 
 ## Read entire file into string

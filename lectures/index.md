@@ -12,8 +12,8 @@ auto-title: true
 - [4 - Planes](04-planes)
 - [5 - C++ (2)](05-cpp2)
 - [6 - Lighting](06-lighting)
+- [7 - Cook-Torrance](07-cook-torrance)
 
-- [6 - Cook-Torrance](06-cook-torrance)
 - [7 - Reflection and Refraction](07-reflection-refraction)
 - [8 - Triangles](08-triangles)
 - [9 - Transformations](09-transformations)

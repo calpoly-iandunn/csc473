@@ -1,12 +1,12 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 6: Cook-Torrance"
+title: "Lecture 7: Cook-Torrance"
 auto-title: true
 ---
 
 In 1982, Robert Cook and Kenneth Torrance published a reflectance model that more accurately represented the physical reality of light reflectance
-than the Phong and Blinn-Phong models we discussed in [Lecture 5]({{ site.baseurl }}/lectures/05-lighting).
+than the Phong and Blinn-Phong models we discussed in [Lecture 6]({{ site.baseurl }}/lectures/06-lighting).
 
 The proposed method is general purpose - it has three "pluggable" components that can be replaced with equations of your choice.
 It is also effective at representing a variety of materials, whereas a BRDF like Blinn-Phong is really only good at representing plastics and some metals (though that point is debatable).
@@ -116,11 +116,11 @@ The Cook-Torrance model attempts to account for these three phenomena.
 
 ### So... what about $$ D * G * F $$ ?
 
-$$ D $$ is the Normali Distribution Function, which accounts for the fraction of facets which reflect light at the viewer.
+$$ D $$ is the **Normal Distribution Function**, which accounts for the fraction of facets which reflect light at the viewer.
 
-$$ G $$ is the Geometric Attenuation Function, which accounts for the shadowing and masking of facets by one another.
+$$ G $$ is the **Geometric Attenuation Function**, which accounts for the shadowing and masking of facets by one another.
 
-$$ F $$ is the Fresnel Function, which accounts for the *Fresnel* Effect, which causes rays with high angle of incidence to reflect with more specularity.
+$$ F $$ is the **Fresnel Function**, which accounts for the *Fresnel* Effect, which causes rays with high angle of incidence to reflect with more specularity.
 
 $$ G $$ and $$ F $$ have a less significant contribution to the final shaded result than $$ D $$, so we will cover $$ D $$ first.
 

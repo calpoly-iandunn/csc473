@@ -11,9 +11,10 @@ title: "Program 4"
 
 For this portion of your ray tracer, your program needs to:
 
-- handle all previous specifications with modifications to the way reflection and refraction are weighted by using the **Schlick approximation** to weight reflection and refraction
 - handle **geometric transforms** on all geometric types
 - handle **multiple lights**
+- implement the **Fresnel effect** by using the **Schlick approximation** to weight reflection and refraction
+- use **Beer's law** for colored translucent volumes (i.e. spheres)
 - use **anti-aliasing** (stratified super samples per pixel)
 
 ---
@@ -93,6 +94,8 @@ Pixel: [399, 280] Color: (125, 13, 125)
 
 ## Grading breakdown:
 
-- 30 handle geometric transforms
+- 50 handle geometric transforms
 - 15 anti-aliasing
-- 10 working schlick's approximation
+- 10 multiple lights
+- 15 working schlick's approximation
+- 10 points working beer's law

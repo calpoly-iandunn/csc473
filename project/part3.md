@@ -11,7 +11,6 @@ title: "Program 3"
 
 In this assignment you will implement reflection and refraction on mirrored and translucent surfaces.
 You will also need to compute intersections with triangles,
-and use Beer's law for colored translucent volumes (i.e. spheres).
 Please work on these features incrementally using the appropriate files.
 For example:
 
@@ -19,7 +18,6 @@ For example:
 - Add **reflections** and test with `simple_reflect1.pov` (reflective plane) and `simple_reflect2.pov` (reflective spheres) and `simple_reflect3.pov` (spheres and planes)
 - Add **refractions** (use `simple_refract.pov`)
 - Test them all with `recurse_simp2.pov`
-- Finally, implement Beer's law and test with `beers.pov`
 
 Reflection and refraction should be implemented via recursion.
 Limit the recursion to `6` bounces, but I recommend making that number configurable.
@@ -111,8 +109,7 @@ Pixel: [315, 185] Color: (33, 33, 33)
 
 
 ## Grading breakdown:
-- 25 points working triangle intersections
-- 25 points working reflection
-- 30 points working refraction
-- 10 points working beer's law
-- 10 points general sanity
+
+- 30 points working triangle intersections
+- 30 points working reflection
+- 40 points working refraction

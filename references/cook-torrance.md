@@ -147,6 +147,15 @@ G_1(x) =
 \frac{2}{1+\sqrt {1 + \alpha^2 tan^2(\theta_x))}}
 $$
 
+$$\chi^+$$ is the positive characteristic function:
+
+$$ \large
+\chi^+(a) =
+\begin{cases}
+1 & \text{if $a > 0$} \\
+0 & \text{if $a \leq 0$}
+\end{cases}
+$$
 
 ## Fresnel Functions
 

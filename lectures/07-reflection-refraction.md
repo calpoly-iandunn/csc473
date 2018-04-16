@@ -192,7 +192,7 @@ In this case we are only concerned with the macrosurface normal.
 
 Given distance travelled through a medium $$ d $$, for object with color $$ c $$:
 
-$$ absorbance = (1.f - c) * \alpha * -d $$
+$$ absorbance = (1 - c) * \alpha * -d $$
 
 Where $$ \alpha $$ is a constant that we will arbitrarily define in this class:
 

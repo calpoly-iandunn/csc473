@@ -13,6 +13,9 @@ auto-title: true
 - [5 - C++ (2)](05-cpp2)
 - [6 - Lighting](06-lighting)
 - [7 - Cook-Torrance](07-cook-torrance)
+- [8 - Cook-Torrance GGX](08-cook-torrance-ggx)
+
+
 
 - [7 - Reflection and Refraction](07-reflection-refraction)
 - [8 - Triangles](08-triangles)

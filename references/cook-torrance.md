@@ -38,7 +38,7 @@ $$ \vec l $$ is the light vector.
 
 $$ \vec v $$ is the view vector.
 
-$$ \vec m $$ is the microsurface normal.
+$$ \vec m $$ is the microsurface normal - in these computations (i.e. for implementation purposes) the half-vector is used.
 
 $$ \theta_m $$ is the angle between $$ \vec m $$ and $$ \vec n $$
 

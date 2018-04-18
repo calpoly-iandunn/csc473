@@ -56,7 +56,7 @@
   - name: Wednesday 4/18
     lecture:
       - text: Cook-Torrance GGX
-        link: /references/cook-torrance
+        link: /lectures/08-cook-torrance-ggx
 
   - name: Friday 4/20
     lecture:

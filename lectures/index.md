@@ -14,11 +14,11 @@ auto-title: true
 - [6 - Lighting](06-lighting)
 - [7 - Cook-Torrance](07-cook-torrance)
 - [8 - Cook-Torrance GGX](08-cook-torrance-ggx)
+- [9 - Triangles](09-triangles)
 
 
 
 - [7 - Reflection and Refraction](07-reflection-refraction)
-- [8 - Triangles](08-triangles)
 - [9 - Transformations](09-transformations)
 - [10 - Anti-Aliasing](10-anti-aliasing)
 - [11 - Boxes](11-boxes)

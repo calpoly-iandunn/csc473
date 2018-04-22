@@ -70,18 +70,18 @@
   days:
   - name: Monday 4/23
     lecture:
-      - text: Reflection
-        link: /lectures/07-reflection-refraction
+      - text: Reflection & Refraction
+        link: /lectures/10-reflection-refraction
 
   - name: Wednesday 4/25
     lecture:
-      - text: Refraction
-        link: /lectures/07-reflection-refraction
+      - text: Fresnel and Beer's Law
+        link: /lectures/11-fresnel-beer
 
   - name: Friday 4/27
     lecture:
-      - text: Fresnel
-        link: /lectures/07-reflection-refraction
+      - text: Transformations
+        link: /lectures/12-transformations
     weekend: Sunday 4/30
 
 ###############################################################################
@@ -92,19 +92,19 @@
   - name: Monday 4/30
     lecture:
       - text: Transformations
-        link: /lectures/09-transformations
+        link: /lectures/12-transformations
 
   - name: Wednesday 5/2
     lecture:
       - text: Transformations
-        link: /lectures/09-transformations
+        link: /lectures/12-transformations
       - text: "Lab: Code Review Session 1"
         link: /workshops/code-review-1
 
   - name: Friday 5/4
     lecture:
-      - text: Transformations
-        link: /lectures/09-transformations
+      - text: Anti-Aliasing
+        link: /lectures/13-anti-aliasing
 
 ###############################################################################
 
@@ -122,8 +122,8 @@
 
   - name: Friday 5/11
     lecture:
-      - text: Anti-Aliasing
-        link: /lectures/10-anti-aliasing
+      - text: Boxes
+        link: /lectures/14-boxes
 
 ###############################################################################
 
@@ -132,18 +132,16 @@
   days:
   - name: Monday 5/14
     lecture:
-      - text: Boxes
-        link: /lectures/11-boxes
 
   - name: Wednesday 5/16
     lecture:
       - text: Spatial Data Structures
-        link: /lectures/12-spatial-data-structures
+        link: /lectures/15-spatial-data-structures
 
   - name: Friday 5/18
     lecture:
       - text: Bounding-Volume Hierarchies
-        link: /lectures/12-spatial-data-structures
+        link: /lectures/15-spatial-data-structures
 
 ###############################################################################
 
@@ -153,19 +151,19 @@
   - name: Monday 5/21
     lecture:
       - text: Light Theory
-        link: /lectures/13-light-theory
+        link: /lectures/16-light-theory
 
   - name: Wednesday 5/23
     lecture:
       - text: Monte Carlo Ray Tracing
-        link: /lectures/14-monte-carlo
+        link: /lectures/17-monte-carlo
       - text: "Lab: Code Review Session 2"
         link: /workshops/code-review-2
 
   - name: Friday 5/25
     lecture:
       - text: Distribution Ray Tracing
-        link: /lectures/14-monte-carlo
+        link: /lectures/17-monte-carlo
 
 ###############################################################################
 
@@ -178,12 +176,12 @@
   - name: Wednesday 5/30
     lecture:
       - text: Advanced Ray Tracing
-        link: /lectures/15-advanced-ray-tracing
+        link: /lectures/18-advanced-ray-tracing
 
   - name: Friday 6/1
     lecture:
       - text: Advanced Ray Tracing
-        link: /lectures/15-advanced-ray-tracing
+        link: /lectures/18-advanced-ray-tracing
 
 ###############################################################################
 

@@ -15,14 +15,12 @@ auto-title: true
 - [7 - Cook-Torrance](07-cook-torrance)
 - [8 - Cook-Torrance GGX](08-cook-torrance-ggx)
 - [9 - Triangles](09-triangles)
-
-
-
-- [7 - Reflection and Refraction](07-reflection-refraction)
-- [9 - Transformations](09-transformations)
-- [10 - Anti-Aliasing](10-anti-aliasing)
-- [11 - Boxes](11-boxes)
-- [12 - Spatial Data Structures](12-spatial-data-structures)
-- [13 - Light Theory](13-light-theory)
-- [14 - Monte Carlo Ray Tracing](14-monte-carlo)
-- [15 - Advanced Ray Tracing](15-advanced-ray-tracing)
+- [10 - Reflection and Refraction](10-reflection-refraction)
+- [11 - Fresnel and Beer's Law](11-fresnel-beer)
+- [12 - Transformations](12-transformations)
+- [13 - Anti-Aliasing](13-anti-aliasing)
+- [14 - Boxes](14-boxes)
+- [15 - Spatial Data Structures](15-spatial-data-structures)
+- [16 - Light Theory](16-light-theory)
+- [17 - Monte Carlo Ray Tracing](17-monte-carlo)
+- [18 - Advanced Ray Tracing](18-advanced-ray-tracing)

@@ -326,7 +326,7 @@ $$
 
 $$
 t = \frac
-{-f (ak - jb) + e (jc - al) + d (bl - kc)}
+{-f (ak - jb) - e (jc - al) - d (bl - kc)}
 {\text{det}(A)}
 $$
 

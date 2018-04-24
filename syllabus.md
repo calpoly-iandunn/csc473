@@ -59,10 +59,9 @@ By the end of the quarter students will:
 * Final project (10% of final grade)
 
 Please see the program description for final details. There is a strict late policy for all assignments: if your program is late you will lose:
-- **-20%** within first 24 hours after deadline
+- **-15%** within first 24 hours after deadline
 - **-30%** within 48 hours
-- **-40%** within 72 hours
-- and finally **-60%** after 72 hours
+- and finally **-40%** after 48 hours
 
 
 

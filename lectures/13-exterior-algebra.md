@@ -104,7 +104,7 @@ Using that same notation we can write out the wedge product a little more compac
 $$ a \wedge b = (a_2 b_3 - a_3 b_2) e_{23} + (a_3 b_1 - a_1 b_3) e_{31} + (a_1 b_2 - a_2 b_1) e_{12} $$
 
 This looks quite a bit similar to the cross product, but it is a bit more than a cross product.
-The cross product is only defined in 3D, and is not associate.
+The cross product is only defined in 3D, and is not associative.
 
 $$ (\vec a \times \vec b) \times \vec c \neq \vec a \times (\vec b \times \vec c) $$
 
@@ -180,5 +180,162 @@ we get a different result:
 $$ M((1, 0, 0) \times (0, 1, 0)) = M(0, 0, 1) = (0, 0, 1) $$
 
 This shows us that the result of a cross product transforms differently from a cross product.
-That's because that result is not a vector - it's a cross product.
+That's because that result is not a vector - it's a bi-vector.
+
+Let's take a closer look.
+What do we get if we transform some vector $$ a $$ by matrix $$ M $$?
+
+$$ M (a_1 e_1 + a_2 e_2 + a_3 e_3) = a_1 M_1 + a_2 M_2 + a_3 M_3 $$
+
+Here $$ M_i $$ is the $$i$$th column of $$ M $$.
+
+So what is the cross product of two vectors $$ a $$ and $$ b $$ after they are transformed?
+
+$$ Ma \times Mb = $$
+
+$$ (a_1 M_1 + a_2 M_2 + a_3 M_3) \times (b_1 M_1 + b_2 M_2 + b_3 M_3) = $$
+
+$$ (a_2 b_3 - a_3 b_2) (M_2 \times M_3) + $$
+
+$$ (a_3 b_1 - a_1 b_3) (M_3 \times M_1) + $$
+
+$$ (a_1 b_2 - a_2 b_1) (M_1 \times M_2) $$
+
+Okay, there's the formula for the cross product components on the left, but what about those cross products on the right?
+
+Well, first let's just point something interesting out.
+
+$$ (M_2 \times M_3) \cdot M_1 = \text{det}M $$
+
+$$ (M_3 \times M_1) \cdot M_2 = \text{det}M $$
+
+$$ (M_1 \times M_2) \cdot M_3 = \text{det}M $$
+
+However, all other dot products are $$ 0 $$, e.g.:
+
+$$ (M_2 \times M_3) \cdot M_2 = 0 $$
+
+$$ (M_2 \times M_3) \cdot M_3 = 0 $$
+
+This is interesting because it gives us:
+
+$$
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}
+M
+=
+\begin{bmatrix}
+\text{det}M & 0 & 0 \\
+0 & \text{det}M & 0 \\
+0 & 0 & \text{det}M \\
+\end{bmatrix}
+$$
+
+$$
+\frac{1}{\text{det}M}
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}
+M
+=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+\frac{1}{\text{det}M}
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}
+=
+M^{-1}
+$$
+
+$$
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}
+=
+(\text{det}M) M^{-1}
+$$
+
+$$
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}^T
+=
+(\text{det}M) (M^{-1})^T
+$$
+
+Therefore:
+
+
+
+$$
+(\text{det}M) (M^{-1})^T
+\begin{bmatrix}
+a_2 b_3 - a_3 b_2 \\
+a_3 b_1 - a_1 b_3 \\
+a_1 b_2 - a_2 b_1 \\
+\end{bmatrix} =
+$$
+
+$$
+\begin{bmatrix}
+M_2 \times M_3 \\
+M_3 \times M_1 \\
+M_1 \times M_2 \\
+\end{bmatrix}^T
+\begin{bmatrix}
+a_2 b_3 - a_3 b_2 \\
+a_3 b_1 - a_1 b_3 \\
+a_1 b_2 - a_2 b_1 \\
+\end{bmatrix} =
+$$
+
+$$
+\begin{bmatrix}
+(M_2 \times M_3)_x * (a_2 b_3 - a_3 b_2) + (M_3 \times M_1)_x * (a_3 b_1 - a_1 b_3) + (M_2 \times M_3)_x * (a_1 b_2 - a_2 b_1) \\
+(M_2 \times M_3)_y * (a_2 b_3 - a_3 b_2) + (M_3 \times M_1)_y * (a_3 b_1 - a_1 b_3) + (M_2 \times M_3)_y * (a_1 b_2 - a_2 b_1) \\
+(M_2 \times M_3)_z * (a_2 b_3 - a_3 b_2) + (M_3 \times M_1)_z * (a_3 b_1 - a_1 b_3) + (M_2 \times M_3)_z * (a_1 b_2 - a_2 b_1) \\
+\end{bmatrix}
+=
+$$
+
+$$
+(a_2 b_3 - a_3 b_2) (M_2 \times M_3) +
+(a_3 b_1 - a_1 b_3) (M_3 \times M_1) +
+(a_1 b_2 - a_2 b_1) (M_1 \times M_2)
+$$
+
+
+There we go - inverse transpose is how to transform bi-vectors.
+
+
+
+## Antivectors and Antiscalars
+
+Trivectors are somewhat interesting - they are a lot similar to scalars, in that they only have one "component".
+These are sometimes called antiscalars.
+
+Bivectors are similarily similar to vectors, they both have three components.
+Therefore they are sometimes called antivectors.
+
+The wedge product between a vector and an antivector is the dot product.
+
+And this is what we do in shading - $$ N \cdot L $$ - $$ N $$ is an antivector.
 

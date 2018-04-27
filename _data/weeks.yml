@@ -90,9 +90,7 @@
   name: Week 5
   days:
   - name: Monday 4/30
-    lecture:
-      - text: Transformations
-        link: /lectures/12-transformations
+    override: Class Cancelled
 
   - name: Wednesday 5/2
     lecture:

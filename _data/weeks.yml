@@ -94,15 +94,17 @@
 
   - name: Wednesday 5/2
     lecture:
-      - text: Transformations
+      - text: Euler Angles
         link: /lectures/12-transformations
+      - text: Normal Matrix
+        link: /lectures/13-normal-matrix
       - text: "Lab: Code Review Session 1"
         link: /workshops/code-review-1
 
   - name: Friday 5/4
     lecture:
-      - text: Anti-Aliasing
-        link: /lectures/13-anti-aliasing
+      - text: Exterior Algebra
+        link: /lectures/14-exterior-algebra
 
 ###############################################################################
 
@@ -120,8 +122,8 @@
 
   - name: Friday 5/11
     lecture:
-      - text: Boxes
-        link: /lectures/14-boxes
+      - text: Anti-Aliasing
+        link: /lectures/15-anti-aliasing
 
 ###############################################################################
 
@@ -130,16 +132,18 @@
   days:
   - name: Monday 5/14
     lecture:
+      - text: Boxes
+        link: /lectures/16-boxes
 
   - name: Wednesday 5/16
     lecture:
       - text: Spatial Data Structures
-        link: /lectures/15-spatial-data-structures
+        link: /lectures/17-spatial-data-structures
 
   - name: Friday 5/18
     lecture:
       - text: Bounding-Volume Hierarchies
-        link: /lectures/15-spatial-data-structures
+        link: /lectures/17-spatial-data-structures
 
 ###############################################################################
 
@@ -149,19 +153,19 @@
   - name: Monday 5/21
     lecture:
       - text: Light Theory
-        link: /lectures/16-light-theory
+        link: /lectures/18-light-theory
 
   - name: Wednesday 5/23
     lecture:
       - text: Monte Carlo Ray Tracing
-        link: /lectures/17-monte-carlo
+        link: /lectures/19-monte-carlo
       - text: "Lab: Code Review Session 2"
         link: /workshops/code-review-2
 
   - name: Friday 5/25
     lecture:
       - text: Distribution Ray Tracing
-        link: /lectures/17-monte-carlo
+        link: /lectures/19-monte-carlo
 
 ###############################################################################
 
@@ -174,12 +178,12 @@
   - name: Wednesday 5/30
     lecture:
       - text: Advanced Ray Tracing
-        link: /lectures/18-advanced-ray-tracing
+        link: /lectures/20-advanced-ray-tracing
 
   - name: Friday 6/1
     lecture:
       - text: Advanced Ray Tracing
-        link: /lectures/18-advanced-ray-tracing
+        link: /lectures/20-advanced-ray-tracing
 
 ###############################################################################
 

@@ -18,9 +18,16 @@ auto-title: true
 - [10 - Reflection and Refraction](10-reflection-refraction)
 - [11 - Fresnel and Beer's Law](11-fresnel-beer)
 - [12 - Transformations](12-transformations)
-- [13 - Anti-Aliasing](13-anti-aliasing)
-- [14 - Boxes](14-boxes)
-- [15 - Spatial Data Structures](15-spatial-data-structures)
-- [16 - Light Theory](16-light-theory)
-- [17 - Monte Carlo Ray Tracing](17-monte-carlo)
-- [18 - Advanced Ray Tracing](18-advanced-ray-tracing)
+- [13 - Normal Matrix](13-normal-matrix)
+- [14 - Exterior Algebra](13-normal-matrix)
+
+
+
+
+
+- [15 - Anti-Aliasing](15-anti-aliasing)
+- [16 - Boxes](16-boxes)
+- [17 - Spatial Data Structures](17-spatial-data-structures)
+- [18 - Light Theory](18-light-theory)
+- [19 - Monte Carlo Ray Tracing](19-monte-carlo)
+- [20 - Advanced Ray Tracing](20-advanced-ray-tracing)

@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 14: Monte Carlo Global Illumination"
+title: "Lecture 19: Monte Carlo Global Illumination"
 auto-title: true
 ---
 

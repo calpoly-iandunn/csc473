@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 10: Anti-Aliasing"
+title: "Lecture 15: Anti-Aliasing"
 auto-title: true
 ---
 

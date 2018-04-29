@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 13: Light Theory"
+title: "Lecture 18: Light Theory"
 auto-title: true
 ---
 

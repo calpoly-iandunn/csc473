@@ -234,7 +234,7 @@ The wedge product between a vector and an antivector is the dot product - and it
 
 $$ (a_1e_1 + a_2e_2 + a_3e_3) \wedge (b_1\bar e_1 + b_2\bar e_2 + b_3\bar e_3) $$
 
-$$ = (a_1b_1 + a_2_b_2 + a_3b_3) (e_1 \wedge e_2 \wedge e_3) $$
+$$ = (a_1b_1 + a_2b_2 + a_3b_3) (e_1 \wedge e_2 \wedge e_3) $$
 
 And this is what we do in shading - $$ N \cdot L $$ - here $$ N $$ is an antivector (or bivector).
 

@@ -19,7 +19,7 @@ auto-title: true
 - [11 - Fresnel and Beer's Law](11-fresnel-beer)
 - [12 - Transformations](12-transformations)
 - [13 - Normal Matrix](13-normal-matrix)
-- [14 - Exterior Algebra](13-normal-matrix)
+- [14 - Exterior Algebra](14-exterior-algebra)
 
 
 

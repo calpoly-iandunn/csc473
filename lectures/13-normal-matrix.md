@@ -34,7 +34,7 @@ we get a different result:
 $$ M((1, 0, 0) \times (0, 1, 0)) = M(0, 0, 1) = (0, 0, 1) $$
 
 This shows us that the result of a cross product transforms differently from a cross product.
-That's because that result is not a vector - it's a bi-vector.
+That's because that result is not a vector - it's a bivector.
 
 ## Derivation
 

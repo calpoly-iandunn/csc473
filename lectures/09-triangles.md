@@ -309,7 +309,7 @@ $$
 $$
 
 $$
-\beta = \frac
+\gamma = \frac
 {i (ak - jb) + h (jc - al) + g (bl - kc)}
 {\text{det}(A)}
 $$
@@ -332,7 +332,7 @@ t = \frac
 {\text{det}(A)}
 $$
 
-Which we can then manipulate to create common terms with the $$ \beta $$ solution.
+Which we can then manipulate to create common terms with the $$ \gamma $$ solution.
 
 $$
 t = \frac

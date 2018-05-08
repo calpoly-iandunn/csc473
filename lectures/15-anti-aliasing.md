@@ -5,6 +5,8 @@ title: "Lecture 15: Anti-Aliasing"
 auto-title: true
 ---
 
+[Slide Deck](https://docs.google.com/presentation/d/1FaixfnT0TACwkWryQnqlD7PtdMg8eaSW7YKDKegKAW0/edit?usp=sharin){:class="btn btn-info"}
+
 ## Super Sampling
 
 ### Pixel Centers

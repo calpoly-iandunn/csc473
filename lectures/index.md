@@ -20,12 +20,12 @@ auto-title: true
 - [12 - Transformations](12-transformations)
 - [13 - Normal Matrix](13-normal-matrix)
 - [14 - Exterior Algebra](14-exterior-algebra)
-
-
-
-
-
 - [15 - Anti-Aliasing](15-anti-aliasing)
+
+
+
+
+
 - [16 - Boxes](16-boxes)
 - [17 - Spatial Data Structures](17-spatial-data-structures)
 - [18 - Light Theory](18-light-theory)

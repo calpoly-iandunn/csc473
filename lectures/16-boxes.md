@@ -172,3 +172,9 @@ For the units in our program, something like the above will work just fine.
 If you're interested in a slightly more in-depth look at floating point comparisons,
 [this blog post](http://realtimecollisiondetection.net/blog/?p=89) is a good place to start.
 
+
+## Interactive Example
+
+<div id="example1">
+  <iframe id="exampleFrame1" src="examples/box-ray-intersect.html" width="820px" height="820px"></iframe>
+</div>

@@ -21,12 +21,10 @@ auto-title: true
 - [13 - Normal Matrix](13-normal-matrix)
 - [14 - Exterior Algebra](14-exterior-algebra)
 - [15 - Anti-Aliasing](15-anti-aliasing)
-
-
-
-
-
 - [16 - Boxes](16-boxes)
+
+
+
 - [17 - Spatial Data Structures](17-spatial-data-structures)
 - [18 - Light Theory](18-light-theory)
 - [19 - Monte Carlo Ray Tracing](19-monte-carlo)

@@ -233,3 +233,8 @@ you get the bidirectional scattering distribution function (BSDF).
 This also does not account for subsurface scattering (whereby light may leave a surface at a different point than where it arrived),
 but neither will we.
 
+
+## References
+
+- [*The Rendering Equation* - original paper](http://www.cse.chalmers.se/edu/year/2011/course/TDA361/2007/rend_eq.pdf)
+- [Light (technical)](https://sites.fas.harvard.edu/~cs278/papers/light.pdf)

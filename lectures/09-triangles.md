@@ -168,10 +168,10 @@ $$
 e & f \\
 h & i \\
 \end{vmatrix}
-+ b * \text{det}
+- b * \text{det}
 \begin{vmatrix}
-f & d \\
-i & g \\
+d & f \\
+g & i \\
 \end{vmatrix}
 + c * \text{det}
 \begin{vmatrix}
@@ -181,10 +181,12 @@ g & h \\
 $$
 
 $$
-= aei - afh + bfg - bdi + cdh - ceg
+= aei - afh - bdi + bfg + cdh - ceg
 $$
 
-Note that we can compute this "expansion" of the determinant using any row or column, not just the first row (as in this example).
+Note the pattern of (+) (-) (+) for the three 2x2 determinants.
+We can compute this "expansion" of the determinant using any row or column, not just the first row (as in this example).
+However, if you use the middle row or middle column, you flip the signs to (-) (+) (-)
 
 
 ### Solve
@@ -307,7 +309,7 @@ $$
 $$
 
 $$
-\beta = \frac
+\gamma = \frac
 {i (ak - jb) + h (jc - al) + g (bl - kc)}
 {\text{det}(A)}
 $$
@@ -323,6 +325,14 @@ t = \frac{
 \text{det}(A)
 }
 $$
+
+$$
+t = \frac
+{- d (bl - kc) + e (al - jc) - f (ak - jb)}
+{\text{det}(A)}
+$$
+
+Which we can then manipulate to create common terms with the $$ \gamma $$ solution.
 
 $$
 t = \frac

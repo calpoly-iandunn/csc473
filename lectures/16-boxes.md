@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 11: Boxes"
+title: "Lecture 16: Boxes"
 auto-title: true
 ---
 
@@ -172,3 +172,46 @@ For the units in our program, something like the above will work just fine.
 If you're interested in a slightly more in-depth look at floating point comparisons,
 [this blog post](http://realtimecollisiondetection.net/blog/?p=89) is a good place to start.
 
+
+## Interactive Example
+
+<div id="example1">
+  <iframe id="exampleFrame1" src="examples/box-ray-intersect.html" width="100%" height="840px"></iframe>
+</div>
+
+Example Code:
+
+```js
+function FindIntersectTime(d, p0) {
+  tymin = (bbox_min.y - p0.y) / d.y;
+  tymax = (bbox_max.y - p0.y) / d.y;
+  txmin = (bbox_min.x - p0.x) / d.x;
+  txmax = (bbox_max.x - p0.x) / d.x;
+
+  if (tymin > tymax) {
+    var temp = tymin;
+    tymin = tymax;
+    tymax = temp;
+  }
+  if (txmin > txmax) {
+    var temp = txmin;
+    txmin = txmax;
+    txmax = temp;
+  }
+
+  smallestMax = min(txmax, tymax); // Smallest of maxs
+  largestMin = max(txmin, tymin); // Largest of mins
+
+  // If max of mins is < min of maxes, then miss
+  if (smallestMax < largestMin || smallestMax < 0) {
+    return -1;
+  }
+
+  if (largestMin > 0) {
+    return largestMin;
+  }
+  else {
+    return smallestMax;
+  }
+}
+```

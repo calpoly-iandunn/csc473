@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 12: Spatial Data Structures"
+title: "Lecture 17: Spatial Data Structures"
 auto-title: true
 ---
 

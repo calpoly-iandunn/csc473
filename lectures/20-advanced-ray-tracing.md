@@ -1,7 +1,7 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 15: Advanced Ray Tracing"
+title: "Lecture 20: Advanced Ray Tracing"
 auto-title: true
 ---
 

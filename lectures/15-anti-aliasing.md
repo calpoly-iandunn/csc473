@@ -1,9 +1,11 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 10: Anti-Aliasing"
+title: "Lecture 15: Anti-Aliasing"
 auto-title: true
 ---
+
+[Slide Deck](https://docs.google.com/presentation/d/1QQX93-7boqMMRny6YIr4PC0r3gurClO07pdA262SoMU/edit?usp=sharing){:class="btn btn-info"}
 
 ## Super Sampling
 
@@ -65,3 +67,16 @@ $$ U_s = -{1 \over 2} + \frac{i + \frac{m + {1 \over 2}}{s} }{w} $$
 $$ V_s = -{1 \over 2} + \frac{j + \frac{n + {1 \over 2}}{s} }{h} $$
 
 Where $$ i, j$$ is the pixel, $$ m, n $$ is the sub-pixel, $$ w, h $$ is the image size and $$ s $$ is the number of sub-pixel super-samples.
+
+By multiplying by $$s$$, we can see that this is equivalent to treating the image as $$s$$ times as large:
+
+$$
+\begin{align}
+U_s & = -{1 \over 2} + \frac{i + \frac{m + {1 \over 2}}{s} }{w} \\
+& = -{1 \over 2} + \frac{i + \frac{m + {1 \over 2}}{s} }{w} * \frac{s}{s} \\
+& = -{1 \over 2} + \frac{i * s + m + {1 \over 2} }{w * s}
+\end{align}
+$$
+
+This is what we get in our original equation for $$ U_s $$ (without supersampling)
+if we replace $$ i $$ with $$ i * s + m $$ and replace $$ w $$ with $$ w * s $$.

@@ -51,10 +51,10 @@ Now we need to accurately light the models that our rays are intersecting.
 
 Recall the Phong lighting model:
 
-$$ I_{tot} = K_a + K_d * ( \hat N \cdot \hat L ) * L_d + K_s * ( \hat R \cdot \hat V ) ^ \alpha * L_s $$
+$$ I_{tot} = K_a + K_d * ( \hat N \cdot \hat L ) * L_c + K_s * ( \hat R \cdot \hat V ) ^ \alpha * L_c $$
 
 Where $$ K_a $$, $$ K_d $$, and $$ K_s $$ specify the material colors for ambient, diffuse, and specular respectively.
-Similarly, $$ L_d $$ and $$ L_s $$ specify the light colors for diffuse and specular respectively.
+Similarly, $$ L_c $$ specifies the light color.
 Note that we omit an ambient light color since ambient light is supposed to represent global illumination that is not tied to a particular light.
 $$ \alpha $$ specifies the shininess of the material.
 And, $$ \hat N $$, $$ \hat L $$, $$ \hat V $$, and $$ \hat R $$ specify the normal, light, view, and reflection vectors (respectively).

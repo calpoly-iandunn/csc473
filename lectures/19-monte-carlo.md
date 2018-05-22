@@ -1,11 +1,11 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 14: Monte Carlo Global Illumination"
+title: "Lecture 19: Monte Carlo Global Illumination"
 auto-title: true
 ---
 
-[In class, this lecture was presented with this slide deck.](https://docs.google.com/presentation/d/1MWH-IcK2I0JK39sADBSA0qj9zyM2W9JWPYme-MKkUNQ/edit?usp=sharing)
+[Slide Deck](https://docs.google.com/presentation/d/1MWH-IcK2I0JK39sADBSA0qj9zyM2W9JWPYme-MKkUNQ/edit?usp=sharing){:class="btn btn-info"}
 
 ## Monte Carlo
 

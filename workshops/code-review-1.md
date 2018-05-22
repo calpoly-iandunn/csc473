@@ -2,6 +2,7 @@
 layout: page
 active: None
 title: "Code Review 1"
+auto-title: true
 ---
 
 For our first code review session we are going to do group code review followed by class-wide code review.

@@ -41,6 +41,9 @@ assuming that your executable is named `raytrace` where the options are:
 - `-fresnel` = use Schlick's Approximation to simulate **Fresnel** reflection
   **(optional argument)**{: class="text-warning"}
   **(new)**{: class="text-info"}
+- `-beers` = use Beer's law for colored translucent volumes
+  **(optional argument)**{: class="text-warning"}
+  **(new)**{: class="text-info"}
 - `-ss=N` = use **super sampling** with NxN samples
   **(optional argument)**{: class="text-warning"}
   **(new)**{: class="text-info"}

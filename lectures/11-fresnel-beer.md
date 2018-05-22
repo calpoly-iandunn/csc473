@@ -81,7 +81,7 @@ local_color := blinn_phong(n, l, v) // or cook_torrance
 reflection_color := raytrace(pt + r * epsilon, r)
 transmission_color := raytrace(pt + t * epsilon, t)
 
-fresnel_reflectance := schlicks_approximation(ior, l, v)
+fresnel_reflectance := schlicks_approximation(ior, n, v)
 local_contribution = (1 - finish.filter) * (1 - finish.reflection)
 reflection_contribution = (1 - finish.filter) * (finish.reflection) + (finish.filter) * (fresnel_reflectance)
 transmission_contribution = (finish.filter) * (1 - fresnel_reflectance)

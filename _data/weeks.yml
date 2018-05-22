@@ -159,8 +159,6 @@
     lecture:
       - text: Monte Carlo Ray Tracing
         link: /lectures/19-monte-carlo
-      - text: "Lab: Code Review Session 2"
-        link: /workshops/code-review-2
 
   - name: Friday 5/25
     lecture:
@@ -179,6 +177,8 @@
     lecture:
       - text: Advanced Ray Tracing
         link: /lectures/20-advanced-ray-tracing
+      - text: "Lab: Code Review Session 2"
+        link: /workshops/code-review-2
 
   - name: Friday 6/1
     lecture:

@@ -9,7 +9,7 @@ title: Syllabus
 
 * **Instructor:** Ian Dunn
 * **Office:** Building 14, Room 209
-* **Office Hours:** MWF 11:10am - 12:00pm
+* **Office Hours:** [See here](https://calpoly-iandunn.github.io/)
 * **Email:** idunn01@calpoly.edu
 * **Schedule:**
   * Lecture: MWF {{ site.data.course.meetings.lecture.when }} ({{ site.data.course.meetings.lecture.in }})

@@ -129,6 +129,12 @@ $$ f_r(p, \omega_o, \omega_i) $$ is the BRDF, for a point $$ p $$, in direction 
 
 $$ L_i(p, \omega_i) $$ is the incoming light
 
+There are three principles adhered to by the rendering equation:
+
+- **Principle of global illumination** - every object in the scene contributes illumination
+- **Principle of equivalence** - there is no distrinction between emitted and reflected light
+- **Principle of direction** - reflected and scattered light travels in a direction (described by the BRDF)
+
 This is the integral that we want to approximate.
 However, for a variety of reasons we want to split up the direct and indirect illumination:
 

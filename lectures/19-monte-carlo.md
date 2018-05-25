@@ -12,6 +12,14 @@ auto-title: true
 The **Monte Carlo Methods** are a broad class of algorithms that use repeated random sampling to solve problems.
 In computer graphics, we often use Monte Carlo methods to estimate the value of integrals.
 
+Perhaps the simplest example of something you can do with Monte Carlo estimation is compute the value of $$\pi$$.
+Given a random number generator that generates points in the range 0 to 1, we can easily generate random points in a unit square.
+We can also determine which points of these are inside a unit sphere circumscribed by the box, by checking the distance of a given point from the center of the box.
+We know that the area of the box is 1, but the area of the circle is $$\pi$$.
+Therefore, the ratio of points that land inside the circle to points that land inside the box should be the ratio of the areas,
+$$\pi$$ to 1.
+
+[You can see a video of this in action here.](https://www.reddit.com/r/dataisbeautiful/comments/8kh2w4/monte_carlo_simulation_of_pi_oc/)
 
 
 ## Global Illumination
@@ -173,6 +181,8 @@ function raytrace(ray) {
     for (pt of sample_pts)
         ambient += raytrace(pt) * dot(pt, normal);
 
+    ambient *= 2 / num_pts;
+
     let total_color = combine(ambient, diffuse, specular, reflection, transmission);
     return total_color;
 }
@@ -182,6 +192,26 @@ Note that we assume constant brdf, e.g. purely diffuse surface.
 This also assumes that our generated hemisphere points have uniform distribution with respect to $$ d\mu $$,
 i.e. with respect to surface area of the hemisphere.
 
+But how do we generate points on a hemisphere?
+One common attempt is to generate random points in a cube and normalize them.
+This produces biases along the diagonals of the cube.
+[You can see an example of this in 2D on my 476 notes about ambient occlusion](https://iondune.github.io/csc476/lectures/17-example-sample-bias.html).
+
+Another thing we could try is generating $$\theta$$ and $$\phi$$ spherical coordinates with uniform distribution.
+However, this is going to give a tremendous bias towards points at the top of the hemisphere.
+
+If we generate two random variables $$u$$ and $$v$$ with uniform distribution from 0 to 1,
+we can generate uniformly distributed (with respect to surface area) points on a hemisphere like so:
+
+$$ r = \sqrt{1 - u^2} $$
+
+$$ \phi = 2\pi * v $$
+
+$$ x_i = (cos(\phi) * r, sin(\phi) * r, u) $$
+
+The PDF of this distribution has value $$\frac{1}{2\pi}$$ everywhere.
+We'll ignore the $$\pi$$ in this class (we tend to do that in graphics),
+but we need to multiply the final result by $$2$$ to get the right result.
 
 
 ## Sample Distribution
@@ -193,7 +223,7 @@ In general, an `N` increase in rays will produce an `sqrt(N)` decrease in noise.
 So if we can find a way to decrease noise without increasing ray count, that will be incredibly valuable to us.
 
 We can accomplish this by modifying the distribution function of our random hemisphere samples.
-Specifically, if we choose a distribution function with **cosine weighting**, that is, $$ p(x) = cos(\theta) $$,
+Specifically, if we choose a distribution function with **cosine weighting**, that is, $$ p(x) = \frac{cos(\theta)}{\pi} $$,
 we can eliminate the $$ cos(\theta) $$ component of our function.
 We'll also significantly improve the image quality (i.e. reduce noise, or variance)
 since we'll be concentrating our rays in the direction that matters,
@@ -202,6 +232,13 @@ avoiding rays near the edge of the hemisphere which have little effect on the im
 As it happens, we can generate random samples on a hemisphere with cosine weight
 by simpling generating uniform samples on a disc (uniform with respect to area)
 and projecting them upwards onto the hemisphere.
+
+$$ r = \sqrt{u} $$
+
+$$ \theta = 2 * \pi * v $$
+
+$$ x_i = (cos(\theta) * r, sin(\theta) * r, \sqrt{1 - u}) $$
+
 The code for this generation/projection looks like this:
 
 ```javascript

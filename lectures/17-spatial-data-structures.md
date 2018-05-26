@@ -41,6 +41,14 @@ We want a tree of bounding boxes, with each node being a bounding box that conta
 The root node of the tree is a bounding box that contains the entire scene.
 The leaf nodes of the tree are the objects we want to render.
 
+Example scene with bounding volumes:
+
+{% include scaled-figure.html name="bvh-scene" alt="bvh scene" %}
+
+Example bounding volume hierarchy:
+
+{% include scaled-figure.html name="bvh-graph" alt="bvh graph" %}
+
 The general tree traversal for ray intersection looks like this:
 
 ```pascal
@@ -58,13 +66,100 @@ if (ray hits root) then
             check triangle/sphere for intersection
 
     if (any hits on subtrees) then
-        return cloests of hits
+        return closest of hits
         // likewise if just one
     else
         return false // no hits
 ```
 
 Note the recursive nature of this traversal.
+In your actual implementation, you will likely want some sort of BoundingVolumeNode class
+with a list of children (or just left/right pointers) and a recursive intersect method.
+
+It's important to note that finding an intersect on the left side of a node doesn't mean we can skip the right side.
+There could be intersects on both left and right subtrees - we need to return the closest of the two.
+
+
+### Bounding Boxes
+
+First we need to compute bounding boxes for each type of object in our scene.
+
+I recommend creating an axis-aligned bounding-box class with a few methods:
+
+```cpp
+class AABB
+{
+    vec3 min, max;
+
+public:
+    void Reset(vec3 pt) {
+        min = max = pt;
+    }
+
+    void AddPoint(vec3 pt) {
+        min.x = glm::min(min.x, pt.x);
+        min.y = glm::min(min.y, pt.y);
+        min.z = glm::min(min.z, pt.z);
+        max.x = glm::min(max.x, pt.x);
+        max.y = glm::min(max.y, pt.y);
+        max.z = glm::min(max.z, pt.z);
+    }
+
+    void AddBox(AABB other) {
+        AddPoint(other.min);
+        AddPoint(other.max);
+    }
+};
+```
+
+Then, we can create a bounding box for each of our shapes like so:
+
+```cpp
+// Sphere
+box.Reset(center - vec3(radius));
+box.AddPoint(center + vec3(radius));
+```
+
+```cpp
+// Triangle
+box.Reset(v1);
+box.AddPoint(v2);
+box.AddPoint(v3);
+```
+
+For boxes, the bounding box is the same as the object.
+I recommend keeping planes out of your bounding-volume hierachy.
+For planes, the bounding box will stretch from $$-\inf$$ to $$\inf$$ in at least two axis.
+
+To compute the composite box of two shapes, just add one to the other.
+
+To handle bounding boxes of **transformed** shapes, compute the bounding box in object space and transform it into world space.
+To transform a bounding box, this algorithm will create an admissable box:
+
+```cpp
+vector<vec3> verts = box.compute_8_vertices();
+
+for (vec3 & v : verts) {
+    v = m * v; // have to promote to vec4, you know the drill
+}
+
+box.Reset(v[0]);
+for (int i = 1; i < 8; ++ i)
+    box.AddPoint(v[i]);
+```
+
+It is not sufficient to simply transform the `min` and `max` corners.
+Consider the result of a long and narrow shape is rotate 45 degrees.
+The containing AABB will need to be significantly larger in volume.
+
+{% include scaled-figure.html name="transform-aabb" alt="transformed aabb" %}
+
+It is clear that the box formed by the transformed min and max is not sufficient.
+The box formed by transforming coordinates is also rather larger.
+However, finding a true-fitting box for a transformed shape would be difficult for all general shapes,
+(though in the case of some like triangles it would be quite easy)
+and for the purposes of our hierarchy it is not a huge problem if boxes are slightly larger than they should be,
+though it *would* be a huge problem if boxes didn't fully cover the shapes.
 
 
 ### Building the Tree

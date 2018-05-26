@@ -129,7 +129,7 @@ box.AddPoint(v3);
 
 For boxes, the bounding box is the same as the object.
 I recommend keeping planes out of your bounding-volume hierachy.
-For planes, the bounding box will stretch from $$-\inf$$ to $$\inf$$ in at least two axis.
+For planes, the bounding box will stretch from $$-\infty$$ to $$\infty$$ in at least two axis.
 
 To compute the composite box of two shapes, just add one to the other.
 

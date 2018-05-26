@@ -130,6 +130,10 @@ box.AddPoint(v3);
 For boxes, the bounding box is the same as the object.
 I recommend keeping planes out of your bounding-volume hierachy.
 For planes, the bounding box will stretch from $$-\infty$$ to $$\infty$$ in at least two axis.
+Keeping these in the hierarchy would reduce its effectiveness significantly,
+and in general our scenes tend to contain few planes.
+A scene with a thousand triangles or spheres is interesting,
+a scene with a thousand planes is not.
 
 To compute the composite box of two shapes, just add one to the other.
 
@@ -149,17 +153,17 @@ for (int i = 1; i < 8; ++ i)
 ```
 
 It is not sufficient to simply transform the `min` and `max` corners.
-Consider the result of a long and narrow shape is rotate 45 degrees.
+Consider the result of a long and narrow shape is rotated 45 degrees.
 The containing AABB will need to be significantly larger in volume.
 
 {% include scaled-figure.html name="transform-aabb" alt="transformed aabb" %}
 
-It is clear that the box formed by the transformed min and max is not sufficient.
-The box formed by transforming coordinates is also rather larger.
-However, finding a true-fitting box for a transformed shape would be difficult for all general shapes,
-(though in the case of some like triangles it would be quite easy)
+It is clear that the box formed by the transformed min and max (dotted outline) does not cover the transformed shape.
+The box formed by transforming each corner of the box is also a little larger than it needs to be.
+However, finding a true-fitting box for a transformed shape would be difficult for all general shapes
+(though in the case of some like triangles it would be quite easy),
 and for the purposes of our hierarchy it is not a huge problem if boxes are slightly larger than they should be,
-though it *would* be a huge problem if boxes didn't fully cover the shapes.
+though it *would* be a huge problem if boxes didn't fully cover the shapes they are supposed to contain.
 
 
 ### Building the Tree

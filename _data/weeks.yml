@@ -162,7 +162,7 @@
 
   - name: Friday 5/25
     lecture:
-      - text: Distribution Ray Tracing
+      - text: Hemisphere Sampling
         link: /lectures/19-monte-carlo
 
 ###############################################################################
@@ -175,7 +175,7 @@
 
   - name: Wednesday 5/30
     lecture:
-      - text: Advanced Ray Tracing
+      - text: Distribution Ray Tracing
         link: /lectures/20-advanced-ray-tracing
       - text: "Lab: Code Review Session 2"
         link: /workshops/code-review-2

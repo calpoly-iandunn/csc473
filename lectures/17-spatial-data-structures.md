@@ -100,9 +100,9 @@ public:
         min.x = glm::min(min.x, pt.x);
         min.y = glm::min(min.y, pt.y);
         min.z = glm::min(min.z, pt.z);
-        max.x = glm::min(max.x, pt.x);
-        max.y = glm::min(max.y, pt.y);
-        max.z = glm::min(max.z, pt.z);
+        max.x = glm::max(max.x, pt.x);
+        max.y = glm::max(max.y, pt.y);
+        max.z = glm::max(max.z, pt.z);
     }
 
     void AddBox(AABB other) {

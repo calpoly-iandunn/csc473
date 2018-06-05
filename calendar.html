@@ -78,29 +78,29 @@ auto-title: true
 
   {% if assignment.type == 'program' %}
     {% if day.name == assignment.due %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
     {% endif %}
 
     {% if day.weekend contains assignment.due %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due (this weekend)" aria-hidden="true" style="color: orange;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-circle-x" title="{{assignment.title}} due (this weekend)" aria-hidden="true" style="color: orange;"></span></a>
     {% endif %}
 
     {% if day.name == assignment.assigned %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-arrow-circle-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-arrow-circle-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
     {% endif %}
   {% endif %}
 
   {% if assignment.type == 'lab' %}
     {% if day.name == assignment.due %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due" aria-hidden="true" style="color: red;"></span></a>
     {% endif %}
 
     {% if day.weekend contains assignment.due %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due (this weekend)" aria-hidden="true" style="color: orange;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-x" title="{{assignment.title}} due (this weekend)" aria-hidden="true" style="color: orange;"></span></a>
     {% endif %}
 
     {% if day.name == assignment.assigned %}
-      <a href="{{ site.baseurl }}/assignments/{{ name }}"><span class="oi oi-arrow-thick-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
+      <a href="{{ site.baseurl }}/project/{{ name }}"><span class="oi oi-arrow-thick-right" title="{{assignment.title}} assigned" aria-hidden="true" style="color: green;"></span></a>
     {% endif %}
   {% endif %}
 

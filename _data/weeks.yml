@@ -90,7 +90,7 @@
   name: Week 5
   days:
   - name: Monday 4/30
-    override: Class Cancelled
+    override: Class was cancelled
 
   - name: Wednesday 5/2
     lecture:
@@ -184,6 +184,9 @@
     lecture:
       - text: Advanced Ray Tracing
         link: /lectures/20-advanced-ray-tracing
+    weekend:
+      - Saturday 6/2
+      - Sunday 6/3
 
 ###############################################################################
 
@@ -191,17 +194,21 @@
   name: Week 10
   days:
   - name: Monday 6/4
-    lecture:
-      - text: Midterm 2 Review
-        outbound: https://docs.google.com/document/d/1_z7UJPzR8lD5h5NJ2hpdsxL8bF1VjU-GA2lp2pMYZGE/edit?usp=sharing
+    override: Class was cancelled
 
   - name: Wednesday 6/6
     lecture:
-      - text: Midterm Exam 2
+      - text: Midterm 2 Review
+        outbound: https://docs.google.com/document/d/1_z7UJPzR8lD5h5NJ2hpdsxL8bF1VjU-GA2lp2pMYZGE/edit?usp=sharing
+      - text: Final Project Ideas
+      - text: C++ (3)
 
   - name: Friday 6/8
     lecture:
-      - text: Make-up Day or TBA
+      - text: Midterm Exam 2
+    weekend:
+      - Saturday 6/9
+      - Sunday 6/10
 
 ###############################################################################
 

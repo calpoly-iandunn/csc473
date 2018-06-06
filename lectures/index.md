@@ -25,7 +25,5 @@ auto-title: true
 - [17 - Spatial Data Structures](17-spatial-data-structures)
 - [18 - Light Theory](18-light-theory)
 - [19 - Monte Carlo Ray Tracing](19-monte-carlo)
-
-
-
-- [20 - Advanced Ray Tracing](20-advanced-ray-tracing)
+- [20 - Final Project Grab-Bag](20-final-project)
+- [21 - C++ (3)](21-cpp3)

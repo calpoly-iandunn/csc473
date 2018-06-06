@@ -1,12 +1,14 @@
 ---
 layout: page
 active: lectures
-title: "Lecture 20: Advanced Ray Tracing"
+title: "Lecture 20: Final Project Grab-Bag"
 auto-title: true
 ---
 
 
 ## Global Illumination
+
+[Slide Deck](https://docs.google.com/presentation/d/1MWH-IcK2I0JK39sADBSA0qj9zyM2W9JWPYme-MKkUNQ/edit?usp=sharing){:class="btn btn-info"}
 
 ### Ambient Occlusion
 
@@ -50,6 +52,8 @@ A large number of rays is necessary to generate accurate images without too much
 
 
 ## Distribution Ray Tracing
+
+[Slide Deck](https://docs.google.com/presentation/d/1Ne_-WUN0DvDOIJFrXX1wHDQFSItCCIGum3LsMjc5FC4/edit?usp=sharing){:class="btn btn-info"}
 
 **Distribution ray tracing** is a general methodology that includes using a distribution of random samples to simulate a number of effects.
 It is dicussed on slides 40-49 of [this slide deck](https://docs.google.com/presentation/d/1FaixfnT0TACwkWryQnqlD7PtdMg8eaSW7YKDKegKAW0/edit?usp=sharing).

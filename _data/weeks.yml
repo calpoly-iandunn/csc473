@@ -176,14 +176,14 @@
   - name: Wednesday 5/30
     lecture:
       - text: Distribution Ray Tracing
-        link: /lectures/20-advanced-ray-tracing
+        link: /lectures/20-final-project
       - text: "Lab: Code Review Session 2"
         link: /workshops/code-review-2
 
   - name: Friday 6/1
     lecture:
-      - text: Advanced Ray Tracing
-        link: /lectures/20-advanced-ray-tracing
+      - text: Global Illumination+
+        link: /lectures/20-final-project
     weekend:
       - Saturday 6/2
       - Sunday 6/3
@@ -201,7 +201,9 @@
       - text: Midterm 2 Review
         outbound: https://docs.google.com/document/d/1_z7UJPzR8lD5h5NJ2hpdsxL8bF1VjU-GA2lp2pMYZGE/edit?usp=sharing
       - text: Final Project Ideas
+        link: /lectures/20-final-project
       - text: C++ (3)
+        link: /lectures/21-cpp3
 
   - name: Friday 6/8
     lecture:

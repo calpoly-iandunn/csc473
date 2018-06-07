@@ -50,7 +50,7 @@ part6:
   type:     program
   individual: true
   assigned: Friday 6/1
-  due:      Friday 6/8
+  due:      Sunday 6/10
 
 
 final:
@@ -60,4 +60,5 @@ final:
   individual: true
   assigned: Friday 6/8
   due:      Friday 6/15
+  website:  Sunday 6/17
 

@@ -207,7 +207,7 @@
 
   - name: Friday 6/8
     lecture:
-      - text: Midterm Exam 2
+      - text: Take-home Midterm Exam 2
     weekend:
       - Saturday 6/9
       - Sunday 6/10
@@ -217,7 +217,9 @@
 - number: 11
   name: Finals Week
   days:
+  - name: "Monday 6/11"
+    override: "Final Project Demos (Option 1): 1:10p - 3:00p"
   - name: "Friday 6/15"
-    override: "Final Project Demos: ??? - ???"
+    override: "Final Project Demos (Option 2): 1:10p - 4:00p"
 
 ###############################################################################

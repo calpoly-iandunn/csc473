@@ -5,11 +5,16 @@ title: "Final Project"
 auto-title: true
 ---
 
+You must demo your final project results during the final exam period on {{ site.data.assignments.final.due }}.
+
+You must also submit a website detailing your project, results images, references, and software development process.
+This is due on {{ site.data.assignments.final.website }}.
+
 ## Requirements
 
 There are four components to this project.
 
-1. Implement an additional feature (with instructor approval) for your raytracer.
+1. Implement an additional feature for your raytracer or any interesting graphics technique.
    Some reasonable ideas can be found below.
 2. Provide 2-3 `.pov` files of your own creation that show off your new feature (or are generally visually interesting)
 3. Create an HTML website that describes your project and shows some screenshots (and/or videos if appropriate)

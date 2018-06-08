@@ -65,13 +65,19 @@ Some general ideas:
 * Ambient occlusion
 * Depth of field
 * Perlin noise
+  * [OpenSimplex noise implementation - C++](https://gist.github.com/tombsar/716134ec71d1b8c1b530)
+  * [Idea images](http://fooo.fr/~vjeux/epita/raytracer/rt/docs/img/hall_of_fame/perlin.png)
 * Soft lighting
 * Constructive Solid Geometry
+  * [Example image](https://upload.wikimedia.org/wikipedia/commons/8/8b/Csg_tree.png)
+  * [Slides](http://web.cse.ohio-state.edu/~parent.1/classes/681/Lectures/19.RayTracingCSG.pdf)
 * Participating media (volumes)
 * Texture mapping
+  * [Past student work](http://users.csc.calpoly.edu/~idunn01/teaching/csc473/finals17/jsheriff/)
 * Physics/animation
 * Motion blur
 * Glossy reflection
-* Ray marching (mandelbulb)
+* Ray marching ([mandelbulb](https://en.wikipedia.org/wiki/Mandelbulb))
+  * [Real-time ray marching example](https://www.shadertoy.com/view/Xds3zN)
 * Photon mapping
 * Path tracer

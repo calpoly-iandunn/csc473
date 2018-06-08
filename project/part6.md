@@ -13,8 +13,8 @@ For this portion of your ray tracer, your program needs to:
 
 - Support all prior rendering requirements
 - Compute **global illumination** using Monte Carlo ray tracing
-  - Please use 128 cosine weighted sample rays on your hemisphere for the first bounce (though make this parameter configurable)
-  - Use 32 cosine weighted sample rays on your hemisphere for the second bounce (though make this parameter configurable)
+  - Use 64 stratified cosine-weighted sample rays on your hemisphere for the first bounce (though make this parameter configurable)
+  - Use 16 stratified cosine-weighted sample rays on your hemisphere for the second bounce (though make this parameter configurable)
 
 You will also need to create your own visually interesting scene that you render and submit the `.pov` file.
 
@@ -43,17 +43,61 @@ assuming that your executable is named `raytrace` where the options are:
 
 I also recommend that you support the following commands to control `gi` parameters:
 
-- `-gi_samples=N` = use N sampes for Monte Carlo **global illumination**
+- `-gi_samples=N,N,...` = use at most N bounces (specified for each bounce) for Monte Carlo **global illumination**,
+  for example `-gi_samples=64,16` for 64 samples at first bounce and 16 at secound bounce
   **(optional argument)**{: class="text-warning"}
   **(new)**{: class="text-info"}
-- `-gi_bounces=b` = use at most b bounces for Monte Carlo **global illumination**
-  **(optional argument)**{: class="text-warning"}
-  **(new)**{: class="text-info"}
-- `-gi_ratio=r` = divide N by r for each bounce of Monte Carlo **global illumination**
+- `-gi_bounces=b` = use at most b bounces for Monte Carlo **global illumination**,
   **(optional argument)**{: class="text-warning"}
   **(new)**{: class="text-info"}
 
-Sample input files and images are given in the input files repository.
+Here are some string utility functions that can be used to handle the `-gi_samples` argument above:
+
+```cpp
+bool StringBeginsWith(const std::string & s, const std::string & prefix, std::string & remainder)
+{
+  if (s.size() < prefix.size())
+  {
+    return false;
+  }
+
+  if (s.substr(0, prefix.size()) == prefix)
+  {
+    remainder = s.substr(prefix.size());
+    return true;
+  }
+
+  return false;
+}
+```
+
+```cpp
+std::vector<string> StringExplode(const std::string & str, const char delimiter)
+{
+  std::vector<string> words;
+  std::istringstream stream(str);
+
+  std::string word;
+  while (std::getline(stream, word, delimiter))
+  {
+    words.push_back(word);
+  }
+
+  return words;
+}
+```
+
+```cpp
+std::vector<int> sampleCounts;
+
+std::string remainder;
+if (StringBeginsWith(argument, "-gi_samples=", remainder))
+{
+  std::vector<string> words = StringExplode(remainder, ',');
+  for (const std::string & s : words)
+    sampleCounts.push_back(std::stoi(s));
+}
+```
 
 
 ### Diagnostic/Testing

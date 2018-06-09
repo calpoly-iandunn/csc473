@@ -178,13 +178,13 @@ function raytrace(ray) {
     let reflection = raytrace(reflection_ray);
     let transmission = raytrace(transmission_ray);
 
-    let sample_pts = generate_hemisphere_sample_points(256);
-
     let ambient = 0;
-    for (pt of sample_pts)
+    for (i = 0 to num_samples) {
+      let sample_pt = generate_hemisphere_sample_point();
         ambient += raytrace(pt) * dot(pt, normal);
+    }
 
-    ambient *= 2 / num_pts;
+    ambient *= 2 / num_pts; // 2 because of the probability density function, described below
 
     let total_color = combine(ambient, diffuse, specular, reflection, transmission);
     return total_color;
@@ -264,6 +264,29 @@ const float u = rand() / (float) RAND_MAX;
 const float v = rand() / (float) RAND_MAX;
 ```
 
+The probability density function for our uniform hemisphere points was $$p(x) = \frac{1}{2\pi}$$,
+so we'll also lose our factor of two when we use points with pdf $$p(x) = \frac{cos(\theta)}{\pi}$$.
+With cosine weighted sample points, our pseudocode now looks like this:
+
+
+```javascript
+function raytrace(ray) {
+
+    // ...
+
+    let ambient = 0;
+    for (i = 0 to num_samples) {
+      let sample_pt = generate_cosine_weighted_hemisphere_sample_point();
+        ambient += raytrace(pt);
+    }
+
+    ambient *= 1 / num_pts;
+
+    // ...
+}
+```
+
+
 
 ### Other Distributions
 
@@ -288,15 +311,34 @@ Here's some pseudocode:
 ```javascript
 function alignSampleVector(sample, up, normal)
 {
-    let angle = Math.acos(Math.dot(up, normal));
-    let axis = Math.cross(up, normal);
+  let angle = Math.acos(Math.dot(up, normal));
+  let axis = Math.cross(up, normal);
 
-    let matrix = make_rotation_matrix(angle, axis);
+  let matrix = make_rotation_matrix(angle, axis);
 
-    return transform(matrix, sample);
+  return transform(matrix, sample);
 }
 ```
 
+`up` here is **not** the camera up vector.
+It is just the direction in which our sample hemisphere is facing.
+Because of the way we generated hemisphere points, that direction is $$(0, 0, 1)$$.
+
+Note that this code will break if `up` and `normal` are the same direction -
+the cross product will be zero and the rotation matrix will be filled with `NaN`.
+So we need to add some sort of check for this.
+But if `up` and `normal` are the same, we can just use the samples as is - no alignment is necessary.
+The rotation matrix will also break if `up` and `normal` are opposites, but there's an easy fix for that too.
+
+```js
+if (up == normal)
+  return sample;
+else if (up == -normal)
+  return -sample;
+else {
+  // construct rotation matrix and align
+}
+```
 
 
 ## Stratifed Samples
@@ -317,4 +359,5 @@ Since we are now simulating indirect light it's a good idea to turn off the cons
 
 We also need to figure out what material properties we should apply to the color value calculated by indirect illumination.
 You could make strong arguments for multiplying by either `material.diffuse` or `material.ambient`.
-I recommend simply using the value outright.
+I recommend simply using the value outright -
+it produces more visually interesting images.

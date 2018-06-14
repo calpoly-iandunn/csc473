@@ -75,6 +75,10 @@ Some general ideas:
 * Texture mapping
   * [Past student work](http://users.csc.calpoly.edu/~idunn01/teaching/csc473/finals17/jsheriff/)
 * Physics/animation
+  * To take a series of still images and stich together into a movie, there are a number of tools:
+    * [ffmpeg](https://trac.ffmpeg.org/wiki/Slideshow)
+    * [virtualdub](http://www.virtualdub.org/blog/pivot/entry.php?id=34) (windows only)
+    * This seems like a quick and easy online tool: [gifmaker.org](http://gifmaker.org/) (thanks to Henry)
 * Motion blur
 * Glossy reflection
 * Ray marching ([mandelbulb](https://en.wikipedia.org/wiki/Mandelbulb))

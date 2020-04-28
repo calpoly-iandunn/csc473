@@ -5,6 +5,8 @@ title: "Lecture 14: Exterior Algebra"
 auto-title: true
 ---
 
+*This lecture is based on a GDC talk called "Fundamentals of Grassman Algebra" by Eric Lengyel. You may want to simply watch that, [here](https://www.gdcvault.com/play/1015534/Fundamentals-of-Grassmann).*
+
 **Exterior Algebra** is the basis for the geometric algebra we use in computer graphics.
 By understanding these fundamentals, we will understand:
 
@@ -62,8 +64,6 @@ Another property of the wedge product is that the product of two vectors is not 
 it is something else, specifically a **bivector**.
 Bivectors are distinct from scalars and vectors, and represents an oriented 2D area
 (whereas a vector represents an oriented 1D direction and scalars are zero-dimensional values).
-
-![wedge product bivector](figures/wedge-product-bivector.png){:class="img-thumbnail"}
 
 The orientation of this area is sometimes called the "winding" and can be described as clockwise or counterclockwise.
 This also illustrates the anticommutivity of the wedge product - changing the order of operands reverses the orientation of the bivector.
@@ -124,8 +124,6 @@ Similarly, the wedge product of three vectors produces a **trivector**.
 Trivectors represent a 3D oriented volume.
 
 $$ \vec a \wedge \vec b \wedge \vec c $$
-
-![wedge product trivector](figures/wedge-product-trivector.png){:class="img-thumbnail"}
 
 If one of the vectors is reversed, the opposite (negated) volume is produced.
 
@@ -237,8 +235,6 @@ $$ (a_1e_1 + a_2e_2 + a_3e_3) \wedge (b_1\bar e_1 + b_2\bar e_2 + b_3\bar e_3) $
 $$ = (a_1b_1 + a_2b_2 + a_3b_3) (e_1 \wedge e_2 \wedge e_3) $$
 
 And this is what we do in shading - $$ N \cdot L $$ - here $$ N $$ is an antivector (or bivector).
-
-![shading antiscalar](figures/shading-antiscalar.png){:class="img-thumbnail"}
 
 What are the consequences of this?
 Well, an antiscalar is different from a scalar in that it flips sign under certain transforms,
